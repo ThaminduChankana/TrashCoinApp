@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    tools:context=".SplashScreen">
+
+    <ImageView
+        android:id="@+id/img_logo_name"
+        android:layout_width="match_parent"
+        android:layout_height="311dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:contentDescription="@string/img_logo_name"
+        android:src="@drawable/img_logo_name" />
+
+    <ImageView
+        android:id="@+id/img_quote"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/img_logo_name"
+        android:layout_marginTop="30dp"
+        android:layout_centerHorizontal="true"
+        android:contentDescription="@string/img_quote"
+        android:src="@drawable/img_quote" />
+
+    <ImageView
+        android:id="@+id/img_innovation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/progress_bar"
+        android:layout_marginTop="30dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="10dp"
+        android:contentDescription="@string/img_innovation"
+        android:src="@drawable/innovation_by" />
+
+    <ImageView
+        android:id="@+id/img_team_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/img_innovation"
+        android:layout_marginTop="10dp"
+        android:layout_centerHorizontal="true"
+        android:contentDescription="@string/img_team_name"
+        app:srcCompat="@drawable/byte_squad"
+        android:layout_marginBottom="25dp"/>
+
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        style="?android:attr/progressBarStyle"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/img_quote" />
+
+</RelativeLayout>

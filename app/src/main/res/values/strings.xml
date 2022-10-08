@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">TrashCoin App</string>
+    <string name="img_logo_name" />
+    <string name="img_innovation" />
+    <string name="img_team_name" />
+    <string name="img_quote" />
+
+</resources>
