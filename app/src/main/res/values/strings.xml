@@ -1,8 +1,22 @@
 <resources>
     <string name="app_name">TrashCoin App</string>
+    <string name="todo">Image context</string>
     <string name="img_logo_name" />
     <string name="img_innovation" />
     <string name="img_team_name" />
     <string name="img_quote" />
+    <string name="tv_intro_decide">Would You Like to Start With Our Introduction ?</string>
+    <string name="txt_yes">Yes</string>
+    <string name="btn_intro_decide_skip">Skip Introduction</string>
+    <string name="txt_no">No</string>
+    <string name="tv_intro_pg_one">Dispose your waste efficiently...</string>
+    <string name="tv_intro_pg_two">Collect waste efficiently...</string>
+    <string name="tv_intro_pg_three">Recycle waste efficiently...</string>
+    <string name="tv_intro_pg_four">Buy and Sell Recycled Products</string>
+    <string name="tv_intro_pg_five">Connect with recyclers <br></br>(Collectors Only)...</string>
+    <string name="next">Next</string>
+    <string name="tv_get_started">Get Started...</string>
+    <string name="btn_get_started_register">Register</string>
+    <string name="btn_get_started_login">Login</string>
 
 </resources>

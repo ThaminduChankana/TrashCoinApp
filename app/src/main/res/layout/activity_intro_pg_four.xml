@@ -5,53 +5,38 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background"
-    tools:context=".IntroActivity">
+    tools:context=".IntroPgFour">
 
     <ImageView
-        android:id="@+id/img_intro_decide"
+        android:id="@+id/img_intro_pg_four"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="75dp"
-        android:contentDescription="@string/todo"
-        android:src="@drawable/intro_decide_img" />
+        android:src="@drawable/img_intro_pg_four" />
 
     <TextView
-        android:id="@+id/tv_intro_decide"
+        android:id="@+id/tv_intro_pg_four"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/img_intro_decide"
+        android:layout_below="@id/img_intro_pg_four"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="50dp"
-        android:text="@string/tv_intro_decide"
+        android:layout_marginTop="100dp"
+        android:text="@string/tv_intro_pg_four"
         android:textAlignment="center"
         android:textColor="@color/intro_text_color"
         android:textSize="24sp" />
 
     <Button
-        android:id="@+id/btn_intro_decide_yes"
+        android:id="@+id/btn_intro_pg_four_next"
         android:layout_width="250dp"
         android:layout_height="80dp"
-        android:layout_below="@id/tv_intro_decide"
+        android:layout_below="@id/tv_intro_pg_four"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="30dp"
         android:backgroundTint="@color/btn_color"
-        android:text="@string/txt_yes"
+        android:text="@string/next"
         android:textSize="20sp"
-        app:cornerRadius="50dp"
-        tools:ignore="TextContrastCheck" />
-
-    <Button
-        android:id="@+id/btn_intro_decide_skip"
-        android:layout_width="250dp"
-        android:layout_height="80dp"
-        android:layout_below="@id/btn_intro_decide_yes"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
-        android:backgroundTint="@color/btn_color"
-        android:text="@string/btn_intro_decide_skip"
-        android:textSize="20sp"
-        app:cornerRadius="50dp"
-        tools:ignore="TextContrastCheck" />
+        app:cornerRadius="50dp" />
 
 </RelativeLayout>

@@ -3,55 +3,61 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
     android:background="@color/background"
-    tools:context=".IntroActivity">
-
-    <ImageView
-        android:id="@+id/img_intro_decide"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="75dp"
-        android:contentDescription="@string/todo"
-        android:src="@drawable/intro_decide_img" />
+    android:layout_height="match_parent"
+    tools:context=".GetStarted">
 
     <TextView
-        android:id="@+id/tv_intro_decide"
+        android:id="@+id/tv_get_started"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/img_intro_decide"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="50dp"
-        android:text="@string/tv_intro_decide"
+        android:text="@string/tv_get_started"
         android:textAlignment="center"
-        android:textColor="@color/intro_text_color"
-        android:textSize="24sp" />
+        android:textColor="@color/heading"
+        android:textSize="40sp" />
+
+    <ImageView
+        android:id="@+id/img_get_started"
+        android:layout_below="@id/tv_get_started"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:contentDescription="@string/todo"
+        android:src="@drawable/img_get_started" />
+
 
     <Button
-        android:id="@+id/btn_intro_decide_yes"
+        android:id="@+id/btn_get_started_register"
         android:layout_width="250dp"
         android:layout_height="80dp"
-        android:layout_below="@id/tv_intro_decide"
+        android:layout_below="@id/img_get_started"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="30dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="75dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="30dp"
         android:backgroundTint="@color/btn_color"
-        android:text="@string/txt_yes"
+        android:text="@string/btn_get_started_register"
         android:textSize="20sp"
         app:cornerRadius="50dp"
         tools:ignore="TextContrastCheck" />
 
     <Button
-        android:id="@+id/btn_intro_decide_skip"
+        android:id="@+id/btn_get_started_login"
         android:layout_width="250dp"
         android:layout_height="80dp"
-        android:layout_below="@id/btn_intro_decide_yes"
+        android:layout_below="@id/btn_get_started_register"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
         android:backgroundTint="@color/btn_color"
-        android:text="@string/btn_intro_decide_skip"
+        android:text="@string/btn_get_started_login"
         android:textSize="20sp"
         app:cornerRadius="50dp"
         tools:ignore="TextContrastCheck" />
+
+
 
 </RelativeLayout>

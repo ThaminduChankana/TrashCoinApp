@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/background"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".IntroPgTwo">
+
+    <ImageView
+        android:id="@+id/img_intro_pg_two"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="75dp"
+        android:src="@drawable/img_intro_pg_two" />
+
+    <TextView
+        android:id="@+id/tv_intro_pg_two"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/img_intro_pg_two"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp"
+        android:text="@string/tv_intro_pg_two"
+        android:textAlignment="center"
+        android:textColor="@color/intro_text_color"
+        android:textSize="24sp" />
+
+    <Button
+        android:id="@+id/btn_intro_pg_two_next"
+        android:layout_width="250dp"
+        android:layout_height="80dp"
+        android:layout_below="@id/tv_intro_pg_two"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:backgroundTint="@color/btn_color"
+        android:text="@string/next"
+        android:textSize="20sp"
+        app:cornerRadius="50dp" />
+
+</RelativeLayout>
