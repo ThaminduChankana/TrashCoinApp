@@ -17,6 +17,15 @@
     <string name="next">Next</string>
     <string name="tv_get_started">Get Started...</string>
     <string name="btn_get_started_register">Register</string>
+    <string name="btn_register">Register</string>
     <string name="btn_get_started_login">Login</string>
+    <string name="et_reg_full_name">Full Name</string>
+    <string name="et_reg_address">Address</string>
+    <string name="et_reg_email">Email</string>
+    <string name="et_reg_telephone">Telephone Number</string>
+    <string name="et_reg_password">Password</string>
+    <string name="hint_password">Password</string>
+    <string name="spinner_user_category">Registering As...</string>
+
 
 </resources>
