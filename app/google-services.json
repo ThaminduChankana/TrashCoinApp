@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "104427470661",
+    "project_id": "trashcoin-app-4d00d",
+    "storage_bucket": "trashcoin-app-4d00d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:104427470661:android:b2da889a1db56948fd882c",
+        "android_client_info": {
+          "package_name": "com.example.trashcoinapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "104427470661-n7hppfqgfkbhv3j3eftfnkbjq4cc8iqa.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBOGGWOwO3Gjh8TkertAatx46P9SUno6gg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "104427470661-n7hppfqgfkbhv3j3eftfnkbjq4cc8iqa.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

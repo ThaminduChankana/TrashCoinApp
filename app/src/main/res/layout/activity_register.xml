@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="15dp"
-        android:text="@string/tv_get_started"
+        android:text="@string/tv_register"
         android:textColor="@color/heading"
         android:textSize="40sp" />
 
