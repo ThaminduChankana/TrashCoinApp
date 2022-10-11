@@ -15,7 +15,8 @@
         <entry key="..\:/Users/ASUS ROG/Desktop/New folder (3)/TrashCoinApp/app/src/main/res/layout/activity_intro_pg_three.xml" value="0.33645833333333336" />
         <entry key="..\:/Users/ASUS ROG/Desktop/New folder (3)/TrashCoinApp/app/src/main/res/layout/activity_intro_pg_two.xml" value="0.35052083333333334" />
         <entry key="..\:/Users/ASUS ROG/Desktop/New folder (3)/TrashCoinApp/app/src/main/res/layout/activity_intro_pgfive.xml" value="0.35052083333333334" />
-        <entry key="..\:/Users/ASUS ROG/Desktop/New folder (3)/TrashCoinApp/app/src/main/res/layout/activity_register.xml" value="0.30315315315315317" />
+        <entry key="..\:/Users/ASUS ROG/Desktop/New folder (3)/TrashCoinApp/app/src/main/res/layout/activity_login_selector.xml" value="0.30315315315315317" />
+        <entry key="..\:/Users/ASUS ROG/Desktop/New folder (3)/TrashCoinApp/app/src/main/res/layout/activity_register.xml" value="0.21" />
         <entry key="..\:/Users/ASUS ROG/Desktop/New folder (3)/TrashCoinApp/app/src/main/res/layout/fragment_intro_one.xml" value="0.25" />
       </map>
     </option>
@@ -29,7 +30,7 @@
   <component name="VisualizationToolProject">
     <option name="state">
       <ProjectState>
-        <option name="scale" value="0.18" />
+        <option name="scale" value="0.21" />
       </ProjectState>
     </option>
   </component>

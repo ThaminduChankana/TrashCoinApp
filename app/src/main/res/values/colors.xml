@@ -12,5 +12,6 @@
     <color name="btn_color">#26AB7B</color>
     <color name="heading">#315548</color>
     <color name="second_color">#F5F8F0</color>
+    <color name="reg_spinner_color">#989393</color>
 
 </resources>

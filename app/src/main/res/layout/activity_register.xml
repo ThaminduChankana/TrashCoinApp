@@ -12,7 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="15dp"
         android:text="@string/tv_get_started"
         android:textColor="@color/heading"
         android:textSize="40sp" />
@@ -23,7 +23,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="20dp"
         android:contentDescription="@string/todo"
         android:src="@drawable/img_register" />
 
@@ -31,7 +31,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/img_register"
-
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:orientation="vertical"
@@ -125,7 +124,7 @@
             android:backgroundTint="#CFEDE2"
             android:prompt="@string/spinner_user_category"
             android:spinnerMode="dropdown"
-            android:textAlignment="center"
+            android:textColor="@color/reg_spinner_color"
             tools:ignore="SpeakableTextPresentCheck" />
 
         <Button

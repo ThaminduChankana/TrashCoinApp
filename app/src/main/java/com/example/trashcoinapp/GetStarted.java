@@ -31,5 +31,13 @@ public class GetStarted extends AppCompatActivity {
             }
         });
 
+        btn_get_started_login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), LoginSelector.class);
+                startActivity(intent);
+            }
+        });
+
     }
 }
