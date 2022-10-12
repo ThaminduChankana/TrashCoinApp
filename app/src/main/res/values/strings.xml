@@ -41,6 +41,13 @@
     <string name="tv_waste_recyclers">Waste Disposers</string>
     <string name="tv_view_inventory">View Inventory</string>
     <string name="tv_chat">Chat</string>
+    <string name="tv_add_inventory">Add Inventory</string>
+    <string name="tv_edit_inventory">Edit Inventory</string>
+    <string name="et_item_name">Item Name</string>
+    <string name="et_description">Description</string>
+    <string name="btn_add_item">Add Item</string>
+    <string name="btn_edit_item">Edit</string>
+
 
 
 </resources>

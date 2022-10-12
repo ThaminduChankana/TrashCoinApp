@@ -17,41 +17,47 @@
         android:theme="@style/Theme.TrashCoinApp"
         tools:targetApi="31">
         <activity
-            android:name=".WasteCollectorDashboard"
+            android:name=".EditInventory"
             android:exported="false" />
+        <activity
+            android:name=".AddInventory"
+            android:exported="false" />
+        <activity
+            android:name=".WasteCollectorDashboard"
+            android:exported="true" />
         <activity
             android:name=".LoginWasteRecycler"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".LoginWasteDisposer"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".LoginWasteCollector"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".LoginSelector"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".Register"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".GetStarted"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".IntroPgFive"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".IntroPgFour"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".IntroPgThree"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".IntroPgTwo"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".IntroPgOne"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".IntroActivity"
             android:exported="true" />
