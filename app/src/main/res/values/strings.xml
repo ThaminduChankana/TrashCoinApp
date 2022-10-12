@@ -34,6 +34,13 @@
     <string name="tv_login_select_recycler">Waste Recycler</string>
     <string name="tv_login">Login</string>
     <string name="et_login_email">Email</string>
+    <string name="tv_waste_collector_dashboard">Waste Collector Dashboard</string>
+    <string name="btn_logout">Logout</string>
+    <string name="btn_add_details">Add details</string>
+    <string name="tv_waste_disposers">Waste Disposers</string>
+    <string name="tv_waste_recyclers">Waste Disposers</string>
+    <string name="tv_view_inventory">View Inventory</string>
+    <string name="tv_chat">Chat</string>
 
 
 </resources>
