@@ -47,6 +47,10 @@
     <string name="et_description">Description</string>
     <string name="btn_add_item">Add Item</string>
     <string name="btn_edit_item">Edit</string>
+    <string name="btm_nav_disposers">Disposers</string>
+    <string name="btm_nav_recyclers">Recyclers</string>
+    <string name="btm_nav_inventory">Inventory</string>
+    <string name="btm_nav_chat">Chat</string>
 
 
 

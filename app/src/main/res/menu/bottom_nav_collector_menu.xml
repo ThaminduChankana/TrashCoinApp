@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <item android:id="@+id/img_collector_disposers"
+        android:title="@string/btm_nav_disposers"
+        android:icon="@drawable/ic_disposers"/>
+
+    <item android:id="@+id/img_collector_recyclers"
+        android:title="@string/btm_nav_recyclers"
+        android:icon="@drawable/ic_recyclers"
+        />
+
+    <item android:id="@+id/img_collector_inventory"
+        android:title="@string/btm_nav_inventory"
+        android:icon="@drawable/ic_inventory"
+        />
+
+    <item android:id="@+id/img_collector_chat"
+        android:title="@string/btm_nav_chat"
+        android:icon="@drawable/ic_chat"
+        />
+
+</menu>

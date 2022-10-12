@@ -222,5 +222,22 @@
             </LinearLayout>
         </androidx.cardview.widget.CardView>
     </GridLayout>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/btm_nav_collector_container"
+        android:layout_above="@id/bottom_navigation_collector"
+        />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation_collector"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/btn_color"
+        app:itemIconTint="@color/white"
+        app:itemTextColor="@color/white"
+        app:menu="@menu/bottom_nav_collector_menu" />
+    
 
 </RelativeLayout>
