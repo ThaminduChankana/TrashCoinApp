@@ -8,6 +8,9 @@ import android.view.View;
 import android.view.WindowManager;
 
 import com.example.trashcoinapp.R;
+import com.example.trashcoinapp.activities.logins.LoginWasteCollector;
+import com.example.trashcoinapp.activities.logins.LoginWasteDisposer;
+import com.example.trashcoinapp.activities.logins.LoginWasteRecycler;
 
 public class LoginSelector extends AppCompatActivity {
 

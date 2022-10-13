@@ -53,10 +53,11 @@
         android:layout_marginLeft="20dp"
         android:layout_marginTop="10dp"
         android:layout_marginRight="20dp"
-        android:layout_marginBottom="80dp"
+        android:layout_above="@id/bottom_navigation_collector"
         android:columnCount="2"
         android:rowCount="2"
-        android:layout_centerHorizontal="true">
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="25dp">
 
         <androidx.cardview.widget.CardView
             android:id="@+id/cv_wc_db_disposer"
@@ -222,12 +223,12 @@
             </LinearLayout>
         </androidx.cardview.widget.CardView>
     </GridLayout>
+
     <FrameLayout
+        android:id="@+id/btm_nav_collector_container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/btm_nav_collector_container"
-        android:layout_above="@id/bottom_navigation_collector"
-        />
+        android:layout_above="@id/bottom_navigation_collector" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation_collector"

@@ -9,6 +9,7 @@ import android.view.WindowManager;
 import android.widget.Button;
 
 import com.example.trashcoinapp.R;
+import com.example.trashcoinapp.activities.intro.IntroPgOne;
 
 public class IntroActivity extends AppCompatActivity {
 
@@ -29,7 +30,7 @@ public class IntroActivity extends AppCompatActivity {
         btn_intro_decide_yes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(),IntroPgOne.class);
+                Intent intent = new Intent(getApplicationContext(), IntroPgOne.class);
                 startActivity(intent);
 
             }
