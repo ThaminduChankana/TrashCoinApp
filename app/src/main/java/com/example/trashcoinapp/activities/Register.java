@@ -1,4 +1,4 @@
-package com.example.trashcoinapp;
+package com.example.trashcoinapp.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -11,6 +11,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Spinner;
+
+import com.example.trashcoinapp.R;
 
 import java.util.ArrayList;
 import java.util.List;

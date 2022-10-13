@@ -1,4 +1,4 @@
-package com.example.trashcoinapp;
+package com.example.trashcoinapp.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
+
+import com.example.trashcoinapp.R;
 
 public class GetStarted extends AppCompatActivity {
 

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background"
-    tools:context=".LoginWasteDisposer">
+    tools:context=".activities.LoginWasteDisposer">
 
     <TextView
         android:id="@+id/tv_waste_disposer_login"

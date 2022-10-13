@@ -17,52 +17,52 @@
         android:theme="@style/Theme.TrashCoinApp"
         tools:targetApi="31">
         <activity
-            android:name=".EditInventory"
+            android:name=".activities.EditInventory"
             android:exported="false" />
         <activity
-            android:name=".AddInventory"
+            android:name=".activities.AddInventory"
             android:exported="false" />
         <activity
-            android:name=".WasteCollectorDashboard"
+            android:name=".activities.WasteCollectorDashboard"
             android:exported="true" />
         <activity
-            android:name=".LoginWasteRecycler"
+            android:name=".activities.LoginWasteRecycler"
             android:exported="true" />
         <activity
-            android:name=".LoginWasteDisposer"
+            android:name=".activities.LoginWasteDisposer"
             android:exported="true" />
         <activity
-            android:name=".LoginWasteCollector"
+            android:name=".activities.LoginWasteCollector"
             android:exported="true" />
         <activity
-            android:name=".LoginSelector"
+            android:name=".activities.LoginSelector"
             android:exported="true" />
         <activity
-            android:name=".Register"
+            android:name=".activities.Register"
             android:exported="true" />
         <activity
-            android:name=".GetStarted"
+            android:name=".activities.GetStarted"
             android:exported="true" />
         <activity
-            android:name=".IntroPgFive"
+            android:name=".activities.IntroPgFive"
             android:exported="true" />
         <activity
-            android:name=".IntroPgFour"
+            android:name=".activities.IntroPgFour"
             android:exported="true" />
         <activity
-            android:name=".IntroPgThree"
+            android:name=".activities.IntroPgThree"
             android:exported="true" />
         <activity
-            android:name=".IntroPgTwo"
+            android:name=".activities.IntroPgTwo"
             android:exported="true" />
         <activity
-            android:name=".IntroPgOne"
+            android:name=".activities.IntroPgOne"
             android:exported="true" />
         <activity
-            android:name=".IntroActivity"
+            android:name=".activities.IntroActivity"
             android:exported="true" />
         <activity
-            android:name=".SplashScreen"
+            android:name=".activities.SplashScreen"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

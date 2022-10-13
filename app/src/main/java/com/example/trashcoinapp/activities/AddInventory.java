@@ -1,9 +1,11 @@
-package com.example.trashcoinapp;
+package com.example.trashcoinapp.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.WindowManager;
+
+import com.example.trashcoinapp.R;
 
 public class AddInventory extends AppCompatActivity {
 

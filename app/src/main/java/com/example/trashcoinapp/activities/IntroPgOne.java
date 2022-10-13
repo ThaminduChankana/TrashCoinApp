@@ -1,4 +1,4 @@
-package com.example.trashcoinapp;
+package com.example.trashcoinapp.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,25 +8,31 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 
-public class IntroPgFour extends AppCompatActivity {
+import com.example.trashcoinapp.R;
 
-    Button btn_intro_pg_four_next;
+public class IntroPgOne extends AppCompatActivity {
+
+    Button btn_intro_pg_one_next;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getSupportActionBar().hide();
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        setContentView(R.layout.activity_intro_pg_four);
+        setContentView(R.layout.activity_intro_pg_one);
 
-        btn_intro_pg_four_next = findViewById(R.id.btn_intro_pg_four_next);
-        btn_intro_pg_four_next.setOnClickListener(new View.OnClickListener() {
+        btn_intro_pg_one_next = findViewById(R.id.btn_intro_pg_one_next);
+        btn_intro_pg_one_next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(),IntroPgFive.class);
+                Intent intent = new Intent(getApplicationContext(),IntroPgTwo.class);
                 startActivity(intent);
-                IntroPgFour.this.finish();
+                IntroPgOne.this.finish();
 
             }
         });
+
+
+
     }
 }

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background"
-    tools:context=".EditInventory">
+    tools:context=".activities.EditInventory">
 
     <TextView
         android:id="@+id/tv_edit_inventory"
