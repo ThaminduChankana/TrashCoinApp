@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,91 +7,86 @@
     android:background="@color/background"
     tools:context=".activities.AddInventory">
 
-    <TextView
-        android:id="@+id/tv_add_inventory"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="50dp"
-        android:text="@string/tv_add_inventory"
-        android:textAlignment="center"
-        android:textColor="@color/heading"
-
-        android:textSize="40sp" />
-    <ImageView
-        android:id="@+id/img_add_inventory_back"
-        android:layout_below="@id/tv_add_inventory"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="25dp"
-        android:layout_marginTop="20dp"
-        android:contentDescription="@string/todo"
-        android:src="@drawable/img_btn_back" />
-
-    <ImageView
-        android:id="@+id/img_add_inventory"
-        android:layout_below="@id/img_add_inventory_back"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="40dp"
-        android:contentDescription="@string/todo"
-        android:src="@drawable/img_add_inventory" />
-
     <LinearLayout
-        android:id="@+id/ll_add_inventory"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/img_add_inventory"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="50dp"
-        android:orientation="vertical"
-        android:paddingStart="25dp"
-        android:paddingEnd="25dp"
-        android:paddingTop="10dp"
-        android:paddingBottom="10dp"
-        >
-        <EditText
-            android:id="@+id/et_add_inventory_name"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/tv_add_inventory"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:text="@string/tv_add_inventory"
+            android:textAlignment="center"
+            android:textColor="@color/heading"
+            android:textSize="40sp" />
+        <ImageView
+            android:id="@+id/img_add_inventory_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="25dp"
+            android:layout_gravity="start"
+            android:layout_marginTop="20dp"
+            android:contentDescription="@string/todo"
+            android:src="@drawable/img_btn_back" />
+        <ImageView
+            android:id="@+id/img_add_inventory"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:contentDescription="@string/todo"
+            android:src="@drawable/img_add_inventory" />
+
+        <LinearLayout
+            android:id="@+id/ll_add_inventory"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/background_edittext"
-            android:ems="10"
-            android:hint="@string/et_item_name"
-            android:importantForAutofill="no"
-            android:inputType="text"
-            android:minHeight="48dp"
-            android:textAlignment="textStart"
-            tools:ignore="SpeakableTextPresentCheck" />
+            android:layout_marginTop="50dp"
+            android:orientation="vertical"
+            android:paddingStart="25dp"
+            android:paddingEnd="25dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp">
+            <EditText
+                android:id="@+id/et_add_inventory_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/background_edittext"
+                android:ems="10"
+                android:hint="@string/et_item_name"
+                android:importantForAutofill="no"
+                android:inputType="text"
+                android:minHeight="48dp"
+                android:textAlignment="textStart"
+                tools:ignore="SpeakableTextPresentCheck" />
 
-        <EditText
-            android:id="@+id/et_add_inventory_description"
-            android:layout_width="match_parent"
+            <EditText
+                android:id="@+id/et_add_inventory_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/background_edittext"
+                android:ems="10"
+                android:hint="@string/et_description"
+                android:importantForAutofill="no"
+                android:inputType="text"
+                android:minHeight="48dp"
+                android:textAlignment="textStart"
+                tools:ignore="SpeakableTextPresentCheck,TextContrastCheck" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_add_inventory"
+            android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:background="@drawable/background_edittext"
-            android:ems="10"
-            android:hint="@string/et_description"
-            android:importantForAutofill="no"
-            android:inputType="text"
-            android:minHeight="48dp"
-            android:textAlignment="textStart"
-            tools:ignore="SpeakableTextPresentCheck,TextContrastCheck" />
-
+            android:backgroundTint="@color/btn_color"
+            android:text="@string/btn_add_item"
+            app:cornerRadius="50dp"
+            tools:ignore="DuplicateSpeakableTextCheck" />
 
     </LinearLayout>
 
-    <Button
-        android:id="@+id/btn_add_inventory"
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/ll_add_inventory"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"
-        android:backgroundTint="@color/btn_color"
-        android:text="@string/btn_add_item"
-        app:cornerRadius="50dp"
-        tools:ignore="DuplicateSpeakableTextCheck" />
 
-</RelativeLayout>
+</ScrollView>
