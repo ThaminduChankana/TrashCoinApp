@@ -17,6 +17,42 @@
     <string name="next">Next</string>
     <string name="tv_get_started">Get Started...</string>
     <string name="btn_get_started_register">Register</string>
-    <string name="btn_get_started_login">Login</string>
+    <string name="btn_register">Register</string>
+    <string name="btn_login">Login</string>
+    <string name="tv_register">Register</string>
+    <string name="et_reg_full_name">Full Name</string>
+    <string name="et_reg_address">Address</string>
+    <string name="et_reg_email">Email</string>
+    <string name="et_reg_telephone">Telephone Number</string>
+    <string name="et_reg_password">Password</string>
+    <string name="hint_password">Password</string>
+    <string name="spinner_user_category">Registering As...</string>
+    <string name="tv_select_login">Select Your Login</string>
+    <string name="tv_login_as">Login As...</string>
+    <string name="tv_login_select_disposer">Waste Disposer</string>
+    <string name="tv_login_select_collector">Waste Collector</string>
+    <string name="tv_login_select_recycler">Waste Recycler</string>
+    <string name="tv_login">Login</string>
+    <string name="et_login_email">Email</string>
+    <string name="tv_waste_collector_dashboard">Waste Collector Dashboard</string>
+    <string name="btn_logout">Logout</string>
+    <string name="btn_add_details">Add details</string>
+    <string name="tv_waste_disposers">Waste Disposers</string>
+    <string name="tv_waste_recyclers">Waste Disposers</string>
+    <string name="tv_view_inventory">View Inventory</string>
+    <string name="tv_chat">Chat</string>
+    <string name="tv_add_inventory">Add Inventory</string>
+    <string name="tv_edit_inventory">Edit Inventory</string>
+    <string name="et_item_name">Item Name</string>
+    <string name="et_description">Description</string>
+    <string name="btn_add_item">Add Item</string>
+    <string name="btn_edit_item">Edit</string>
+    <string name="btm_nav_dashboard">Dashboard</string>
+    <string name="btm_nav_disposers">Disposers</string>
+    <string name="btm_nav_recyclers">Recyclers</string>
+    <string name="btm_nav_inventory">Inventory</string>
+    <string name="btm_nav_chat">Chat</string>
+
+
 
 </resources>

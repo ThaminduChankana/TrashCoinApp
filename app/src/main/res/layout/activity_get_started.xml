@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:background="@color/background"
     android:layout_height="match_parent"
-    tools:context=".GetStarted">
+    tools:context=".activities.GetStarted">
 
     <TextView
         android:id="@+id/tv_get_started"
@@ -53,7 +53,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="20dp"
         android:backgroundTint="@color/btn_color"
-        android:text="@string/btn_get_started_login"
+        android:text="@string/btn_login"
         android:textSize="20sp"
         app:cornerRadius="50dp"
         tools:ignore="TextContrastCheck" />

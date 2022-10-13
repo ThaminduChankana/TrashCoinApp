@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    tools:context=".activities.LoginSelector">
+
+    <TextView
+        android:id="@+id/tv_select_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:text="@string/tv_select_login"
+        android:textColor="@color/heading"
+        android:textSize="40sp" />
+    <TextView
+        android:id="@+id/tv_login_as"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_below="@id/tv_select_login"
+        android:layout_marginTop="25dp"
+        android:text="@string/tv_login_as"
+        android:textColor="@color/heading"
+        android:textSize="20sp" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_login_disposer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_login_as"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="25dp"
+        android:background="@color/card_background"
+        android:onClick="openWasteDisposerLogin"
+        app:cardCornerRadius="50dp">
+
+        <ImageView
+            android:id="@+id/img_login_select_disposer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginBottom="25dp"
+            android:src="@drawable/img_login_select_disposer" />
+
+        <TextView
+            android:id="@+id/tv_login_select_disposer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|end"
+            android:layout_marginRight="25dp"
+            android:text="@string/tv_login_select_disposer"
+            android:textColor="@color/black"
+            android:textSize="25dp" />
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_login_collector"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/cv_login_disposer"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="25dp"
+        android:background="@color/card_background"
+        android:onClick="openWasteCollectorLogin"
+        app:cardCornerRadius="50dp">
+
+        <ImageView
+            android:id="@+id/img_login_select_collector"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginBottom="25dp"
+            android:src="@drawable/img_login_select_collector" />
+
+        <TextView
+            android:id="@+id/tv_login_select_collector"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|end"
+            android:layout_marginRight="25dp"
+            android:text="@string/tv_login_select_collector"
+            android:textColor="@color/black"
+            android:textSize="25dp" />
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_login_recycler"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/cv_login_collector"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="25dp"
+        android:background="@color/card_background"
+        android:onClick="openWasteRecyclerLogin"
+        app:cardCornerRadius="50dp">
+
+        <ImageView
+            android:id="@+id/img_login_select_recycler"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginBottom="25dp"
+            android:src="@drawable/img_login_select_recycler" />
+
+        <TextView
+            android:id="@+id/tv_login_select_recycler"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|end"
+            android:layout_marginRight="25dp"
+            android:text="@string/tv_login_select_recycler"
+            android:textColor="@color/black"
+            android:textSize="25dp" />
+
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>
