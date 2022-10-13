@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background"
-    tools:context=".activities.IntroPgThree">
+    tools:context=".activities.intro.IntroPgThree">
 
     <ImageView
         android:id="@+id/img_intro_pg_three"
