@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Patterns;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.AdapterView;
@@ -100,10 +101,11 @@ public class Register extends AppCompatActivity implements AdapterView.OnItemSel
                 .add(user)
                 .addOnSuccessListener(documentReference -> {
                     loading(false);
-                    preferenceManager.putBoolean(Constants.KEY_IS_SIGNED_IN,true);
+                    preferenceManager.putBoolean(Constants.KEY_IS_SIGNED_IN,false);
                     preferenceManager.putString(Constants.KEY_USER_ID, documentReference.getId());
                     preferenceManager.putString(Constants.KEY_FULL_NAME, et_reg_full_name.getText().toString());
                     preferenceManager.putString(Constants.KEY_USER_TYPE, spinner_user_category.getSelectedItem().toString());
+                    showToast("Registration Successful !");
                     Intent intent = new Intent(getApplicationContext(),LoginSelector.class);
                     intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                     startActivity(intent);
@@ -125,6 +127,9 @@ public class Register extends AppCompatActivity implements AdapterView.OnItemSel
             return false;
         }else if(et_reg_email.getText().toString().trim().isEmpty()){
             showToast("Enter Your Email !");
+            return false;
+        }else if(!Patterns.EMAIL_ADDRESS.matcher(et_reg_email.getText().toString()).matches()){
+            showToast("Enter Valid Email !");
             return false;
         }else if(et_reg_telephone.getText().toString().trim().isEmpty()){
             showToast("Enter Your Telephone Number !");

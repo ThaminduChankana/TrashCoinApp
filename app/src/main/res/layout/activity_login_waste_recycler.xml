@@ -24,20 +24,15 @@
             android:textSize="40sp" />
         <ImageView
             android:id="@+id/img_login"
-            android:layout_below="@id/tv_waste_recycler_login"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="30dp"
             android:contentDescription="@string/todo"
             android:src="@drawable/img_login" />
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/img_login"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentEnd="true"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="30dp"
             android:orientation="vertical"
             android:padding="25dp">
             <EditText
@@ -76,10 +71,18 @@
                 android:id="@+id/btn_waste_recycler_login"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:layout_marginTop="50dp"
+                android:layout_marginTop="30dp"
                 android:backgroundTint="@color/btn_color"
                 android:text="@string/btn_login"
                 tools:ignore="DuplicateSpeakableTextCheck" />
+
+            <ProgressBar
+                android:id="@+id/prg_waste_recycler_login"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="20dp"
+                android:visibility="invisible"/>
 
         </LinearLayout>
     </LinearLayout>
