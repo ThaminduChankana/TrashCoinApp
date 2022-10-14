@@ -38,7 +38,7 @@
     <string name="btn_logout">Logout</string>
     <string name="btn_add_details">Add details</string>
     <string name="tv_waste_disposers">Waste Disposers</string>
-    <string name="tv_waste_recyclers">Waste Disposers</string>
+    <string name="tv_waste_recyclers">Waste Recyclers</string>
     <string name="tv_view_inventory">View Inventory</string>
     <string name="tv_chat">Chat</string>
     <string name="tv_add_inventory">Add Inventory</string>
@@ -53,6 +53,7 @@
     <string name="btm_nav_inventory">Inventory</string>
     <string name="btm_nav_chat">Chat</string>
     <string name="tv_users_select_user">Select User</string>
+    <string name="et_messaging_hint">Type A Message</string>
 
 
 </resources>

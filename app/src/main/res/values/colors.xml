@@ -16,5 +16,8 @@
     <color name="reg_spinner_color">#989393</color>
     <color name="card_background">#D9D9D9</color>
     <color name="red">#ff0033</color>
+    <color name="chat_input_color">#C6EBC5</color>
+    <color name="secondary">#84918a</color>
+    <color name="chat_received">#1C6758</color>
 
 </resources>

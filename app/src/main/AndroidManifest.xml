@@ -17,6 +17,9 @@
         android:theme="@style/Theme.TrashCoinApp"
         tools:targetApi="31">
         <activity
+            android:name=".MessagingActivity"
+            android:exported="false" />
+        <activity
             android:name=".ChatDisposer"
             android:exported="false" />
         <activity
