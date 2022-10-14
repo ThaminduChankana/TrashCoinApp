@@ -13,10 +13,11 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="25dp"
+        android:gravity="center"
+        android:textStyle="italic"
         android:text="@string/tv_waste_collector_dashboard"
         android:textColor="@color/heading"
-        android:gravity="center"
-        android:textSize="40sp" />
+        android:textSize="30sp" />
 
     <Button
         android:id="@+id/btn_logout"
