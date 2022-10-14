@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background"
+    android:animateLayoutChanges="true"
     tools:context=".activities.WasteCollectorDashboard">
 
     <TextView
@@ -143,6 +144,7 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
+            android:id="@+id/cv_wc_db_inventory"
             android:layout_width="155dp"
             android:layout_height="120dp"
             android:layout_row="1"
@@ -184,6 +186,7 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
+            android:id="@+id/cv_wc_db_chat"
             android:layout_width="155dp"
             android:layout_height="120dp"
             android:layout_row="1"

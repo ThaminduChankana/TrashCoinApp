@@ -1,6 +1,7 @@
 package com.example.trashcoinapp.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -24,6 +25,7 @@ public class WasteCollectorDashboard extends AppCompatActivity {
 
     private PreferenceManager preferenceManager;
     private TextView tv_waste_collector_dashboard;
+    private CardView cv_wc_db_chat;
     private Button btn_logout;
 
     @Override
@@ -36,6 +38,7 @@ public class WasteCollectorDashboard extends AppCompatActivity {
         preferenceManager = new PreferenceManager(getApplicationContext());
 
         tv_waste_collector_dashboard=findViewById(R.id.tv_waste_collector_dashboard);
+        cv_wc_db_chat = findViewById(R.id.cv_wc_db_chat);
         btn_logout = findViewById(R.id.btn_logout);
         loadUserDetails();
         getToken();
@@ -44,6 +47,14 @@ public class WasteCollectorDashboard extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 signOut();
+            }
+        });
+
+        cv_wc_db_chat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), Chat.class);
+                startActivity(intent);
             }
         });
 
@@ -67,7 +78,7 @@ public class WasteCollectorDashboard extends AppCompatActivity {
                 preferenceManager.getString(Constants.KEY_USER_ID)
         );
         documentReference.update(Constants.KEY_FCM_TOKEN, token)
-                .addOnSuccessListener(unused -> showToast("Token Updated Successfully"))
+//                .addOnSuccessListener(unused -> showToast("Token Updated Successfully"))
                 .addOnFailureListener(e -> showToast("Unable To Update The Token"));
     }
 

@@ -52,6 +52,7 @@
     <string name="btm_nav_recyclers">Recyclers</string>
     <string name="btm_nav_inventory">Inventory</string>
     <string name="btm_nav_chat">Chat</string>
+    <string name="tv_users_select_user">Select User</string>
 
 
 </resources>
