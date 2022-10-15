@@ -17,14 +17,9 @@
         android:theme="@style/Theme.TrashCoinApp"
         tools:targetApi="31">
         <activity
-            android:name=".MessagingActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ChatDisposer"
-            android:exported="false" />
-        <activity
-            android:name=".ChatRecycler"
-            android:exported="false" />
+            android:name=".activities.MessagingActivity"
+            android:exported="true"
+            android:windowSoftInputMode="adjustResize"/>
         <activity
             android:name=".activities.UsersActivity"
             android:exported="true"

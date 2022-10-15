@@ -31,8 +31,7 @@ public class Chat extends AppCompatActivity {
         img_chat_back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), WasteCollectorDashboard.class);
-                startActivity(intent);
+                onBackPressed();
             }
         });
 

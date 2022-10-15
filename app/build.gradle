@@ -65,5 +65,5 @@ dependencies {
     implementation 'com.google.firebase:firebase-firestore:24.4.0'
 
     //MultiDex
-//    implementation 'androidx.multidex:multidex:2.0.1'
+    implementation 'androidx.multidex:multidex:2.0.1'
 }

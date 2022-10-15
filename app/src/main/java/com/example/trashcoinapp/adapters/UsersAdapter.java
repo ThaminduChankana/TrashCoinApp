@@ -7,14 +7,19 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.trashcoinapp.databinding.ItemContainerUserBinding;
+import com.example.trashcoinapp.listners.UserListener;
 import com.example.trashcoinapp.models.User;
 
 import java.util.List;
 
 public class UsersAdapter extends RecyclerView.Adapter<UsersAdapter.UserViewHolder>{
 
-    public UsersAdapter(List<User> users) {
+    private final List<User> users;
+    private final UserListener userListener;
+
+    public UsersAdapter(List<User> users,UserListener userListener) {
         this.users = users;
+        this.userListener = userListener;
     }
 
     @NonNull
@@ -38,8 +43,6 @@ public class UsersAdapter extends RecyclerView.Adapter<UsersAdapter.UserViewHold
         return users.size();
     }
 
-    private final List<User> users;
-
     class UserViewHolder extends RecyclerView.ViewHolder{
 
         ItemContainerUserBinding binding;
@@ -53,6 +56,7 @@ public class UsersAdapter extends RecyclerView.Adapter<UsersAdapter.UserViewHold
             binding.itemContainerTxtFullName.setText(user.fullName);
             binding.itemContainerTxtRole.setText(user.category);
             binding.itemContainerTxtAddress.setText(user.address);
+            binding.getRoot().setOnClickListener(v -> userListener.onUserClicked(user));
         }
 
 

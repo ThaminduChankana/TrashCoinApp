@@ -13,6 +13,8 @@ import android.widget.TextView;
 
 import com.example.trashcoinapp.R;
 import com.example.trashcoinapp.adapters.UsersAdapter;
+import com.example.trashcoinapp.databinding.ActivityUsersBinding;
+import com.example.trashcoinapp.listners.UserListener;
 import com.example.trashcoinapp.models.User;
 import com.example.trashcoinapp.utilities.Constants;
 import com.example.trashcoinapp.utilities.PreferenceManager;
@@ -22,36 +24,28 @@ import com.google.firebase.firestore.QueryDocumentSnapshot;
 import java.util.ArrayList;
 import java.util.List;
 
-public class UsersActivity extends AppCompatActivity {
+public class UsersActivity extends AppCompatActivity implements UserListener {
 
-    private ProgressBar prg_users;
+    private ActivityUsersBinding binding;
     private PreferenceManager preferenceManager;
-    private TextView users_txt_error_message;
-    private RecyclerView users_recycler_view;
-    private ImageView img_users_back;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getSupportActionBar().hide();
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        setContentView(R.layout.activity_users);
-
-        prg_users = findViewById(R.id.prg_users);
-        users_txt_error_message = findViewById(R.id.users_txt_error_message);
-        users_recycler_view = findViewById(R.id.users_recycler_view);
-        img_users_back = findViewById(R.id.img_users_back);
+        binding = ActivityUsersBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
 
         preferenceManager = new PreferenceManager(getApplicationContext());
+        setListeners();
         getUsers();
 
-        img_users_back.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), Chat.class));
-            }
-        });
+    }
 
+    private void setListeners(){
+        binding.imgUsersBack.setOnClickListener((v -> onBackPressed()));
     }
 
     private void getUsers(){
@@ -78,9 +72,9 @@ public class UsersActivity extends AppCompatActivity {
                             users.add(user);
                         }
                         if(users.size()>0){
-                            UsersAdapter usersAdapter = new UsersAdapter(users);
-                            users_recycler_view.setAdapter(usersAdapter);
-                            users_recycler_view.setVisibility(View.VISIBLE);
+                            UsersAdapter usersAdapter = new UsersAdapter(users, this);
+                            binding.usersRecyclerView.setAdapter(usersAdapter);
+                            binding.usersRecyclerView.setVisibility(View.VISIBLE);
                         } else {
                             showErrorMessage();
                         }
@@ -95,16 +89,23 @@ public class UsersActivity extends AppCompatActivity {
     }
 
     private void showErrorMessage(){
-        users_txt_error_message.setText(String.format("%s", "No Users Available"));
-        users_txt_error_message.setVisibility(View.VISIBLE);
+        binding.usersTxtErrorMessage.setText(String.format("%s", "No Users Available"));
+        binding.usersTxtErrorMessage.setVisibility(View.VISIBLE);
     }
 
     private void loading(Boolean isLoading){
         if(isLoading){
-            prg_users.setVisibility(View.VISIBLE);
+            binding.prgUsers.setVisibility(View.VISIBLE);
         }else{
-            prg_users.setVisibility(View.INVISIBLE);
+            binding.prgUsers.setVisibility(View.INVISIBLE);
         }
     }
 
+    @Override
+    public void onUserClicked(User user) {
+        Intent intent = new Intent(getApplicationContext(), MessagingActivity.class);
+        intent.putExtra(Constants.KEY_USER, user);
+        startActivity(intent);
+        finish();
+    }
 }
