@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:background="@color/background"
     android:animateLayoutChanges="true"
-    tools:context=".activities.MessagingActivity">
+    tools:context=".activities.messaging.MessagingActivity">
 
     <View
         android:id="@+id/messaging_view_background"
@@ -69,6 +69,7 @@
         android:layout_height="wrap_content"
         android:layout_above="@id/messaging_send"
         android:layout_below="@id/view_sup_msg"
+        app:stackFromEnd="true"
         android:layout_marginTop="@dimen/_12sdp"
         android:layout_marginBottom="@dimen/_16sdp"
         android:clipToPadding="false"
@@ -124,11 +125,11 @@
         android:layout_toStartOf="@id/messaging_send"
         android:layout_alignParentStart="true"/>
 
-<!--    <FrameLayout-->
-<!--        android:id="@+id/btm_nav_collector_container"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="match_parent"-->
-<!--        android:layout_above="@id/bottom_navigation_collector" />-->
+    <FrameLayout
+        android:id="@+id/btm_nav_collector_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/bottom_navigation_collector" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation_collector"

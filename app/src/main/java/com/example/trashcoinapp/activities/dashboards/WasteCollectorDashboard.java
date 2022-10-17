@@ -1,4 +1,4 @@
-package com.example.trashcoinapp.activities;
+package com.example.trashcoinapp.activities.dashboards;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
@@ -12,6 +12,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.trashcoinapp.R;
+import com.example.trashcoinapp.activities.LoginSelector;
+import com.example.trashcoinapp.activities.chat.Chat;
 import com.example.trashcoinapp.utilities.Constants;
 import com.example.trashcoinapp.utilities.PreferenceManager;
 import com.google.firebase.firestore.DocumentReference;

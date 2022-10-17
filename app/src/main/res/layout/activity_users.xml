@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:animateLayoutChanges="true"
-    tools:context=".activities.UsersActivity">
+    tools:context=".activities.users.UsersActivity">
 
     <TextView
         android:id="@+id/tv_users_select_user"

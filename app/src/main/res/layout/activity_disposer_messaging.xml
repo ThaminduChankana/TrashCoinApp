@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background"
+        android:animateLayoutChanges="true"
+        tools:context=".activities.messaging.DisposerMessagingActivity">
+
+        <View
+            android:id="@+id/disposer_messaging_view_background"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@id/disposer_messaging_send"
+            android:layout_alignParentTop="true"
+            android:layout_marginBottom="@dimen/_16sdp"
+            android:background="@drawable/background_content_top" />
+
+        <ImageView
+            android:id="@+id/img_disposer_messaging_back"
+            android:src="@drawable/img_btn_back"
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_marginStart="@dimen/_12sdp"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"/>
+
+        <ImageView
+            android:id="@+id/img_disposer_messaging_info"
+            android:layout_width="@dimen/_35sdp"
+            android:layout_height="@dimen/_35sdp"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:src="@drawable/ic_info"
+            android:layout_marginEnd="@dimen/_12sdp"
+            android:padding="@dimen/_2sdp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"/>
+
+        <TextView
+            android:id="@+id/txt_disposer_messaging_name"
+            android:layout_marginStart="@dimen/_8sdp"
+            android:layout_marginEnd="@dimen/_8sdp"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:maxLines="1"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_16sdp"
+            android:textStyle="bold|italic"
+            android:layout_alignBottom="@id/img_disposer_messaging_back"
+            android:layout_toEndOf="@id/img_disposer_messaging_back"
+            android:layout_alignTop="@id/img_disposer_messaging_back"
+            android:layout_toStartOf="@id/img_disposer_messaging_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <View
+            android:id="@+id/view_sup_msg"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:layout_below="@+id/img_disposer_messaging_back"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_disposer_messaging"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/disposer_messaging_send"
+            app:stackFromEnd="true"
+            android:layout_below="@id/view_sup_msg"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:layout_marginBottom="@dimen/_16sdp"
+            android:clipToPadding="false"
+            android:visibility="gone"
+            android:orientation="vertical"
+            android:padding="@dimen/_20sdp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+        <ProgressBar
+            android:id="@+id/prg_disposer_messaging"
+            android:layout_width="@dimen/_25sdp"
+            android:layout_height="@dimen/_25sdp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:indeterminateTint="@color/white"
+            android:indeterminateTintMode="src_atop"/>
+
+        <FrameLayout
+            android:id="@+id/disposer_messaging_send"
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_marginEnd="@dimen/_8sdp"
+            android:layout_marginBottom="@dimen/_12sdp"
+            android:layout_alignParentEnd="true"
+            android:background="@drawable/background_send_button"
+            android:layout_above="@id/bottom_navigation_collector">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_send"
+                android:padding="@dimen/_8sdp"
+                app:tint="@color/white" />
+
+        </FrameLayout>
+
+        <EditText
+            android:id="@+id/disposer_messaging_input_message"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_marginStart="@dimen/_8sdp"
+            android:layout_marginEnd="@dimen/_8sdp"
+            android:layout_marginBottom="@dimen/_12sdp"
+            android:background="@drawable/background_chat_input"
+            android:hint="@string/et_disposer_messaging_hint"
+            android:imeOptions="actionDone"
+            android:importantForAutofill="no"
+            android:inputType="text"
+            android:paddingStart="@dimen/_16sdp"
+            android:paddingEnd="@dimen/_16sdp"
+            android:textColor="@color/black"
+            android:layout_above="@id/bottom_navigation_collector"
+            android:layout_toStartOf="@id/disposer_messaging_send"
+            android:layout_alignParentStart="true"/>
+
+            <FrameLayout
+                android:id="@+id/btm_nav_collector_container"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_above="@id/bottom_navigation_collector" />
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottom_navigation_collector"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="@color/btn_color"
+            app:itemIconTint="@color/white"
+            app:itemTextColor="@color/white"
+            app:menu="@menu/bottom_nav_collector_menu" />
+
+    </RelativeLayout>
+</layout>

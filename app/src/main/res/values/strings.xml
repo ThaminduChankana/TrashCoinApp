@@ -53,7 +53,14 @@
     <string name="btm_nav_inventory">Inventory</string>
     <string name="btm_nav_chat">Chat</string>
     <string name="tv_users_select_user">Select User</string>
+    <string name="tv_disposer_users_select_user">Select User</string>
+    <string name="tv_recycler_users_select_user">Select User</string>
     <string name="et_messaging_hint">Type A Message</string>
+    <string name="et_disposer_messaging_hint">Type A Message</string>
+    <string name="et_recycler_messaging_hint">Type A Message</string>
+    <string name="tv_chat_disposer">Chat</string>
+    <string name="tv_chat_recycler">Chat</string>
+
 
 
 </resources>

@@ -6,24 +6,24 @@
     android:layout_height="match_parent"
     android:background="@color/background"
     android:animateLayoutChanges="true"
-    tools:context=".activities.chat.Chat">
+    tools:context=".activities.chat.ChatRecycler">
 
     <TextView
-        android:id="@+id/tv_chat"
+        android:id="@+id/tv_chat_recycler"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:text="@string/tv_chat"
+        android:text="@string/tv_chat_recycler"
         android:textAlignment="center"
         android:textColor="@color/heading"
         android:layout_centerHorizontal="true"
         android:textSize="30sp" />
 
     <ImageView
-        android:id="@+id/img_chat_back"
+        android:id="@+id/img_chat_recycler_back"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/tv_chat"
+        android:layout_below="@id/tv_chat_recycler"
         android:layout_gravity="start"
         android:layout_marginStart="25dp"
         android:layout_marginTop="10dp"
@@ -33,18 +33,18 @@
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_above="@id/bottom_navigation_chat"
-        android:layout_below="@id/img_chat_back"
+        android:layout_above="@id/bottom_navigation_chat_recycler"
+        android:layout_below="@id/img_chat_recycler_back"
         android:layout_marginTop="10dp"
         android:background="@drawable/background_content_bottom">
 
     </FrameLayout>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fab_new_chat"
+        android:id="@+id/fab_new_chat_recycler"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@id/bottom_navigation_chat"
+        android:layout_above="@id/bottom_navigation_chat_recycler"
         android:layout_alignParentEnd="true"
         android:layout_marginStart="@dimen/_24sdp"
         android:layout_marginTop="@dimen/_24sdp"
@@ -55,7 +55,7 @@
         android:src="@drawable/ic_add" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottom_navigation_chat"
+        android:id="@+id/bottom_navigation_chat_recycler"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"

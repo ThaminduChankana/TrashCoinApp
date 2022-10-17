@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:animateLayoutChanges="true"
     android:background="@color/background"
-    tools:context=".activities.WasteDisposerDashboard">
+    tools:context=".activities.dashboards.WasteDisposerDashboard">
     <TextView
         android:id="@+id/textView1"
         android:layout_width="wrap_content"

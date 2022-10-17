@@ -1,19 +1,16 @@
-package com.example.trashcoinapp.activities;
+package com.example.trashcoinapp.activities.users;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
-import android.widget.ImageView;
-import android.widget.ProgressBar;
-import android.widget.TextView;
 
 import com.example.trashcoinapp.R;
+import com.example.trashcoinapp.activities.messaging.MessagingActivity;
 import com.example.trashcoinapp.adapters.UsersAdapter;
-import com.example.trashcoinapp.databinding.ActivityUsersBinding;
+import com.example.trashcoinapp.databinding.ActivityRecyclerUsersBinding;
 import com.example.trashcoinapp.listners.UserListener;
 import com.example.trashcoinapp.models.User;
 import com.example.trashcoinapp.utilities.Constants;
@@ -24,9 +21,9 @@ import com.google.firebase.firestore.QueryDocumentSnapshot;
 import java.util.ArrayList;
 import java.util.List;
 
-public class UsersActivity extends AppCompatActivity implements UserListener {
+public class RecyclerUsersActivity extends AppCompatActivity implements UserListener {
 
-    private ActivityUsersBinding binding;
+    private ActivityRecyclerUsersBinding binding;
     private PreferenceManager preferenceManager;
 
 
@@ -35,7 +32,7 @@ public class UsersActivity extends AppCompatActivity implements UserListener {
         super.onCreate(savedInstanceState);
         getSupportActionBar().hide();
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        binding = ActivityUsersBinding.inflate(getLayoutInflater());
+        binding = ActivityRecyclerUsersBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
         preferenceManager = new PreferenceManager(getApplicationContext());
@@ -45,7 +42,7 @@ public class UsersActivity extends AppCompatActivity implements UserListener {
     }
 
     private void setListeners(){
-        binding.imgUsersBack.setOnClickListener((v -> onBackPressed()));
+        binding.imgRecyclerUsersBack.setOnClickListener((v -> onBackPressed()));
     }
 
     private void getUsers(){
@@ -58,7 +55,7 @@ public class UsersActivity extends AppCompatActivity implements UserListener {
                     String currentUserId = preferenceManager.getString(Constants.KEY_USER_ID);
 
                     if(task.isSuccessful() && task.getResult() != null){
-                        List <User> users = new ArrayList<>();
+                        List<User> users = new ArrayList<>();
                         for(QueryDocumentSnapshot queryDocumentSnapshot : task.getResult()){
                             if(currentUserId.equals(queryDocumentSnapshot.getId())){
                                 continue;
@@ -68,13 +65,13 @@ public class UsersActivity extends AppCompatActivity implements UserListener {
                             user.category = queryDocumentSnapshot.getString(Constants.KEY_USER_TYPE);
                             user.address = queryDocumentSnapshot.getString(Constants.KEY_ADDRESS);
                             user.token = queryDocumentSnapshot.getString(Constants.KEY_FCM_TOKEN);
-
+                            user.id = queryDocumentSnapshot.getId();
                             users.add(user);
                         }
                         if(users.size()>0){
                             UsersAdapter usersAdapter = new UsersAdapter(users, this);
-                            binding.usersRecyclerView.setAdapter(usersAdapter);
-                            binding.usersRecyclerView.setVisibility(View.VISIBLE);
+                            binding.recyclerUsersRecyclerView.setAdapter(usersAdapter);
+                            binding.recyclerUsersRecyclerView.setVisibility(View.VISIBLE);
                         } else {
                             showErrorMessage();
                         }
@@ -89,15 +86,15 @@ public class UsersActivity extends AppCompatActivity implements UserListener {
     }
 
     private void showErrorMessage(){
-        binding.usersTxtErrorMessage.setText(String.format("%s", "No Users Available"));
-        binding.usersTxtErrorMessage.setVisibility(View.VISIBLE);
+        binding.recyclerUsersTxtErrorMessage.setText(String.format("%s", "No Users Available"));
+        binding.recyclerUsersTxtErrorMessage.setVisibility(View.VISIBLE);
     }
 
     private void loading(Boolean isLoading){
         if(isLoading){
-            binding.prgUsers.setVisibility(View.VISIBLE);
+            binding.prgRecyclerUsers.setVisibility(View.VISIBLE);
         }else{
-            binding.prgUsers.setVisibility(View.INVISIBLE);
+            binding.prgRecyclerUsers.setVisibility(View.INVISIBLE);
         }
     }
 
