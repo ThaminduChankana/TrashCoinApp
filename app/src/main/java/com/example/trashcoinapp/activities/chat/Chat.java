@@ -10,32 +10,53 @@ import android.widget.ImageView;
 
 import com.example.trashcoinapp.R;
 import com.example.trashcoinapp.activities.users.UsersActivity;
+import com.example.trashcoinapp.adapters.RecentConversationsAdapter;
+import com.example.trashcoinapp.databinding.ActivityChatBinding;
+import com.example.trashcoinapp.databinding.ActivityMessagingBinding;
+import com.example.trashcoinapp.models.ChatMessage;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class Chat extends AppCompatActivity {
 
-    private FloatingActionButton fab_new_chat;
-    private ImageView img_chat_back;
-
+    private ActivityChatBinding binding;
+    private List<ChatMessage> conversations;
+    private RecentConversationsAdapter conversationsAdapter;
+    private FirebaseFirestore database;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getSupportActionBar().hide();
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        setContentView(R.layout.activity_chat);
+        binding = ActivityChatBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
+        init();
+        setListeners();
 
-        img_chat_back = findViewById(R.id.img_chat_back);
-        fab_new_chat = findViewById(R.id.fab_new_chat);
+    }
 
-        img_chat_back.setOnClickListener(new View.OnClickListener() {
+    private void init() {
+        conversations = new ArrayList<>();
+        conversationsAdapter = new RecentConversationsAdapter(conversations);
+        binding.conversationsRecyclerView.setAdapter(conversationsAdapter);
+        database = FirebaseFirestore.getInstance();
+
+
+    }
+
+    private void setListeners(){
+        binding.imgChatBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 onBackPressed();
             }
         });
 
-        fab_new_chat.setOnClickListener(new View.OnClickListener() {
+        binding.fabNewChat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getApplicationContext(), UsersActivity.class));
@@ -43,4 +64,5 @@ public class Chat extends AppCompatActivity {
         });
 
     }
+
 }
