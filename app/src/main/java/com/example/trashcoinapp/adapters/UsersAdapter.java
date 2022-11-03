@@ -7,7 +7,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.trashcoinapp.databinding.ItemContainerUserBinding;
-import com.example.trashcoinapp.listners.UserListener;
+import com.example.trashcoinapp.listeners.UserListener;
 import com.example.trashcoinapp.models.User;
 
 import java.util.List;

@@ -10,11 +10,14 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.trashcoinapp.R;
+import com.example.trashcoinapp.activities.messaging.MessagingActivity;
 import com.example.trashcoinapp.activities.users.UsersActivity;
 import com.example.trashcoinapp.adapters.RecentConversationsAdapter;
 import com.example.trashcoinapp.databinding.ActivityChatBinding;
 import com.example.trashcoinapp.databinding.ActivityMessagingBinding;
+import com.example.trashcoinapp.listeners.ConversationListener;
 import com.example.trashcoinapp.models.ChatMessage;
+import com.example.trashcoinapp.models.User;
 import com.example.trashcoinapp.utilities.Constants;
 import com.example.trashcoinapp.utilities.PreferenceManager;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -29,7 +32,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class Chat extends AppCompatActivity {
+public class Chat extends AppCompatActivity implements ConversationListener {
 
     private ActivityChatBinding binding;
     private List<ChatMessage> conversations;
@@ -56,7 +59,7 @@ public class Chat extends AppCompatActivity {
 
     private void init() {
         conversations = new ArrayList<>();
-        conversationsAdapter = new RecentConversationsAdapter(conversations);
+        conversationsAdapter = new RecentConversationsAdapter(conversations, this);
         binding.conversationsRecyclerView.setAdapter(conversationsAdapter);
         database = FirebaseFirestore.getInstance();
 
@@ -152,4 +155,10 @@ public class Chat extends AppCompatActivity {
 
     }
 
+    @Override
+    public void onConversationClicked(User user) {
+        Intent intent = new Intent(getApplicationContext(), MessagingActivity.class);
+        intent.putExtra(Constants.KEY_USER, user);
+        startActivity(intent);
+    }
 }

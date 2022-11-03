@@ -10,7 +10,7 @@ import android.view.WindowManager;
 import com.example.trashcoinapp.activities.messaging.MessagingActivity;
 import com.example.trashcoinapp.adapters.UsersAdapter;
 import com.example.trashcoinapp.databinding.ActivityUsersBinding;
-import com.example.trashcoinapp.listners.UserListener;
+import com.example.trashcoinapp.listeners.UserListener;
 import com.example.trashcoinapp.models.User;
 import com.example.trashcoinapp.utilities.Constants;
 import com.example.trashcoinapp.utilities.PreferenceManager;
