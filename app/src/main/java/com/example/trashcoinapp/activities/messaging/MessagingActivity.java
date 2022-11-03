@@ -80,6 +80,7 @@ public class MessagingActivity extends AppCompatActivity {
             conversation.put(Constants.KEY_SENDER_ROLE, preferenceManager.getString(Constants.KEY_USER_TYPE));
             conversation.put(Constants.KEY_RECEIVER_ID,receiverUser.id);
             conversation.put(Constants.KEY_RECEIVER_NAME, receiverUser.fullName);
+            conversation.put(Constants.KEY_RECEIVER_ROLE, receiverUser.category);
             conversation.put(Constants.KEY_LAST_MESSAGE, binding.messagingInputMessage.getText().toString());
             conversation.put(Constants.KEY_TIMESTAMP, new Date());
             addConversation(conversation);

@@ -87,6 +87,7 @@ public class Chat extends AppCompatActivity {
                     if(preferenceManager.getString(Constants.KEY_USER_ID).equals(senderId)){
                         chatMessage.conversationName = documentChange.getDocument().getString(Constants.KEY_RECEIVER_NAME);
                         chatMessage.conversationId = documentChange.getDocument().getString(Constants.KEY_RECEIVER_ID);
+                        chatMessage.UserRole = documentChange.getDocument().getString(Constants.KEY_RECEIVER_ROLE);
                     } else {
                         chatMessage.conversationName = documentChange.getDocument().getString(Constants.KEY_SENDER_NAME);
                         chatMessage.conversationId = documentChange.getDocument().getString(Constants.KEY_SENDER_ID);

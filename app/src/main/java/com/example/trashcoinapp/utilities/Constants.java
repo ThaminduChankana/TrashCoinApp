@@ -22,5 +22,6 @@ public class Constants {
     public static final String KEY_SENDER_NAME = "senderName";
     public static final String KEY_RECEIVER_NAME = "receiverName";
     public static final String KEY_SENDER_ROLE = "senderRole";
+    public static final String KEY_RECEIVER_ROLE = "receiverRole";
     public static final String KEY_LAST_MESSAGE = "lastMessage";
 }
