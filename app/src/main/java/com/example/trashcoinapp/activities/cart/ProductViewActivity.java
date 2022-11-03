@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -18,6 +19,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 public class ProductViewActivity extends AppCompatActivity {
 
     ImageView img_shopping_cart;
+    static Context context;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,7 +29,7 @@ public class ProductViewActivity extends AppCompatActivity {
         setContentView(R.layout.activity_product_view);
 
         img_shopping_cart = findViewById(R.id.img_shopping_cart);
-
+        context = getApplicationContext();
         img_shopping_cart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -67,5 +69,8 @@ public class ProductViewActivity extends AppCompatActivity {
             }
         });
 
+    }
+    public  static Context getContext(){
+        return context;
     }
 }
