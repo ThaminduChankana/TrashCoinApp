@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -41,6 +42,42 @@ public class CartViewAdapter  extends RecyclerView.Adapter<CartViewAdapter.ViewH
         holder.productPrice.setText(String.valueOf(cart.getTotalPrice()));
         holder.productQuantity.setText(String.valueOf(cart .getQuantity()));
 
+        holder.qtyIncrement.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FirebaseFirestore.getInstance().collection("Cart").document(cart.getId()).update("quantity",cart.getQuantity()+1);
+                FirebaseFirestore.getInstance().collection("Cart").document(cart.getId()).update("totalPrice",(cart.getQuantity()+1)*cart.getPrice());
+                Intent myIntent = new Intent(context,CartActivity.class);
+                context.startActivity(myIntent);
+
+
+            }
+        });
+
+        holder.qtyDecrement.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FirebaseFirestore.getInstance().collection("Cart").document(cart.getId()).update("quantity",cart.getQuantity()-1);
+                FirebaseFirestore.getInstance().collection("Cart").document(cart.getId()).update("totalPrice",(cart.getQuantity()-1)*cart.getPrice());
+                Intent myIntent = new Intent(context,CartActivity.class);
+                context.startActivity(myIntent);
+
+
+            }
+        });
+        holder.deleteItem.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FirebaseFirestore.getInstance().collection("Cart").document(cart.getId()).delete();
+
+                Intent myIntent = new Intent(context,CartActivity.class);
+                context.startActivity(myIntent);
+
+
+            }
+        });
+
+
 
     }
 
@@ -54,9 +91,9 @@ public class CartViewAdapter  extends RecyclerView.Adapter<CartViewAdapter.ViewH
         private final TextView productName;
         private final TextView productPrice;
         private final TextView productQuantity;
-        private final ImageButton qtyIncrement;
-        private final ImageButton qtyDecrement;
-        private final ImageButton deleteItem;
+        private final ImageView qtyIncrement;
+        private final ImageView qtyDecrement;
+        private final ImageView deleteItem;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);

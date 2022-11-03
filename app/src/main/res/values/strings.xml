@@ -76,5 +76,7 @@
     <string name="tv_cart_product_name">Product Name</string>
     <string name="tv_cart_tot_price">Product Price</string>
     <string name="tv_cart_product_quantity">0</string>
+    <string name="tv_my_cart">My Cart</string>
+    <string name="btn_checkout">Checkout</string>
 
 </resources>

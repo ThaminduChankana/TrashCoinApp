@@ -18,11 +18,11 @@
         tools:targetApi="31">
         <activity
             android:name=".activities.cart.CartActivity"
-            android:exported="false"
+            android:exported="true"
             android:windowSoftInputMode="adjustResize"/>
         <activity
             android:name=".activities.cart.ProductViewActivity"
-            android:exported="false"
+            android:exported="true"
             android:windowSoftInputMode="adjustResize" />
         <activity
             android:name=".activities.users.RecyclerUsersActivity"
