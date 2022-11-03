@@ -62,7 +62,7 @@ public class ProductViewAdapter extends RecyclerView.Adapter<ProductViewAdapter.
         Product products = productArrayList.get(position);
         holder.productTitleTv.setText(products.getTitle());
         holder.productPriceTv.setText(String.valueOf(products.getPrice()));
-        holder.productDiscountTv.setText(String.valueOf(products.getDiscountPrice()));
+        holder.productDiscountTv.setText(products.getDiscountNote());
         Glide.with(context).load(productArrayList.get(position).getPicURL()).into(holder.imageView);
 
         holder.addToCart.setOnClickListener(new View.OnClickListener() {
