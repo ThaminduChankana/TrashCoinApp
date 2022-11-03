@@ -60,7 +60,12 @@
     <string name="et_recycler_messaging_hint">Type A Message</string>
     <string name="tv_chat_disposer">Chat</string>
     <string name="tv_chat_recycler">Chat</string>
-
-
+    <string name="tv_waste_disposer_dashboard">Waste Disposer Dashboard</string>
+    <string name="tv_view_collectors">View Collectors</string>
+    <string name="tv_shop">Shop</string>
+    <string name="tv_waste_in_hand">Waste In Hand</string>
+    <string name="btm_nav_waste_in_hand">Waste</string>
+    <string name="btm_nav_shopping_cart">Cart</string>
+    <string name="btm_nav_view_collectors">Collectors</string>
 
 </resources>
