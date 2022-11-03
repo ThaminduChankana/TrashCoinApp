@@ -68,5 +68,10 @@
     <string name="btm_nav_shopping_cart">Cart</string>
     <string name="btm_nav_view_collectors">Collectors</string>
     <string name="tv_shopping_products">Our Products</string>
+    <string name="tv_product_discount">Discount</string>
+    <string name="tv_product_title">Product Title</string>
+    <string name="tv_product_price">Product Price</string>
+    <string name="btn_add_to_cart">Add</string>
+    <string name="img_description" />
 
 </resources>
