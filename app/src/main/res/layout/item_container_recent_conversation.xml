@@ -47,6 +47,21 @@
         app:layout_constraintStart_toEndOf="@+id/item_container_user_image" />
 
     <TextView
+        android:id="@+id/item_container_txt_role"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_8sdp"
+        android:layout_marginEnd="@dimen/_8sdp"
+        android:layout_marginTop="@dimen/_2sdp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_10ssp"
+        app:layout_constraintTop_toBottomOf="@+id/item_container_view_supporter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/item_container_user_image"/>
+
+    <TextView
         android:id="@+id/item_container_txt_message"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -55,8 +70,8 @@
         android:ellipsize="end"
         android:maxLines="1"
         android:textColor="@color/black"
-        android:textSize="@dimen/_10ssp"
-        app:layout_constraintTop_toBottomOf="@+id/item_container_view_supporter"
+        android:textSize="@dimen/_12ssp"
+        app:layout_constraintTop_toBottomOf="@+id/item_container_txt_role"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/item_container_user_image"/>
 

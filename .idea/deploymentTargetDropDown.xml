@@ -20,7 +20,7 @@
         <deviceKey>
           <Key>
             <type value="VIRTUAL_DEVICE_PATH" />
-            <value value="C:\Users\ASUS ROG\.android\avd\Pixel_3a_API_32_2.avd" />
+            <value value="C:\Users\ASUS ROG\.android\avd\Pixel_3a_API_32.avd" />
           </Key>
         </deviceKey>
       </Target>
@@ -32,6 +32,15 @@
           <Key>
             <type value="VIRTUAL_DEVICE_PATH" />
             <value value="C:\Users\ASUS ROG\.android\avd\Pixel_3a_API_32.avd" />
+          </Key>
+        </deviceKey>
+      </Target>
+      <Target>
+        <type value="QUICK_BOOT_TARGET" />
+        <deviceKey>
+          <Key>
+            <type value="VIRTUAL_DEVICE_PATH" />
+            <value value="C:\Users\ASUS ROG\.android\avd\Pixel_3a_API_32_2.avd" />
           </Key>
         </deviceKey>
       </Target>

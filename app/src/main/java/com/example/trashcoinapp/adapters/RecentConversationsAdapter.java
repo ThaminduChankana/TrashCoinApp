@@ -52,6 +52,7 @@ public class RecentConversationsAdapter extends RecyclerView.Adapter<RecentConve
 
         void setData(ChatMessage chatMessage){
             binding.itemContainerTxtFullName.setText(chatMessage.conversationName);
+            binding.itemContainerTxtRole.setText(chatMessage.UserRole);
             binding.itemContainerTxtMessage.setText(chatMessage.message);
         }
     }
