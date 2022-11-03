@@ -67,5 +67,6 @@
     <string name="btm_nav_waste_in_hand">Waste</string>
     <string name="btm_nav_shopping_cart">Cart</string>
     <string name="btm_nav_view_collectors">Collectors</string>
+    <string name="tv_shopping_products">Our Products</string>
 
 </resources>
