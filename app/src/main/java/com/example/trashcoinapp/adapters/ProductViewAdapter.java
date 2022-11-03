@@ -20,6 +20,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.trashcoinapp.R;
 import com.example.trashcoinapp.activities.cart.CartActivity;
 import com.example.trashcoinapp.activities.cart.ProductViewActivity;
+import com.example.trashcoinapp.models.Cart;
 import com.example.trashcoinapp.models.Product;
 import com.example.trashcoinapp.utilities.Constants;
 import com.example.trashcoinapp.utilities.PreferenceManager;
@@ -53,7 +54,6 @@ public class ProductViewAdapter extends RecyclerView.Adapter<ProductViewAdapter.
     @NonNull
     @Override
     public ProductViewAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        // passing our layout file for displaying our card item
         return new ViewHolder(LayoutInflater.from(context).inflate(R.layout.item_product, parent, false));
     }
 
@@ -68,6 +68,12 @@ public class ProductViewAdapter extends RecyclerView.Adapter<ProductViewAdapter.
         holder.addToCart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                String productName = products.getTitle();
+                float price =products.getPrice();
+                float discount = products.getDiscountPrice();
+                addToCart(productName,price, discount);
+                Intent myIntent = new Intent(context,CartActivity.class);
+                context.startActivity(myIntent);
 
             }
 
@@ -75,6 +81,49 @@ public class ProductViewAdapter extends RecyclerView.Adapter<ProductViewAdapter.
 
 
         });
+
+    }
+
+    private void addToCart(String productName, float price, float discount) {
+        String id = UUID.randomUUID().toString();
+        float quantity = 1;
+        float totalPrice = price *1;
+
+
+        DocumentReference dbCartItems = db.collection("Cart").document(id);
+        Cart cart = new Cart(userId,id,productName,price,totalPrice,discount,quantity);
+
+        new CountDownTimer(1000, 1000) {
+            public void onTick(long millisUntilFinished) {
+
+            }
+            public void onFinish() {
+                CollectionReference collection = db.collection("Cart");
+                Query query = collection.whereEqualTo("userID", userId).whereEqualTo("productName", productName);
+                AggregateQuery countQuery = query.count();
+                countQuery.get(AggregateSource.SERVER).addOnCompleteListener(task -> {
+                    if (task.isSuccessful()) {
+                        AggregateQuerySnapshot snapshot = task.getResult();
+                        Log.d(TAG, "Count: " + snapshot.getCount());
+                        count=snapshot.getCount();
+                        System.out.println(count);
+                    } else {
+                        Log.d(TAG, "Count failed: ", task.getException());
+                    }
+                });
+            }
+        }.start();
+
+
+
+        System.out.println(count);
+        if(count ==1 || count >1){
+            Toast.makeText(context, "Already in cart \n" , Toast.LENGTH_SHORT).show();
+        }
+        else if(count==0){
+            dbCartItems.set(cart);
+        }
+
 
     }
 
