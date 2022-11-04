@@ -4,6 +4,7 @@ import static android.content.ContentValues.TAG;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -20,6 +21,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.trashcoinapp.R;
 import com.example.trashcoinapp.activities.cart.CartActivity;
 import com.example.trashcoinapp.activities.cart.ProductViewActivity;
+import com.example.trashcoinapp.activities.cart.SingleProductActivity;
 import com.example.trashcoinapp.models.Cart;
 import com.example.trashcoinapp.models.Product;
 import com.example.trashcoinapp.utilities.Constants;
@@ -82,6 +84,23 @@ public class ProductViewAdapter extends RecyclerView.Adapter<ProductViewAdapter.
 
         });
 
+        holder.img_info.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(context,
+                        SingleProductActivity.class);
+                Bundle bundle = new Bundle();
+                bundle.putString("title", products.getTitle());
+                bundle.putString("picUrl", products.getPicURL());
+                bundle.putString("description", products.getDescription());
+                bundle.putString("discountNote", products.getDiscountNote());
+                bundle.putString("price", String.valueOf(products.getPrice()));
+                bundle.putString("category", products.getCategory());
+                intent.putExtras(bundle);
+                context.startActivity(intent);
+            }
+        });
+
     }
 
     private void addToCart(String productName, float price, float discount) {
@@ -129,6 +148,7 @@ public class ProductViewAdapter extends RecyclerView.Adapter<ProductViewAdapter.
 
 
 
+
     @Override
     public int getItemCount() {
         return productArrayList.size();
@@ -138,7 +158,7 @@ public class ProductViewAdapter extends RecyclerView.Adapter<ProductViewAdapter.
         private final TextView productTitleTv;
         private final TextView productPriceTv;
         private final TextView productDiscountTv;
-        ImageView imageView;
+        ImageView imageView, img_info;
         Button addToCart;
 
 
@@ -151,6 +171,7 @@ public class ProductViewAdapter extends RecyclerView.Adapter<ProductViewAdapter.
             productDiscountTv= itemView.findViewById(R.id.productDiscount);
             imageView = itemView.findViewById(R.id.productImage);
             addToCart = itemView.findViewById(R.id.addToCart);
+            img_info = itemView.findViewById(R.id.img_info);
 
 
 

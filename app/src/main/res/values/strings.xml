@@ -78,5 +78,16 @@
     <string name="tv_cart_product_quantity">0</string>
     <string name="tv_my_cart">My Cart</string>
     <string name="btn_checkout">Checkout</string>
+    <string name="tv_product_category">Product Category</string>
+    <string name="tv_product_description">Product Description</string>
+    <string name="tv_product_discount_note">Discount Note</string>
+    <string name="et_category">Category</string>
+    <string name="et_product_description">Description</string>
+    <string name="et_price">Price</string>
+    <string name="et_discount">Discount</string>
+    <string name="tv_category">Category : </string>
+    <string name="tv_description">Description :</string>
+    <string name="tv_price">Price :</string>
+    <string name="tv_discount">Discount :</string>
 
 </resources>
