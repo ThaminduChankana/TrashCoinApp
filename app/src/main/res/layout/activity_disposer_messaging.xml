@@ -63,13 +63,27 @@
             android:layout_marginTop="@dimen/_12sdp"
             android:layout_below="@+id/img_disposer_messaging_back"/>
 
+        <TextView
+            android:id="@+id/txt_availability"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/view_sup_msg"
+            android:background="@color/online"
+            android:text="@string/tv_availability"
+            android:textSize="@dimen/_10ssp"
+            android:textColor="@color/black"
+            android:textStyle="italic|bold"
+            android:padding="@dimen/_2sdp"
+            android:textAlignment="center"
+            android:visibility="gone"/>
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycler_disposer_messaging"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_above="@id/disposer_messaging_send"
             app:stackFromEnd="true"
-            android:layout_below="@id/view_sup_msg"
+            android:layout_below="@id/txt_availability"
             android:layout_marginTop="@dimen/_12sdp"
             android:layout_marginBottom="@dimen/_16sdp"
             android:clipToPadding="false"

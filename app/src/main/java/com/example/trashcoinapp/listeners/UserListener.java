@@ -1,4 +1,4 @@
-package com.example.trashcoinapp.listners;
+package com.example.trashcoinapp.listeners;
 
 import com.example.trashcoinapp.models.User;
 

@@ -19,5 +19,6 @@
     <color name="chat_input_color">#C6EBC5</color>
     <color name="secondary">#84918a</color>
     <color name="chat_received">#1C6758</color>
+    <color name="online">#0FFF50</color>
 
 </resources>

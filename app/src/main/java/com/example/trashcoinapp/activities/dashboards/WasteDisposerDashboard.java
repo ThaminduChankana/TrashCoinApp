@@ -24,8 +24,10 @@ import com.google.firebase.firestore.FieldValue;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.HashMap;
+import com.example.trashcoinapp.activities.BaseActivity;
 
-public class WasteDisposerDashboard extends AppCompatActivity {
+
+public class WasteDisposerDashboard extends BaseActivity {
 
     private PreferenceManager preferenceManager;
     private CardView cv_wd_db_shop;

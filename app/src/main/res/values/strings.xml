@@ -40,7 +40,7 @@
     <string name="tv_waste_disposers">Waste Disposers</string>
     <string name="tv_waste_recyclers">Waste Recyclers</string>
     <string name="tv_view_inventory">View Inventory</string>
-    <string name="tv_chat">Chat</string>
+    <string name="tv_chat">Collector Chat</string>
     <string name="tv_add_inventory">Add Inventory</string>
     <string name="tv_edit_inventory">Edit Inventory</string>
     <string name="et_item_name">Item Name</string>
@@ -58,8 +58,6 @@
     <string name="et_messaging_hint">Type A Message</string>
     <string name="et_disposer_messaging_hint">Type A Message</string>
     <string name="et_recycler_messaging_hint">Type A Message</string>
-    <string name="tv_chat_disposer">Chat</string>
-    <string name="tv_chat_recycler">Chat</string>
     <string name="tv_waste_disposer_dashboard">Waste Disposer Dashboard</string>
     <string name="tv_view_collectors">View Collectors</string>
     <string name="tv_shop">Shop</string>
@@ -89,5 +87,11 @@
     <string name="tv_description">Description :</string>
     <string name="tv_price">Price :</string>
     <string name="tv_discount">Discount :</string>
+    <string name="tv_chat_disposer">Disposer Chat</string>
+    <string name="tv_chat_recycler">Recycler Chat</string>
+    <string name="tv_availability">Online</string>
+
+
+
 
 </resources>

@@ -1,16 +1,15 @@
 package com.example.trashcoinapp.activities.users;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
 
+import com.example.trashcoinapp.activities.BaseActivity;
 import com.example.trashcoinapp.activities.messaging.MessagingActivity;
 import com.example.trashcoinapp.adapters.UsersAdapter;
 import com.example.trashcoinapp.databinding.ActivityUsersBinding;
-import com.example.trashcoinapp.listners.UserListener;
+import com.example.trashcoinapp.listeners.UserListener;
 import com.example.trashcoinapp.models.User;
 import com.example.trashcoinapp.utilities.Constants;
 import com.example.trashcoinapp.utilities.PreferenceManager;
@@ -20,7 +19,7 @@ import com.google.firebase.firestore.QueryDocumentSnapshot;
 import java.util.ArrayList;
 import java.util.List;
 
-public class UsersActivity extends AppCompatActivity implements UserListener {
+public class UsersActivity extends BaseActivity implements UserListener {
 
     private ActivityUsersBinding binding;
     private PreferenceManager preferenceManager;
