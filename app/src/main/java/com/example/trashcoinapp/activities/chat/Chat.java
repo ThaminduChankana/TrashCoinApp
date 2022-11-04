@@ -1,26 +1,22 @@
 package com.example.trashcoinapp.activities.chat;
 
-import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
-import android.widget.ImageView;
 import android.widget.Toast;
 
-import com.example.trashcoinapp.R;
+import com.example.trashcoinapp.activities.BaseActivity;
 import com.example.trashcoinapp.activities.messaging.MessagingActivity;
 import com.example.trashcoinapp.activities.users.UsersActivity;
 import com.example.trashcoinapp.adapters.RecentConversationsAdapter;
 import com.example.trashcoinapp.databinding.ActivityChatBinding;
-import com.example.trashcoinapp.databinding.ActivityMessagingBinding;
 import com.example.trashcoinapp.listeners.ConversationListener;
 import com.example.trashcoinapp.models.ChatMessage;
 import com.example.trashcoinapp.models.User;
 import com.example.trashcoinapp.utilities.Constants;
 import com.example.trashcoinapp.utilities.PreferenceManager;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.firestore.DocumentChange;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.EventListener;
@@ -32,7 +28,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class Chat extends AppCompatActivity implements ConversationListener {
+public class Chat extends BaseActivity implements ConversationListener {
 
     private ActivityChatBinding binding;
     private List<ChatMessage> conversations;

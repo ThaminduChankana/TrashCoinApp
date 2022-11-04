@@ -1,12 +1,11 @@
 package com.example.trashcoinapp.activities.messaging;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Toast;
 
+import com.example.trashcoinapp.activities.BaseActivity;
 import com.example.trashcoinapp.adapters.ChatAdapter;
 import com.example.trashcoinapp.databinding.ActivityMessagingBinding;
 import com.example.trashcoinapp.models.ChatMessage;
@@ -28,8 +27,9 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
+import java.util.Objects;
 
-public class MessagingActivity extends AppCompatActivity {
+public class MessagingActivity extends BaseActivity {
 
     private ActivityMessagingBinding binding;
     private User receiverUser;
@@ -38,6 +38,7 @@ public class MessagingActivity extends AppCompatActivity {
     private PreferenceManager preferenceManager;
     private FirebaseFirestore database;
     private String conversationId = null;
+    private Boolean isReceiverAvailable = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,7 +62,6 @@ public class MessagingActivity extends AppCompatActivity {
         );
         binding.recyclerMessaging.setAdapter(chatAdapter);
         database = FirebaseFirestore.getInstance();
-
     }
 
     private void sendMessage(){
@@ -86,6 +86,30 @@ public class MessagingActivity extends AppCompatActivity {
             addConversation(conversation);
         }
         binding.messagingInputMessage.setText(null);
+    }
+
+    private void listenAvailabilityOfReceiver(){
+        database.collection(Constants.KEY_COLLECTION_USERS).document(
+                receiverUser.id
+        ).addSnapshotListener(MessagingActivity.this,  (value, error) -> {
+           if(error != null){
+               return;
+           }
+           if(value != null){
+               if(value.getLong(Constants.KEY_AVAILABILITY) != null){
+                   int availability = Objects.requireNonNull(
+                           value.getLong(Constants.KEY_AVAILABILITY)
+                   ).intValue();
+                   isReceiverAvailable = availability ==1;
+               }
+           }
+           if(isReceiverAvailable){
+               binding.txtAvailability.setVisibility(View.VISIBLE);
+           }
+           else {
+               binding.txtAvailability.setVisibility(View.GONE);
+           }
+        });
     }
 
     private void listenMessages(){
@@ -114,7 +138,6 @@ public class MessagingActivity extends AppCompatActivity {
                     chatMessage.dateTime = getReadableDateTime(documentChange.getDocument().getDate(Constants.KEY_TIMESTAMP));
                     chatMessage.dateObject = documentChange.getDocument().getDate(Constants.KEY_TIMESTAMP);
                     chatMessages.add(chatMessage);
-
                 }
             }
             Collections.sort(chatMessages,(obj1, obj2) -> obj1.dateObject.compareTo(obj2.dateObject));
@@ -198,4 +221,9 @@ public class MessagingActivity extends AppCompatActivity {
         }
     };
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        listenAvailabilityOfReceiver();
+    }
 }

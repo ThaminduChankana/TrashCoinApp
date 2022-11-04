@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
 
+import com.example.trashcoinapp.activities.BaseActivity;
 import com.example.trashcoinapp.activities.messaging.MessagingActivity;
 import com.example.trashcoinapp.adapters.UsersAdapter;
 import com.example.trashcoinapp.databinding.ActivityDisposerUsersBinding;
@@ -20,7 +21,7 @@ import com.google.firebase.firestore.QueryDocumentSnapshot;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DisposerUsersActivity extends AppCompatActivity implements UserListener {
+public class DisposerUsersActivity extends BaseActivity implements UserListener {
 
     private ActivityDisposerUsersBinding binding;
     private PreferenceManager preferenceManager;

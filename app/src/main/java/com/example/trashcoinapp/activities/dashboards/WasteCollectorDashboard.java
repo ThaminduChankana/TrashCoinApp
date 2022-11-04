@@ -12,6 +12,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.trashcoinapp.R;
+import com.example.trashcoinapp.activities.BaseActivity;
 import com.example.trashcoinapp.activities.LoginSelector;
 import com.example.trashcoinapp.activities.chat.Chat;
 import com.example.trashcoinapp.utilities.Constants;
@@ -23,7 +24,7 @@ import com.google.firebase.messaging.FirebaseMessaging;
 
 import java.util.HashMap;
 
-public class WasteCollectorDashboard extends AppCompatActivity {
+public class WasteCollectorDashboard extends BaseActivity {
 
     private PreferenceManager preferenceManager;
     private TextView tv_waste_collector_dashboard;

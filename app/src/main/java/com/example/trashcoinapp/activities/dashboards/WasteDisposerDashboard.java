@@ -6,8 +6,9 @@ import android.os.Bundle;
 import android.view.WindowManager;
 
 import com.example.trashcoinapp.R;
+import com.example.trashcoinapp.activities.BaseActivity;
 
-public class WasteDisposerDashboard extends AppCompatActivity {
+public class WasteDisposerDashboard extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

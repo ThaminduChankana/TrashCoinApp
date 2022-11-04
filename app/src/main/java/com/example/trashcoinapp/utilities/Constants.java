@@ -24,4 +24,5 @@ public class Constants {
     public static final String KEY_SENDER_ROLE = "senderRole";
     public static final String KEY_RECEIVER_ROLE = "receiverRole";
     public static final String KEY_LAST_MESSAGE = "lastMessage";
+    public static final String KEY_AVAILABILITY = "availability";
 }
