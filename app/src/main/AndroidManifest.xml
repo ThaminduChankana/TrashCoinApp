@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.example.trashcoinapp">
+    package="com.example.trashcoinapp" >
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
@@ -15,13 +15,51 @@
         android:roundIcon="@drawable/logo"
         android:supportsRtl="true"
         android:theme="@style/Theme.TrashCoinApp"
-        tools:targetApi="31">
+        tools:targetApi="31" >
         <activity
-            android:name=".activities.WasteDisposerDashboard"
-            android:exported="true" />
+            android:name=".activities.users.RecyclerUsersActivity"
+            android:exported="true"
+            android:windowSoftInputMode="adjustResize" />
         <activity
-            android:name=".activities.WasteRecyclerDashboard"
-            android:exported="true" />
+            android:name=".activities.users.DisposerUsersActivity"
+            android:exported="true"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".activities.messaging.RecyclerMessagingActivity"
+            android:exported="true"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".activities.messaging.DisposerMessagingActivity"
+            android:exported="true"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".activities.chat.ChatRecycler"
+            android:exported="true"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".activities.chat.ChatDisposer"
+            android:exported="true"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".activities.messaging.MessagingActivity"
+            android:exported="true"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".activities.users.UsersActivity"
+            android:exported="true"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".activities.chat.Chat"
+            android:exported="true"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".activities.dashboards.WasteDisposerDashboard"
+            android:exported="true"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".activities.dashboards.WasteRecyclerDashboard"
+            android:exported="true"
+            android:windowSoftInputMode="adjustResize" />
         <activity
             android:name=".activities.EditInventory"
             android:exported="true"
@@ -31,7 +69,7 @@
             android:exported="true"
             android:windowSoftInputMode="adjustResize" />
         <activity
-            android:name=".activities.WasteCollectorDashboard"
+            android:name=".activities.dashboards.WasteCollectorDashboard"
             android:exported="true"
             android:windowSoftInputMode="adjustResize" />
         <activity
@@ -85,7 +123,7 @@
         <activity
             android:name=".activities.SplashScreen"
             android:exported="true"
-            android:windowSoftInputMode="adjustResize">
+            android:windowSoftInputMode="adjustResize" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -95,7 +133,7 @@
 
         <service
             android:name=".firebase.MessagingService"
-            android:exported="false">
+            android:exported="false" >
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
