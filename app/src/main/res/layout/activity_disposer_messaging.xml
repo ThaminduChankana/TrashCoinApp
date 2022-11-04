@@ -109,7 +109,7 @@
             android:layout_marginBottom="@dimen/_12sdp"
             android:layout_alignParentEnd="true"
             android:background="@drawable/background_send_button"
-            android:layout_above="@id/bottom_navigation_collector">
+            android:layout_above="@id/bottom_navigation_disposer">
 
             <ImageView
                 android:layout_width="match_parent"
@@ -135,25 +135,25 @@
             android:paddingStart="@dimen/_16sdp"
             android:paddingEnd="@dimen/_16sdp"
             android:textColor="@color/black"
-            android:layout_above="@id/bottom_navigation_collector"
+            android:layout_above="@id/bottom_navigation_disposer"
             android:layout_toStartOf="@id/disposer_messaging_send"
             android:layout_alignParentStart="true"/>
 
-            <FrameLayout
-                android:id="@+id/btm_nav_collector_container"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_above="@id/bottom_navigation_collector" />
+        <FrameLayout
+            android:id="@+id/btm_nav_disposer_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@id/bottom_navigation_disposer" />
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
-            android:id="@+id/bottom_navigation_collector"
+            android:id="@+id/bottom_navigation_disposer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:background="@color/btn_color"
             app:itemIconTint="@color/white"
             app:itemTextColor="@color/white"
-            app:menu="@menu/bottom_nav_collector_menu" />
+            app:menu="@menu/bottom_nav_disposer_menu" />
 
     </RelativeLayout>
 </layout>

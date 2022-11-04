@@ -10,12 +10,14 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.trashcoinapp.R;
 import com.example.trashcoinapp.activities.LoginSelector;
 import com.example.trashcoinapp.activities.cart.ProductViewActivity;
 import com.example.trashcoinapp.activities.chat.Chat;
+import com.example.trashcoinapp.activities.chat.ChatDisposer;
 import com.example.trashcoinapp.utilities.Constants;
 import com.example.trashcoinapp.utilities.PreferenceManager;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -25,12 +27,15 @@ import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.HashMap;
 import com.example.trashcoinapp.activities.BaseActivity;
+import com.google.firebase.messaging.FirebaseMessaging;
 
 
 public class WasteDisposerDashboard extends BaseActivity {
 
     private PreferenceManager preferenceManager;
     private CardView cv_wd_db_shop;
+    private CardView cv_wd_db_chat;
+    private TextView tv_waste_disposer_dashboard;
     Button logout;
 
     @Override
@@ -41,8 +46,13 @@ public class WasteDisposerDashboard extends BaseActivity {
         setContentView(R.layout.activity_waste_disposer_dashboard);
 
         logout = findViewById(R.id.btn_logout);
+        tv_waste_disposer_dashboard=findViewById(R.id.tv_waste_disposer_dashboard);
         cv_wd_db_shop = findViewById(R.id.cv_wd_db_shop);
+        cv_wd_db_chat = findViewById(R.id.cv_wd_db_chat);
         preferenceManager = new PreferenceManager(getApplicationContext());
+
+        loadUserDetails();
+        getToken();
 
         logout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -55,6 +65,14 @@ public class WasteDisposerDashboard extends BaseActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), ProductViewActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        cv_wd_db_chat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), ChatDisposer.class);
                 startActivity(intent);
             }
         });
@@ -90,6 +108,24 @@ public class WasteDisposerDashboard extends BaseActivity {
                 return false;
             }
         });
+    }
+
+    private void loadUserDetails(){
+        tv_waste_disposer_dashboard.setText("Hello "+preferenceManager.getString(Constants.KEY_FULL_NAME));
+    }
+
+    private void getToken(){
+        FirebaseMessaging.getInstance().getToken().addOnSuccessListener(this::updateToken);
+    }
+
+    private void updateToken(String token){
+        FirebaseFirestore database = FirebaseFirestore.getInstance();
+        DocumentReference documentReference = database.collection(Constants.KEY_COLLECTION_USERS).document(
+                preferenceManager.getString(Constants.KEY_USER_ID)
+        );
+        documentReference.update(Constants.KEY_FCM_TOKEN, token)
+//                .addOnSuccessListener(unused -> showToast("Token Updated Successfully"))
+                .addOnFailureListener(e -> showToast("Unable To Update The Token"));
     }
 
     private void showToast(String message){

@@ -34,7 +34,7 @@
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_above="@id/bottom_navigation_chat_disposer"
+        android:layout_above="@id/bottom_navigation_disposer"
         android:layout_below="@id/img_chat_disposer_back"
         android:layout_marginTop="10dp"
         android:background="@drawable/background_content_bottom">
@@ -48,7 +48,7 @@
             android:overScrollMode="never"
             android:padding="@dimen/_20sdp"
             android:visibility="gone"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
 
         <ProgressBar
             android:id="@+id/conversations_prg"
@@ -56,7 +56,7 @@
             android:layout_height="@dimen/_25sdp"
             android:layout_gravity="center"
             android:indeterminateTint="@color/white"
-            android:indeterminateTintMode="src_atop"/>
+            android:indeterminateTintMode="src_atop" />
 
     </FrameLayout>
 
@@ -64,7 +64,7 @@
         android:id="@+id/fab_new_chat_disposer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@id/bottom_navigation_chat_disposer"
+        android:layout_above="@id/bottom_navigation_disposer"
         android:layout_alignParentEnd="true"
         android:layout_marginStart="@dimen/_24sdp"
         android:layout_marginTop="@dimen/_24sdp"
@@ -74,15 +74,21 @@
         android:contentDescription="@string/todo"
         android:src="@drawable/ic_add" />
 
+    <FrameLayout
+        android:id="@+id/btm_nav_disposer_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/bottom_navigation_disposer" />
+
     <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottom_navigation_chat_disposer"
+        android:id="@+id/bottom_navigation_disposer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:background="@color/btn_color"
         app:itemIconTint="@color/white"
         app:itemTextColor="@color/white"
-        app:menu="@menu/bottom_nav_collector_menu" />
+        app:menu="@menu/bottom_nav_disposer_menu" />
 
 
 </RelativeLayout>

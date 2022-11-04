@@ -49,8 +49,11 @@
         <entry key="..\:/Users/ASUS ROG/Desktop/UEE/TrashCoinApp/app/src/main/res/layout/activity_chat_disposer.xml" value="0.35052083333333334" />
         <entry key="..\:/Users/ASUS ROG/Desktop/UEE/TrashCoinApp/app/src/main/res/layout/activity_chat_recycler.xml" value="0.35052083333333334" />
         <entry key="..\:/Users/ASUS ROG/Desktop/UEE/TrashCoinApp/app/src/main/res/layout/activity_disposer_messaging.xml" value="0.35052083333333334" />
+        <entry key="..\:/Users/ASUS ROG/Desktop/UEE/TrashCoinApp/app/src/main/res/layout/activity_disposer_users.xml" value="0.35052083333333334" />
         <entry key="..\:/Users/ASUS ROG/Desktop/UEE/TrashCoinApp/app/src/main/res/layout/activity_messaging.xml" value="0.35052083333333334" />
         <entry key="..\:/Users/ASUS ROG/Desktop/UEE/TrashCoinApp/app/src/main/res/layout/activity_recycler_messaging.xml" value="0.35052083333333334" />
+        <entry key="..\:/Users/ASUS ROG/Desktop/UEE/TrashCoinApp/app/src/main/res/layout/activity_waste_collector_dashboard.xml" value="0.35052083333333334" />
+        <entry key="..\:/Users/ASUS ROG/Desktop/UEE/TrashCoinApp/app/src/main/res/layout/activity_waste_disposer_dashboard.xml" value="0.35052083333333334" />
         <entry key="..\:/Users/ASUS ROG/Desktop/UEE/TrashCoinApp/app/src/main/res/layout/item_container_recent_conversation.xml" value="0.35052083333333334" />
         <entry key="..\:/Users/ASUS ROG/Desktop/UEE/TrashCoinApp/app/src/main/res/layout/item_container_recieved_message.xml" value="0.35052083333333334" />
         <entry key="..\:/Users/ASUS ROG/Desktop/UEE/TrashCoinApp/app/src/main/res/layout/item_container_user.xml" value="0.35052083333333334" />
@@ -79,7 +82,7 @@
   <component name="VisualizationToolProject">
     <option name="state">
       <ProjectState>
-        <option name="scale" value="0.2" />
+        <option name="scale" value="0.1" />
       </ProjectState>
     </option>
   </component>
