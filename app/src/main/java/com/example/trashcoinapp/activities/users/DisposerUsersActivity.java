@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.WindowManager;
 
 import com.example.trashcoinapp.activities.BaseActivity;
+import com.example.trashcoinapp.activities.messaging.DisposerMessagingActivity;
 import com.example.trashcoinapp.activities.messaging.MessagingActivity;
 import com.example.trashcoinapp.adapters.UsersAdapter;
 import com.example.trashcoinapp.databinding.ActivityDisposerUsersBinding;
@@ -100,7 +101,7 @@ public class DisposerUsersActivity extends BaseActivity implements UserListener 
 
     @Override
     public void onUserClicked(User user) {
-        Intent intent = new Intent(getApplicationContext(), MessagingActivity.class);
+        Intent intent = new Intent(getApplicationContext(), DisposerMessagingActivity.class);
         intent.putExtra(Constants.KEY_USER, user);
         startActivity(intent);
         finish();

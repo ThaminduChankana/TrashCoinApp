@@ -204,7 +204,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/tv_chat"
+                    android:text="@string/tv_chat_disposer"
                     android:textAlignment="center"
                     android:textColor="@color/black"
                     android:textSize="15sp"

@@ -10,7 +10,10 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.trashcoinapp.R;
+import com.example.trashcoinapp.activities.BaseActivity;
+import com.example.trashcoinapp.activities.messaging.DisposerMessagingActivity;
 import com.example.trashcoinapp.activities.messaging.MessagingActivity;
+import com.example.trashcoinapp.activities.users.DisposerUsersActivity;
 import com.example.trashcoinapp.activities.users.UsersActivity;
 import com.example.trashcoinapp.adapters.RecentConversationsAdapter;
 import com.example.trashcoinapp.databinding.ActivityChatBinding;
@@ -32,7 +35,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class ChatDisposer extends AppCompatActivity implements ConversationListener {
+public class ChatDisposer extends BaseActivity implements ConversationListener {
 
     private ActivityChatDisposerBinding binding;
     private List<ChatMessage> conversations;
@@ -149,7 +152,7 @@ public class ChatDisposer extends AppCompatActivity implements ConversationListe
         binding.fabNewChatDisposer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), UsersActivity.class));
+                startActivity(new Intent(getApplicationContext(), DisposerUsersActivity.class));
             }
         });
 
@@ -157,7 +160,7 @@ public class ChatDisposer extends AppCompatActivity implements ConversationListe
 
     @Override
     public void onConversationClicked(User user) {
-        Intent intent = new Intent(getApplicationContext(), MessagingActivity.class);
+        Intent intent = new Intent(getApplicationContext(), DisposerMessagingActivity.class);
         intent.putExtra(Constants.KEY_USER, user);
         startActivity(intent);
     }
