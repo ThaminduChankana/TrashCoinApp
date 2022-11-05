@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:elevation="6dp"
+    android:layout_marginHorizontal="10dp"
+    android:scrollbars="vertical"
+    app:cardCornerRadius="25dp"
+    android:layout_marginBottom="10dp"
+    app:cardUseCompatPadding="true">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:background="#B8F1B0">
+
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:id="@+id/img_inventory_item"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/img_inventory_item"
+            tools:ignore="ImageContrastCheck" />
+
+
+        <TextView
+            android:id="@+id/tv_inventory_item_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_toEndOf="@id/img_inventory_item"
+            android:text="@string/txt_inventory_id"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_inventory_item_id_ans"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="26dp"
+            android:layout_toEndOf="@id/tv_inventory_item_id"
+            android:text="@string/txt"
+            android:textColor="@color/black"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/tv_inventory_item_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_inventory_item_id"
+            android:layout_marginStart="10dp"
+            android:layout_toEndOf="@id/img_inventory_item"
+            android:text="@string/txt_inventory_name"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_inventory_item_name_ans"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_inventory_item_id"
+            android:layout_marginStart="5dp"
+            android:layout_toEndOf="@id/tv_inventory_item_name"
+            android:text="@string/txt"
+            android:textColor="@color/black"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/tv_inventory_item_desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_inventory_item_name"
+            android:layout_marginStart="10dp"
+            android:layout_toEndOf="@id/img_inventory_item"
+            android:text="@string/tv_item_description"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_item_description_ans"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_inventory_item_desc"
+            android:layout_alignStart="@id/tv_inventory_item_desc"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:maxWidth="300dp"
+            android:maxHeight="200dp"
+            android:maxLines="6"
+            android:text="@string/txt"
+            android:textColor="@color/black"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/tv_pickup_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_item_description_ans"
+            android:layout_marginStart="10dp"
+            android:layout_toEndOf="@id/img_inventory_item"
+            android:text="@string/tv_pickup_date"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_pickup_date_ans"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_item_description_ans"
+            android:layout_marginStart="47.5dp"
+            android:layout_toEndOf="@id/tv_pickup_date"
+            android:text="@string/txt"
+            android:textColor="@color/black"
+            android:textSize="15sp" />
+
+        <Button
+            android:id="@+id/btn_inventory_item_edit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_pickup_date_ans"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="20dp"
+            android:backgroundTint="@color/green"
+            android:text="@string/btn_inventory_item_edit"
+            android:textSize="15sp" />
+
+        <Button
+            android:id="@+id/btn_meal_item_delete"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:layout_marginStart="75dp"
+            android:layout_marginTop="20dp"
+            android:layout_toEndOf="@id/btn_inventory_item_edit"
+            android:layout_below="@id/tv_pickup_date_ans"
+            android:text="@string/btn_inventory_item_delete"
+            android:textSize="15sp"
+            android:backgroundTint="@color/red"/>
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

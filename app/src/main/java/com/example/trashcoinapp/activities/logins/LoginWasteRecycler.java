@@ -13,8 +13,7 @@ import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.example.trashcoinapp.R;
-import com.example.trashcoinapp.activities.WasteCollectorDashboard;
-import com.example.trashcoinapp.activities.WasteRecyclerDashboard;
+import com.example.trashcoinapp.activities.dashboards.WasteRecyclerDashboard;
 import com.example.trashcoinapp.utilities.Constants;
 import com.example.trashcoinapp.utilities.PreferenceManager;
 import com.google.firebase.firestore.DocumentSnapshot;

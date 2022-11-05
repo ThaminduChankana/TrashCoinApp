@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background"
-    tools:context=".activities.EditInventory">
+    android:animateLayoutChanges="true"
+    tools:context=".activities.inventory.EditInventory">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -36,7 +37,7 @@
             android:id="@+id/img_edit_inventory"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="30dp"
             android:contentDescription="@string/todo"
             android:src="@drawable/img_edit_inventory" />
 
@@ -44,7 +45,7 @@
             android:id="@+id/ll_edit_inventory"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="20dp"
             android:orientation="vertical"
             android:paddingStart="25dp"
             android:paddingEnd="25dp"
@@ -70,7 +71,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:background="@drawable/background_edittext"
-
                 android:ems="10"
                 android:hint="@string/et_description"
                 android:importantForAutofill="no"
@@ -78,6 +78,16 @@
                 android:minHeight="48dp"
                 android:textAlignment="textStart"
                 tools:ignore="SpeakableTextPresentCheck,TextContrastCheck" />
+
+            <Button
+                android:id="@+id/edt_inv_pick_date"
+                android:layout_width="match_parent"
+                android:layout_marginTop="10dp"
+                android:layout_height="wrap_content"
+                app:cornerRadius="10dp"
+                android:text="@string/btn_pickup_date"
+                android:backgroundTint="@color/secondary"
+                tools:ignore="DuplicateSpeakableTextCheck"/>
 
 
         </LinearLayout>
@@ -87,6 +97,7 @@
             android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
             android:backgroundTint="@color/btn_color"
             android:text="@string/btn_edit_item"
             app:cornerRadius="50dp"
