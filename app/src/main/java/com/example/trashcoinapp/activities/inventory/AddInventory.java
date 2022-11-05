@@ -6,6 +6,7 @@ import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
@@ -98,6 +99,17 @@ public class AddInventory extends AppCompatActivity {
                     helper.addInventory(inventoryName,
                             inventoryDescription,
                             inventoryAddDate);
+
+                    Handler h = new Handler();
+                    h.postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            Intent intent = new Intent(getApplicationContext(), InventoryActivity.class);
+                            startActivity(intent);
+                        }
+                    }, 1000);
+
+                    finish();
                 }
 
 

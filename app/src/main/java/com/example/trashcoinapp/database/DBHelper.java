@@ -70,5 +70,21 @@ public class DBHelper extends SQLiteOpenHelper {
 
     }
 
+    public void updateData(String rowId, String itemName, String itemDescription, String addedDate){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+
+        values.put(InventoryMaster.Inventory.COLUMN_NAME_ITEM_NAME,itemName);
+        values.put(InventoryMaster.Inventory.COLUMN_NAME_ITEM_DESCRIPTION, itemDescription);
+        values.put(InventoryMaster.Inventory.COLUMN_NAME_ITEM_ADDED_DATE, addedDate);
+
+        long result = db.update(InventoryMaster.Inventory.TABLE_NAME, values, " _id=? ", new String[]{rowId});
+        if(result == -1){
+            Toast.makeText(context, "Data Update Failed !", Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(context, "Data Successfully Updated !", Toast.LENGTH_SHORT).show();
+        }
+    }
+
 
 }

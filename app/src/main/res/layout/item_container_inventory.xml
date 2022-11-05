@@ -128,9 +128,9 @@
             android:layout_below="@id/tv_pickup_date_ans"
             android:layout_marginStart="50dp"
             android:layout_marginTop="20dp"
+            android:backgroundTint="@color/green"
             android:text="@string/btn_inventory_item_edit"
-            android:textSize="15sp"
-            android:backgroundTint="@color/green"/>
+            android:textSize="15sp" />
 
         <Button
             android:id="@+id/btn_meal_item_delete"

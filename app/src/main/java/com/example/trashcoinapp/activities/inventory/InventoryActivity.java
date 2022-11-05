@@ -23,8 +23,8 @@ public class InventoryActivity extends AppCompatActivity {
 
     private ImageView img_inventory_add;
     private ImageView img_inventory_back;
-    private RecyclerView inventory_recycler_view;
-    private DBHelper helper;
+    RecyclerView inventory_recycler_view;
+    DBHelper helper;
     ArrayList<String> item_id, item_name, item_description, pickup_date;
     InventoryAdapter inventoryAdapter;
 
