@@ -36,6 +36,7 @@ public class HouseHoldWasteAddPage extends AppCompatActivity {
 
 
         //navigation
+
         btn_next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

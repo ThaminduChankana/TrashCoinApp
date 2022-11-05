@@ -4,7 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activities.WasteRecyclerDashboard">
+    android:animateLayoutChanges="true"
+    android:background="@color/background"
+    tools:context=".activities.dashboards.WasteRecyclerDashboard">
 
     <TextView
         android:id="@+id/btn_next"

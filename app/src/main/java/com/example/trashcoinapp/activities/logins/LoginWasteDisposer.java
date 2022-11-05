@@ -13,9 +13,7 @@ import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.example.trashcoinapp.R;
-import com.example.trashcoinapp.activities.WasteCollectorDashboard;
-import com.example.trashcoinapp.activities.WasteDisposerDashboard;
-import com.example.trashcoinapp.activities.WasteDisposerWelcomePage;
+import com.example.trashcoinapp.activities.dashboards.WasteDisposerDashboard;
 import com.example.trashcoinapp.utilities.Constants;
 import com.example.trashcoinapp.utilities.PreferenceManager;
 import com.google.firebase.firestore.DocumentSnapshot;
@@ -85,7 +83,7 @@ public class LoginWasteDisposer extends AppCompatActivity {
                         preferenceManager.putString(Constants.KEY_USER_TYPE,documentSnapshot.getString(Constants.KEY_USER_TYPE));
                         preferenceManager.putString(Constants.KEY_ADDRESS,documentSnapshot.getString(Constants.KEY_ADDRESS));
                         showToast("Login Successful !");
-                        Intent intent = new Intent(getApplicationContext(),WasteDisposerDashboard.class);
+                        Intent intent = new Intent(getApplicationContext(), WasteDisposerDashboard.class);
                         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                         startActivity(intent);
                     }else{
