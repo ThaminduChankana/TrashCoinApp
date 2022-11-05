@@ -1,6 +1,5 @@
 package com.example.trashcoinapp.activities.dashboards;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
 import android.content.Intent;
@@ -13,7 +12,8 @@ import android.widget.Toast;
 
 import com.example.trashcoinapp.R;
 import com.example.trashcoinapp.activities.BaseActivity;
-import com.example.trashcoinapp.activities.LoginSelector;
+import com.example.trashcoinapp.activities.inventory.InventoryActivity;
+import com.example.trashcoinapp.activities.user.LoginSelector;
 import com.example.trashcoinapp.activities.chat.Chat;
 import com.example.trashcoinapp.utilities.Constants;
 import com.example.trashcoinapp.utilities.PreferenceManager;
@@ -29,6 +29,7 @@ public class WasteCollectorDashboard extends BaseActivity {
     private PreferenceManager preferenceManager;
     private TextView tv_waste_collector_dashboard;
     private CardView cv_wc_db_chat;
+    private CardView cv_wc_db_inventory;
     private Button btn_logout;
 
     @Override
@@ -42,6 +43,7 @@ public class WasteCollectorDashboard extends BaseActivity {
 
         tv_waste_collector_dashboard=findViewById(R.id.tv_waste_collector_dashboard);
         cv_wc_db_chat = findViewById(R.id.cv_wc_db_chat);
+        cv_wc_db_inventory = findViewById(R.id.cv_wc_db_inventory);
         btn_logout = findViewById(R.id.btn_logout);
         loadUserDetails();
         getToken();
@@ -50,6 +52,14 @@ public class WasteCollectorDashboard extends BaseActivity {
             @Override
             public void onClick(View v) {
                 signOut();
+            }
+        });
+
+        cv_wc_db_inventory.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), InventoryActivity.class);
+                startActivity(intent);
             }
         });
 
