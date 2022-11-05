@@ -52,6 +52,8 @@
     <string name="btm_nav_recyclers">Recyclers</string>
     <string name="btm_nav_inventory">Inventory</string>
     <string name="btm_nav_chat">Chat</string>
+    <string name="yourinfo">yourInfo</string>
+    <string name="nextPage">NEXT</string>
 
 
 </resources>
