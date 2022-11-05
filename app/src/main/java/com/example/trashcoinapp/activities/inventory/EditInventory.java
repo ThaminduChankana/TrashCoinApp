@@ -2,7 +2,9 @@ package com.example.trashcoinapp.activities.inventory;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
 import android.app.DatePickerDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
@@ -24,7 +26,7 @@ public class EditInventory extends AppCompatActivity {
     private Button edt_inv_pick_date;
     private ImageView img_edit_inventory_back;
     private EditText et_edit_inventory_name, et_edit_inventory_description;
-    private Button btn_edit_inventory;
+    private Button btn_edit_inventory, btn_inventory_delete;
     private String itemId, itemName, itemDescription, pickUpDate;
 
     @Override
@@ -39,6 +41,7 @@ public class EditInventory extends AppCompatActivity {
         et_edit_inventory_name = findViewById(R.id.et_edit_inventory_name);
         et_edit_inventory_description = findViewById(R.id.et_edit_inventory_description);
         btn_edit_inventory = findViewById(R.id.btn_edit_inventory);
+        btn_inventory_delete = findViewById(R.id.btn_inventory_delete);
 
         getAndSetIntentData();
 
@@ -104,12 +107,20 @@ public class EditInventory extends AppCompatActivity {
                         public void run() {
                             Intent intent = new Intent(getApplicationContext(), InventoryActivity.class);
                             startActivity(intent);
+                            finish();
                         }
                     }, 1000);
 
-                    finish();
+
 
                 }
+            }
+        });
+
+        btn_inventory_delete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                confirmDialog();
             }
         });
     }
@@ -130,5 +141,38 @@ public class EditInventory extends AppCompatActivity {
         } else{
             Toast.makeText(this, "No Data Available", Toast.LENGTH_SHORT).show();
         }
+    }
+
+    public void confirmDialog(){
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Delete "+ itemName + " ?");
+        builder.setMessage("Are You Sure You Want To Delete The Inventory Item ?");
+        builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                DBHelper helper = new DBHelper(EditInventory.this);
+                helper.deleteOneRow(itemId);
+                Handler h = new Handler();
+                h.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        Intent intent = new Intent(getApplicationContext(), InventoryActivity.class);
+                        startActivity(intent);
+                        finish();
+                    }
+                }, 1000);
+
+
+            }
+        });
+
+        builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+
+            }
+        });
+        builder.create().show();
+
     }
 }

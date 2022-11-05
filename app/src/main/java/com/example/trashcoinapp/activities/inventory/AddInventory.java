@@ -106,10 +106,11 @@ public class AddInventory extends AppCompatActivity {
                         public void run() {
                             Intent intent = new Intent(getApplicationContext(), InventoryActivity.class);
                             startActivity(intent);
+                            finish();
                         }
                     }, 1000);
 
-                    finish();
+
                 }
 
 
