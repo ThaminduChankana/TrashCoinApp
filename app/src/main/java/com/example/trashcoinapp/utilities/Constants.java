@@ -1,5 +1,7 @@
 package com.example.trashcoinapp.utilities;
 
+import java.util.HashMap;
+
 public class Constants {
     public static final String KEY_COLLECTION_USERS = "users";
     public static final String KEY_FULL_NAME = "fullname";
@@ -25,4 +27,27 @@ public class Constants {
     public static final String KEY_RECEIVER_ROLE = "receiverRole";
     public static final String KEY_LAST_MESSAGE = "lastMessage";
     public static final String KEY_AVAILABILITY = "availability";
+    public static final String REMOTE_MSG_AUTHORIZATION = "Authorization";
+    public static final String REMOTE_MSG_CONTENT_TYPE = "Content-Type";
+    public static final String REMOTE_MSG_DATA = "data";
+    public static final String REMOTE_MSG_REGISTRATION_IDS = "registration_ids";
+
+    public static HashMap<String, String> remoteMsgHeaders = null;
+
+    public static HashMap<String, String> getRemoteMsgHeaders(){
+        if(remoteMsgHeaders == null){
+            remoteMsgHeaders = new HashMap<>();
+            remoteMsgHeaders.put(
+                    REMOTE_MSG_AUTHORIZATION,
+                    "key=AAAAGFBcv0U:APA91bEWC8T-iUvDs3c4-iJHPsoLt4M-bBW55B9EsJinlRlHpzJKwbOcr0V4AEIpMis0ikl0PpmnISjJTybYz4VNhEcNVz-z3CBkom4lalwy1UIcuBDZjSLITRkymw2y5-ENVKaVWcF9"
+            );
+            remoteMsgHeaders.put(
+                    REMOTE_MSG_CONTENT_TYPE,
+                    "application/json"
+            );
+
+        }
+        return remoteMsgHeaders;
+    }
+
 }

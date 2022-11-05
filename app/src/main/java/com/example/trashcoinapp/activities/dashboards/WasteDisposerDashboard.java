@@ -1,7 +1,6 @@
 package com.example.trashcoinapp.activities.dashboards;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
 import android.content.Intent;
@@ -14,9 +13,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.trashcoinapp.R;
-import com.example.trashcoinapp.activities.LoginSelector;
+import com.example.trashcoinapp.activities.user.LoginSelector;
 import com.example.trashcoinapp.activities.cart.ProductViewActivity;
-import com.example.trashcoinapp.activities.chat.Chat;
 import com.example.trashcoinapp.activities.chat.ChatDisposer;
 import com.example.trashcoinapp.utilities.Constants;
 import com.example.trashcoinapp.utilities.PreferenceManager;
@@ -119,6 +117,7 @@ public class WasteDisposerDashboard extends BaseActivity {
     }
 
     private void updateToken(String token){
+        preferenceManager.putString(Constants.KEY_FCM_TOKEN,token);
         FirebaseFirestore database = FirebaseFirestore.getInstance();
         DocumentReference documentReference = database.collection(Constants.KEY_COLLECTION_USERS).document(
                 preferenceManager.getString(Constants.KEY_USER_ID)

@@ -1,4 +1,4 @@
-package com.example.trashcoinapp.activities;
+package com.example.trashcoinapp.activities.user;
 
 import androidx.appcompat.app.AppCompatActivity;
 

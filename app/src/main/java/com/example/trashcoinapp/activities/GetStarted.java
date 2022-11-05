@@ -9,6 +9,8 @@ import android.view.WindowManager;
 import android.widget.Button;
 
 import com.example.trashcoinapp.R;
+import com.example.trashcoinapp.activities.user.LoginSelector;
+import com.example.trashcoinapp.activities.user.Register;
 
 public class GetStarted extends AppCompatActivity {
 

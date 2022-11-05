@@ -90,8 +90,16 @@
     <string name="tv_chat_disposer">Disposer Chat</string>
     <string name="tv_chat_recycler">Recycler Chat</string>
     <string name="tv_availability">Online</string>
-
-
+    <string name="btn_pickup_date">Pickup Date</string>
+    <string name="tv_inventory">Inventory</string>
+    <string name="tv_add_item">Add Item</string>
+    <string name="txt">TextView</string>
+    <string name="txt_inventory_id">Inventory Id :-</string>
+    <string name="txt_inventory_name">Inventory Name :-</string>
+    <string name="tv_item_description">Item Description :-</string>
+    <string name="tv_pickup_date">Pickup Date :-</string>
+    <string name="btn_inventory_item_edit">Edit</string>
+    <string name="btn_inventory_item_delete">Delete</string>
 
 
 </resources>

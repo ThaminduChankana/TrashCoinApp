@@ -92,7 +92,6 @@ public class ProductViewActivity extends AppCompatActivity {
         productRV = findViewById(R.id.recycledProducts);
         loadingPB = findViewById(R.id.idProgressBar);
 
-
         db = FirebaseFirestore.getInstance();
 
 
