@@ -100,6 +100,13 @@
     <string name="tv_pickup_date">Pickup Date :-</string>
     <string name="btn_inventory_item_edit">Edit</string>
     <string name="btn_inventory_item_delete">Delete</string>
+    <string name="tv_collector_add_data">Collector Add Data</string>
+    <string name="btn_add_col_details_end_time">End Time</string>
+    <string name="btn_add_col_details_start_time">Start Time</string>
+    <string name="btn_col_add_data">Add Data</string>
+    <string name="et_enter_working_company_name">Enter Working Company Name</string>
+    <string name="et_enter_working_mobile_number">Enter Working Mobile Number</string>
+    <string name="et_enter_working_area">Enter Working Area</string>
 
 
 </resources>
