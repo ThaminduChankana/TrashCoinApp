@@ -50,8 +50,7 @@ public class EditInventory extends AppCompatActivity {
         img_edit_inventory_back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), InventoryActivity.class);
-                startActivity(intent);
+                onBackPressed();
             }
         });
 
