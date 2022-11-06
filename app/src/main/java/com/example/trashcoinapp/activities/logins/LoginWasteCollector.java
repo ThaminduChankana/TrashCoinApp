@@ -78,6 +78,7 @@ public class LoginWasteCollector extends AppCompatActivity {
                         preferenceManager.putBoolean(Constants.KEY_IS_SIGNED_IN,true);
                         preferenceManager.putString(Constants.KEY_USER_ID,documentSnapshot.getId());
                         preferenceManager.putString(Constants.KEY_FULL_NAME, documentSnapshot.getString(Constants.KEY_FULL_NAME));
+                        preferenceManager.putString(Constants.KEY_TELEPHONE, documentSnapshot.getString(Constants.KEY_TELEPHONE));
                         preferenceManager.putString(Constants.KEY_USER_TYPE,documentSnapshot.getString(Constants.KEY_USER_TYPE));
                         preferenceManager.putString(Constants.KEY_ADDRESS,documentSnapshot.getString(Constants.KEY_ADDRESS));
                         showToast("Login Successful !");
@@ -86,7 +87,7 @@ public class LoginWasteCollector extends AppCompatActivity {
                         startActivity(intent);
                     }else{
                         loading(false);
-                        showToast("Sign In Failed !");
+                        showToast("Username Or Password is Incorrect !");
                     }
                 });
 
