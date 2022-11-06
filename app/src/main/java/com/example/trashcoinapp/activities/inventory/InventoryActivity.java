@@ -62,8 +62,7 @@ public class InventoryActivity extends AppCompatActivity {
         img_inventory_back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), WasteCollectorDashboard.class);
-                startActivity(intent);
+                onBackPressed();
             }
         });
     }
