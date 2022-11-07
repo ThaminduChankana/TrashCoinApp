@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:animateLayoutChanges="true"
+android:background="@color/background"
+tools:context=".activities.addData.CollectorAddData">
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tv_co_add_data"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="@string/tv_collector_add_data"
+        android:textColor="@color/heading"
+        android:textSize="40sp" />
+
+    <ImageView
+        android:id="@+id/img_col_add_data_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="20dp"
+        android:contentDescription="@string/todo"
+        android:src="@drawable/img_btn_back" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingLeft="25dp"
+        android:layout_marginTop="25dp"
+        android:paddingRight="25dp">
+
+        <TextView
+            android:id="@+id/tv_add_col_details_full_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/borders"
+            android:drawableLeft="@drawable/ic_full_name"
+            android:drawablePadding="0dp"
+            android:ems="10"
+            android:importantForAutofill="no"
+            android:minHeight="48dp"
+            android:text="@string/txt"
+            android:gravity="center"
+            android:paddingStart="10dp"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <TextView
+            android:id="@+id/tv_add_col_details_phone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:paddingStart="10dp"
+            android:background="@drawable/borders"
+            android:gravity="center"
+            android:text="@string/txt"
+            android:drawableLeft="@drawable/ic_phone"
+            android:ems="10"
+            android:textSize="18sp"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:importantForAutofill="no"
+            android:minHeight="48dp"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <EditText
+            android:id="@+id/et_add_col_details_working_company"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/borders"
+            android:drawableLeft="@drawable/ic_truck"
+            android:paddingStart="10dp"
+            android:hint="@string/et_enter_working_company_name"
+            android:ems="10"
+            android:importantForAutofill="no"
+            android:inputType="textPersonName"
+            android:minHeight="48dp"
+            android:textAlignment="center"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+
+
+        <Button
+            android:id="@+id/btn_add_col_details_start_time"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:backgroundTint="@color/second_color"
+            android:drawableLeft="@drawable/ic_working_hours"
+            android:ems="10"
+            android:gravity="center"
+            android:importantForAutofill="no"
+            android:minHeight="48dp"
+            android:text="@string/btn_add_col_details_start_time"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+
+            app:cornerRadius="15dp"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <Button
+            android:id="@+id/btn_add_col_details_end_time"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:backgroundTint="@color/second_color"
+            android:drawableLeft="@drawable/ic_end_time"
+            android:ems="10"
+            android:gravity="center"
+            android:importantForAutofill="no"
+            android:minHeight="48dp"
+            android:text="@string/btn_add_col_details_end_time"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:cornerRadius="15dp"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <EditText
+            android:id="@+id/et_add_col_details_working_area"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="10dp"
+            android:background="@drawable/borders"
+            android:layout_marginTop="20dp"
+            android:drawableLeft="@drawable/ic_working_area"
+            android:ems="10"
+            android:hint="@string/et_enter_working_area"
+            android:importantForAutofill="no"
+            android:inputType="text"
+            android:minHeight="48dp"
+            android:textAlignment="center"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <Spinner
+            android:id="@+id/spn_col_availability"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:minHeight="48dp"
+            android:background="@drawable/borders"
+            android:textAlignment="center"/>
+
+        <TextView
+            android:id="@+id/tv_add_col_availability"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:paddingStart="10dp"
+            android:background="@drawable/borders"
+            android:gravity="center"
+            android:text="@string/txt"
+            android:drawableLeft="@drawable/ic_available"
+            android:ems="10"
+            android:textSize="18sp"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:importantForAutofill="no"
+            android:minHeight="48dp"
+            tools:ignore="SpeakableTextPresentCheck"
+            android:visibility="gone"/>
+
+        <Button
+            android:id="@+id/btn_add_data"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="25dp"
+            android:backgroundTint="@color/btn_color"
+            android:text="@string/btn_col_add_data"
+            tools:ignore="DuplicateSpeakableTextCheck" />
+
+        <ProgressBar
+            android:id="@+id/prg_col_add_loading"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="15dp"
+            android:visibility="invisible"
+            android:layout_marginBottom="20dp"/>
+
+
+    </LinearLayout>
+
+</LinearLayout>
+
+
+</ScrollView>

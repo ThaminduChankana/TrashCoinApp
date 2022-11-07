@@ -13,6 +13,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.trashcoinapp.R;
+import com.example.trashcoinapp.activities.collectors.CollectorsForDisposers;
 import com.example.trashcoinapp.activities.user.LoginSelector;
 import com.example.trashcoinapp.activities.cart.ProductViewActivity;
 import com.example.trashcoinapp.activities.chat.ChatDisposer;
@@ -33,6 +34,7 @@ public class WasteDisposerDashboard extends BaseActivity {
     private PreferenceManager preferenceManager;
     private CardView cv_wd_db_shop;
     private CardView cv_wd_db_chat;
+    private CardView cv_wd_db_collector;
     private TextView tv_waste_disposer_dashboard;
     Button logout;
 
@@ -47,6 +49,8 @@ public class WasteDisposerDashboard extends BaseActivity {
         tv_waste_disposer_dashboard=findViewById(R.id.tv_waste_disposer_dashboard);
         cv_wd_db_shop = findViewById(R.id.cv_wd_db_shop);
         cv_wd_db_chat = findViewById(R.id.cv_wd_db_chat);
+        cv_wd_db_chat = findViewById(R.id.cv_wd_db_chat);
+        cv_wd_db_collector = findViewById(R.id.cv_wd_db_collector);
         preferenceManager = new PreferenceManager(getApplicationContext());
 
         loadUserDetails();
@@ -71,6 +75,14 @@ public class WasteDisposerDashboard extends BaseActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), ChatDisposer.class);
+                startActivity(intent);
+            }
+        });
+
+        cv_wd_db_collector.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), CollectorsForDisposers.class);
                 startActivity(intent);
             }
         });

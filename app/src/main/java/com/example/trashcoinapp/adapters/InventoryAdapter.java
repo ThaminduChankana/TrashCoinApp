@@ -45,7 +45,6 @@ public class InventoryAdapter extends RecyclerView.Adapter<InventoryAdapter.Inve
     @Override
     public void onBindViewHolder(@NonNull InventoryAdapter.InventoryViewHolder holder,  final int position) {
 
-        holder.tv_inventory_item_id_ans.setText(String.valueOf(item_id.get(position)));
         holder.tv_inventory_item_name_ans.setText(String.valueOf(item_name.get(position)));
         holder.tv_item_description_ans.setText(String.valueOf(item_description.get(position)));
         holder.tv_pickup_date_ans.setText(String.valueOf(pickup_date.get(position)));
@@ -74,7 +73,6 @@ public class InventoryAdapter extends RecyclerView.Adapter<InventoryAdapter.Inve
 
         public InventoryViewHolder(@NonNull View itemView) {
             super(itemView);
-            tv_inventory_item_id_ans = itemView.findViewById(R.id.tv_inventory_item_id_ans);
             tv_inventory_item_name_ans = itemView.findViewById(R.id.tv_inventory_item_name_ans);
             tv_item_description_ans = itemView.findViewById(R.id.tv_item_description_ans);
             tv_pickup_date_ans = itemView.findViewById(R.id.tv_pickup_date_ans);

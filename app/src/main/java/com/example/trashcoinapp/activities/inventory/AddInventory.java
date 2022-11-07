@@ -48,6 +48,7 @@ public class AddInventory extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), InventoryActivity.class);
                 startActivity(intent);
+                finish();
             }
         });
 
@@ -106,10 +107,11 @@ public class AddInventory extends AppCompatActivity {
                         public void run() {
                             Intent intent = new Intent(getApplicationContext(), InventoryActivity.class);
                             startActivity(intent);
+                            finish();
                         }
                     }, 1000);
 
-                    finish();
+
                 }
 
 
