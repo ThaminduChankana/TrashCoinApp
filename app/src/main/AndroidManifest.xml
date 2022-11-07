@@ -17,9 +17,17 @@
         android:theme="@style/Theme.TrashCoinApp"
         tools:targetApi="31">
         <activity
+            android:name=".activities.collectors.CollectorsForRecyclers"
+            android:exported="true"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".activities.collectors.CollectorsForDisposers"
+            android:exported="true"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
             android:name=".activities.addData.CollectorAddData"
             android:exported="true"
-            android:windowSoftInputMode="adjustResize"/>
+            android:windowSoftInputMode="adjustResize" />
         <activity
             android:name=".activities.inventory.InventoryActivity"
             android:exported="true"
