@@ -46,7 +46,9 @@ public class AddInventory extends AppCompatActivity {
         img_add_inventory_back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                onBackPressed();
+                Intent intent = new Intent(getApplicationContext(), InventoryActivity.class);
+                startActivity(intent);
+                finish();
             }
         });
 
