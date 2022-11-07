@@ -24,10 +24,12 @@ import android.widget.TimePicker;
 import android.widget.Toast;
 
 import com.example.trashcoinapp.R;
+import com.example.trashcoinapp.activities.dashboards.WasteRecyclerDashboard;
 import com.example.trashcoinapp.activities.user.LoginSelector;
 import com.example.trashcoinapp.utilities.Constants;
 import com.example.trashcoinapp.utilities.PreferenceManager;
 import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.messaging.FirebaseMessaging;
 
@@ -123,7 +125,10 @@ public class CollectorAddData extends AppCompatActivity implements AdapterView.O
         spn_col_availability.setAdapter(availabilityDataAdapter);
 
         getToken();
+        //setData();
         loadUserDetails();
+
+
         btn_add_data.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -138,6 +143,7 @@ public class CollectorAddData extends AppCompatActivity implements AdapterView.O
             spn_col_availability.setVisibility(View.GONE);
             tv_add_col_availability.setVisibility(View.VISIBLE);
             addedDetails();
+
         }else{
             AlertDialog.Builder builder = new AlertDialog.Builder(CollectorAddData.this);
             builder.setMessage("Once Data Is Added It Can Only Be Changed After Three Months");
@@ -191,6 +197,7 @@ public class CollectorAddData extends AppCompatActivity implements AdapterView.O
         loading(true);
         FirebaseFirestore database = FirebaseFirestore.getInstance();
         HashMap<String, Object> collector = new HashMap<>();
+        collector.put(Constants.KEY_USER_ID,preferenceManager.getString(Constants.KEY_USER_ID));
         collector.put(Constants.KEY_COLLECTOR_NAME,tv_add_col_details_full_name.getText().toString());
         collector.put(Constants.KEY_COLLECTOR_PHONE,tv_add_col_details_phone.getText().toString());
         collector.put(Constants.KEY_COLLECTOR_COMPANY,et_add_col_details_working_company.getText().toString());
@@ -218,6 +225,34 @@ public class CollectorAddData extends AppCompatActivity implements AdapterView.O
                 });
 
     }
+
+//    private void setData(){
+//        loading(true);
+//        FirebaseFirestore database = FirebaseFirestore.getInstance();
+//        database.collection(Constants.KEY_COLLECTION_COLLECTOR_DETAILS)
+//                .whereEqualTo(Constants.KEY_USER_ID, preferenceManager.getString(Constants.KEY_USER_ID))
+//                .get()
+//                .addOnCompleteListener(task -> {
+//                    if(task.isSuccessful() && task.getResult() != null && task.getResult().getDocuments().size()>0){
+//                        DocumentSnapshot documentSnapshot = task.getResult().getDocuments().get(0);
+//                        preferenceManager.putBoolean(Constants.KEY_COLLECTOR_DETAILS_ADDED,true);
+//                        preferenceManager.putString(Constants.KEY_COLLECTOR_NAME,tv_add_col_details_full_name.getText().toString());
+//                        preferenceManager.putString(Constants.KEY_COLLECTOR_PHONE,tv_add_col_details_phone.getText().toString());
+//                        preferenceManager.putString(Constants.KEY_COLLECTOR_COMPANY,et_add_col_details_working_company.getText().toString());
+//                        preferenceManager.putString(Constants.KEY_COLLECTOR_START_TIME,btn_add_col_details_start_time.getText().toString());
+//                        preferenceManager.putString(Constants.KEY_COLLECTOR_END_TIME,btn_add_col_details_end_time.getText().toString());
+//                        preferenceManager.putString(Constants.KEY_COLLECTOR_AREA,et_add_col_details_working_area.getText().toString());
+//                        preferenceManager.putString(Constants.KEY_COLLECTOR_AVAILABILITY, spn_col_availability.getSelectedItem().toString());
+//                        showToast("Details Exists !");
+//                        onBackPressed();
+//
+//                    }else{
+//                        loading(false);
+//                        showToast("Details Do Not Exist !");
+//                    }
+//                });
+//
+//    }
 
     private Boolean isValidCollectorDetails(){
         if(et_add_col_details_working_company.getText().toString().trim().isEmpty()){
