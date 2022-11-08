@@ -1,5 +1,6 @@
 package com.example.trashcoinapp.activities.inventory;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -7,15 +8,18 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.trashcoinapp.R;
+import com.example.trashcoinapp.activities.chat.Chat;
 import com.example.trashcoinapp.activities.dashboards.WasteCollectorDashboard;
 import com.example.trashcoinapp.adapters.InventoryAdapter;
 import com.example.trashcoinapp.database.DBHelper;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.ArrayList;
 
@@ -67,6 +71,42 @@ public class InventoryActivity extends AppCompatActivity {
                 finish();
             }
         });
+
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation_inventory);
+        bottomNavigationView.setSelectedItemId(R.id.img_collector_inventory);
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()) {
+                    case R.id.img_collector_home:
+                        startActivity(new Intent(getApplicationContext(), WasteCollectorDashboard.class));
+                        overridePendingTransition(0, 0);
+                        finish();
+                        return true;
+//                    case R.id.img_collector_disposers:
+//                        startActivity(new Intent(getApplicationContext(), CollectorsForDisposers.class));
+//                        overridePendingTransition(0, 0);
+//                        finish();
+//                        return true;
+//                    case R.id.img_collector_recyclers:
+//                        startActivity(new Intent(getApplicationContext(), ProductViewActivity.class));
+//                        overridePendingTransition(0, 0);
+//                        finish();
+//                        return true;
+                    case R.id.img_collector_inventory:
+                        return true;
+                    case R.id.img_collector_chat:
+                        startActivity(new Intent(getApplicationContext(), Chat.class));
+                        overridePendingTransition(0, 0);
+                        finish();
+                        return true;
+                }
+
+                return false;
+            }
+        });
+
     }
 
     public void storeDataInArrays(){
