@@ -1,9 +1,11 @@
 package com.example.trashcoinapp.activities.dashboards;
 
+import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
@@ -13,11 +15,15 @@ import android.widget.Toast;
 import com.example.trashcoinapp.R;
 import com.example.trashcoinapp.activities.BaseActivity;
 import com.example.trashcoinapp.activities.addData.CollectorAddData;
+import com.example.trashcoinapp.activities.cart.ProductViewActivity;
+import com.example.trashcoinapp.activities.chat.ChatDisposer;
+import com.example.trashcoinapp.activities.collectors.CollectorsForDisposers;
 import com.example.trashcoinapp.activities.inventory.InventoryActivity;
 import com.example.trashcoinapp.activities.user.LoginSelector;
 import com.example.trashcoinapp.activities.chat.Chat;
 import com.example.trashcoinapp.utilities.Constants;
 import com.example.trashcoinapp.utilities.PreferenceManager;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FieldValue;
@@ -79,6 +85,41 @@ public class WasteCollectorDashboard extends BaseActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), Chat.class);
                 startActivity(intent);
+            }
+        });
+
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation_collector);
+        bottomNavigationView.setSelectedItemId(R.id.img_collector_home);
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()) {
+                    case R.id.img_collector_home:
+                        return true;
+//                    case R.id.img_collector_disposers:
+//                        startActivity(new Intent(getApplicationContext(), CollectorsForDisposers.class));
+//                        overridePendingTransition(0, 0);
+//                        finish();
+//                        return true;
+//                    case R.id.img_collector_recyclers:
+//                        startActivity(new Intent(getApplicationContext(), ProductViewActivity.class));
+//                        overridePendingTransition(0, 0);
+//                        finish();
+//                        return true;
+                    case R.id.img_collector_inventory:
+                        startActivity(new Intent(getApplicationContext(), InventoryActivity.class));
+                        overridePendingTransition(0, 0);
+                        finish();
+                        return true;
+                    case R.id.img_collector_chat:
+                        startActivity(new Intent(getApplicationContext(), Chat.class));
+                        overridePendingTransition(0, 0);
+                        finish();
+                        return true;
+                }
+
+                return false;
             }
         });
 
