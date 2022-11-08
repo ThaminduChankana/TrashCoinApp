@@ -1,13 +1,19 @@
 package com.example.trashcoinapp.activities.users;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
 
+import com.example.trashcoinapp.R;
 import com.example.trashcoinapp.activities.BaseActivity;
+import com.example.trashcoinapp.activities.cart.ProductViewActivity;
+import com.example.trashcoinapp.activities.collectors.CollectorsForDisposers;
+import com.example.trashcoinapp.activities.dashboards.WasteDisposerDashboard;
 import com.example.trashcoinapp.activities.messaging.DisposerMessagingActivity;
 import com.example.trashcoinapp.activities.messaging.MessagingActivity;
 import com.example.trashcoinapp.adapters.UsersAdapter;
@@ -16,6 +22,7 @@ import com.example.trashcoinapp.listeners.UserListener;
 import com.example.trashcoinapp.models.User;
 import com.example.trashcoinapp.utilities.Constants;
 import com.example.trashcoinapp.utilities.PreferenceManager;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 
@@ -39,6 +46,41 @@ public class DisposerUsersActivity extends BaseActivity implements UserListener 
         preferenceManager = new PreferenceManager(getApplicationContext());
         setListeners();
         getUsers();
+
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation_disposer);
+        bottomNavigationView.setSelectedItemId(R.id.img_collector_chat);
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()) {
+                    case R.id.img_disposer_home:
+                        startActivity(new Intent(getApplicationContext(), WasteDisposerDashboard.class));
+                        overridePendingTransition(0, 0);
+                        finish();
+                        return true;
+                    case R.id.img_view_collectors:
+                        startActivity(new Intent(getApplicationContext(), CollectorsForDisposers.class));
+                        overridePendingTransition(0, 0);
+                        finish();
+                        return true;
+                    case R.id.img_shopping_cart:
+                        startActivity(new Intent(getApplicationContext(), ProductViewActivity.class));
+                        overridePendingTransition(0, 0);
+                        finish();
+                        return true;
+//                    case R.id.img_waste_in_hand:
+//                        startActivity(new Intent(getApplicationContext(), WasteDisposerDashboard.class));
+//                        overridePendingTransition(0, 0);
+//                        finish();
+//                        return true;
+                    case R.id.img_collector_chat:
+                        return true;
+                }
+
+                return false;
+            }
+        });
 
     }
 
