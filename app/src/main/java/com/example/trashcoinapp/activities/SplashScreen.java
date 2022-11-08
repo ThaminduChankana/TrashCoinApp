@@ -56,8 +56,6 @@ public class SplashScreen extends AppCompatActivity {
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-
-
                 try{
                     if(role.equals("Waste Collector")){
                         startActivity(new Intent(SplashScreen.this, WasteCollectorDashboard.class));
@@ -75,10 +73,6 @@ public class SplashScreen extends AppCompatActivity {
                     startActivity(new Intent(SplashScreen.this, IntroActivity.class));
                     finish();
                 }
-
-
-
-
             }
         },4000);
 
