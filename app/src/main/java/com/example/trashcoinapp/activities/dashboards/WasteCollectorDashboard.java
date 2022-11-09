@@ -61,7 +61,6 @@ public class WasteCollectorDashboard extends BaseActivity {
             @Override
             public void onClick(View v) {
                 setData();
-//
             }
         });
 
@@ -174,7 +173,7 @@ public class WasteCollectorDashboard extends BaseActivity {
                 .addOnCompleteListener(task -> {
                     if(task.isSuccessful() && task.getResult() != null && task.getResult().getDocuments().size()>0){
                         DocumentSnapshot documentSnapshot = task.getResult().getDocuments().get(0);
-                        showToast("Details Exists !");
+                        showToast("Details Already Exists !");
                         return;
                         //onBackPressed();
 
