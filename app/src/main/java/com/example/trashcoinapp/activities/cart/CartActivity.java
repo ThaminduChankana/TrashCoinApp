@@ -96,7 +96,9 @@ public class CartActivity extends AppCompatActivity {
 
         preference = new PreferenceManager(getApplicationContext());
         userId = preference.getString(Constants.KEY_USER_ID);
-        btn_checkout = findViewById(R.id.btn_checkout);
+        btn_checkout = (Button)findViewById(R.id.btn_checkout);
+
+
 
         cartRV = findViewById(R.id.idRVCartItems);
         loadingPB = findViewById(R.id.idProgressBar);
@@ -142,9 +144,14 @@ public class CartActivity extends AppCompatActivity {
                                 withDiscount = withDiscount + Float.valueOf(c.getTotalPrice());
                                 System.out.println(c.getProductName());
                                 productList = productList + c.getProductName()+ " : " + String.valueOf(c.getQuantity())+" , ";
+
                             }
                             totalPrice.setText(String.valueOf(withoutDiscount));
                             cartRVAdapter.notifyDataSetChanged();
+                            System.out.println(withoutDiscount);
+                            if(withoutDiscount<=0.0){
+                                btn_checkout.setClickable(false);
+                            }
                         } else {
                             loadingPB.setVisibility(View.GONE);
                             Toast.makeText(CartActivity.this, "No data found in Database", Toast.LENGTH_SHORT).show();
