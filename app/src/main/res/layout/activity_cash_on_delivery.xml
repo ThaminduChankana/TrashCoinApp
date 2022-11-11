@@ -27,7 +27,7 @@
         android:layout_marginTop="83dp"
         android:layout_marginBottom="64dp"
         android:text="@string/tv_cash_delivery"
-        android:textColor="@color/heading"
+        android:textColor="@android:color/holo_green_light"
         android:textSize="25sp"
         app:layout_constraintBottom_toTopOf="@+id/et_checkout_name"
         app:layout_constraintStart_toStartOf="parent"

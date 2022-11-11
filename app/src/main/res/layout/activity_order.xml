@@ -28,17 +28,18 @@
         android:layout_marginTop="10dp"
         android:gravity="center"
         android:text="@string/tv_my_orders"
-        android:textColor="@color/heading"
+        android:textColor="@android:color/holo_green_light"
         android:textSize="30sp"
         android:textStyle="italic" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/idRVOrders"
-        android:layout_width="373dp"
-        android:layout_height="664dp"
+        android:layout_width="match_parent"
+        android:layout_height="661dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="0dp" />
+        android:layout_marginStart="0dp"
+        android:layout_marginBottom="3dp" />
 
     <ProgressBar
         android:id="@+id/idProgressBar"
