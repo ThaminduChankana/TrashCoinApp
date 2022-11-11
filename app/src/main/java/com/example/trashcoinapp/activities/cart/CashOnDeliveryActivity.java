@@ -18,6 +18,8 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.trashcoinapp.R;
+import com.example.trashcoinapp.activities.chat.ChatDisposer;
+import com.example.trashcoinapp.activities.collectors.CollectorsForDisposers;
 import com.example.trashcoinapp.activities.dashboards.WasteDisposerDashboard;
 import com.example.trashcoinapp.models.Cart;
 import com.example.trashcoinapp.models.Order;
@@ -99,22 +101,24 @@ public class CashOnDeliveryActivity extends AppCompatActivity {
                     case R.id.img_disposer_home:
                         startActivity(new Intent(getApplicationContext(), WasteDisposerDashboard.class));
                         overridePendingTransition(0, 0);
+                        finish();
                         return true;
                     case R.id.img_view_collectors:
-                        startActivity(new Intent(getApplicationContext(), WasteDisposerDashboard.class));
+                        startActivity(new Intent(getApplicationContext(), CollectorsForDisposers.class));
                         overridePendingTransition(0, 0);
+                        finish();
                         return true;
                     case R.id.img_shopping_cart:
-                        startActivity(new Intent(getApplicationContext(), ProductViewActivity.class));
-                        overridePendingTransition(0, 0);
                         return true;
-                    case R.id.img_waste_in_hand:
-                        startActivity(new Intent(getApplicationContext(), WasteDisposerDashboard.class));
-                        overridePendingTransition(0, 0);
-                        return true;
+//                    case R.id.img_waste_in_hand:
+//                        startActivity(new Intent(getApplicationContext(), WasteDisposerDashboard.class));
+//                        overridePendingTransition(0, 0);
+//                        finish();
+//                        return true;
                     case R.id.img_collector_chat:
-                        startActivity(new Intent(getApplicationContext(), WasteDisposerDashboard.class));
+                        startActivity(new Intent(getApplicationContext(), ChatDisposer.class));
                         overridePendingTransition(0, 0);
+                        finish();
                         return true;
                 }
 
