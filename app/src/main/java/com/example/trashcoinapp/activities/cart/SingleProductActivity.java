@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
 import android.view.WindowManager;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -31,6 +32,7 @@ public class SingleProductActivity extends AppCompatActivity {
     private Bundle bundle;
     ImageView productImage;
     Context context;
+    ImageView img_checkout_back;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -85,6 +87,7 @@ public class SingleProductActivity extends AppCompatActivity {
         productPrice = findViewById(R.id.tv_product_price);
         productCategory = findViewById(R.id.tv_product_category);
         productImage = findViewById(R.id.img_product_view);
+        img_checkout_back = findViewById(R.id.img_checkout_back);
 
         productTitle.setText(bundle.getString("title"));
        productDescription.setText(bundle.getString("description"));
@@ -94,6 +97,15 @@ public class SingleProductActivity extends AppCompatActivity {
         Picasso.get()
                 .load(bundle.getString("picUrl"))
                 .into(productImage);
+
+        img_checkout_back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(SingleProductActivity.this, ProductViewActivity.class);
+                startActivity(intent);
+            }
+        });
+
 
 
     }
