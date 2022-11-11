@@ -39,6 +39,7 @@
         android:layout_marginBottom="4dp"
         android:ellipsize="end"
         android:maxLines="1"
+        android:textStyle="bold"
         android:textColor="@color/black"
         android:textSize="@dimen/_13ssp"
         app:layout_constraintBottom_toTopOf="@+id/item_container_view_supporter"

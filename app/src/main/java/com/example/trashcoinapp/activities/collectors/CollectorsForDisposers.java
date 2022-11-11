@@ -1,4 +1,4 @@
-package com.example.trashcoinapp.activities.users;
+package com.example.trashcoinapp.activities.collectors;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -10,15 +10,15 @@ import android.view.View;
 import android.view.WindowManager;
 
 import com.example.trashcoinapp.R;
-import com.example.trashcoinapp.activities.BaseActivity;
 import com.example.trashcoinapp.activities.cart.ProductViewActivity;
-import com.example.trashcoinapp.activities.collectors.CollectorsForDisposers;
+import com.example.trashcoinapp.activities.chat.ChatDisposer;
 import com.example.trashcoinapp.activities.dashboards.WasteDisposerDashboard;
-import com.example.trashcoinapp.activities.messaging.DisposerMessagingActivity;
-import com.example.trashcoinapp.activities.messaging.MessagingActivity;
+import com.example.trashcoinapp.activities.inventory.InventoryActivity;
+import com.example.trashcoinapp.adapters.CollectorsAdapter;
 import com.example.trashcoinapp.adapters.UsersAdapter;
-import com.example.trashcoinapp.databinding.ActivityDisposerUsersBinding;
-import com.example.trashcoinapp.listeners.UserListener;
+import com.example.trashcoinapp.databinding.ActivityCollectorsForDisposersBinding;
+import com.example.trashcoinapp.databinding.ActivityUsersBinding;
+import com.example.trashcoinapp.models.Collectors;
 import com.example.trashcoinapp.models.User;
 import com.example.trashcoinapp.utilities.Constants;
 import com.example.trashcoinapp.utilities.PreferenceManager;
@@ -29,26 +29,25 @@ import com.google.firebase.firestore.QueryDocumentSnapshot;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DisposerUsersActivity extends BaseActivity implements UserListener {
+public class CollectorsForDisposers extends AppCompatActivity {
 
-    private ActivityDisposerUsersBinding binding;
+    private ActivityCollectorsForDisposersBinding binding;
     private PreferenceManager preferenceManager;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getSupportActionBar().hide();
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        binding = ActivityDisposerUsersBinding.inflate(getLayoutInflater());
+        binding =  ActivityCollectorsForDisposersBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
         preferenceManager = new PreferenceManager(getApplicationContext());
         setListeners();
-        getUsers();
+        getCollectors();
 
-        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation_disposer);
-        bottomNavigationView.setSelectedItemId(R.id.img_collector_chat);
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation_collectors_for_disposers);
+        bottomNavigationView.setSelectedItemId(R.id.img_view_collectors);
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
 
             @Override
@@ -60,9 +59,6 @@ public class DisposerUsersActivity extends BaseActivity implements UserListener 
                         finish();
                         return true;
                     case R.id.img_view_collectors:
-                        startActivity(new Intent(getApplicationContext(), CollectorsForDisposers.class));
-                        overridePendingTransition(0, 0);
-                        finish();
                         return true;
                     case R.id.img_shopping_cart:
                         startActivity(new Intent(getApplicationContext(), ProductViewActivity.class));
@@ -75,6 +71,9 @@ public class DisposerUsersActivity extends BaseActivity implements UserListener 
 //                        finish();
 //                        return true;
                     case R.id.img_collector_chat:
+                        startActivity(new Intent(getApplicationContext(), ChatDisposer.class));
+                        overridePendingTransition(0, 0);
+                        finish();
                         return true;
                 }
 
@@ -82,39 +81,45 @@ public class DisposerUsersActivity extends BaseActivity implements UserListener 
             }
         });
 
+
     }
 
     private void setListeners(){
-        binding.imgDisposerUsersBack.setOnClickListener((v -> onBackPressed()));
+        binding.imgCollectorsForDisposersBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), WasteDisposerDashboard.class);
+                startActivity(intent);
+                finish();
+            }
+        });
     }
-
-    private void getUsers(){
+    private void getCollectors(){
         loading(true);
         FirebaseFirestore database = FirebaseFirestore.getInstance();
-        database.collection(Constants.KEY_COLLECTION_USERS)
+        database.collection(Constants.KEY_COLLECTION_COLLECTOR_DETAILS)
                 .get()
                 .addOnCompleteListener(task->{
                     loading(false);
-                    String currentUserId = preferenceManager.getString(Constants.KEY_USER_ID);
-
                     if(task.isSuccessful() && task.getResult() != null){
-                        List<User> users = new ArrayList<>();
+                        List<Collectors> collectors = new ArrayList<>();
                         for(QueryDocumentSnapshot queryDocumentSnapshot : task.getResult()){
-                            if(currentUserId.equals(queryDocumentSnapshot.getId())){
-                                continue;
-                            }
-                            User user = new User();
-                            user.fullName = queryDocumentSnapshot.getString(Constants.KEY_FULL_NAME);
-                            user.category = queryDocumentSnapshot.getString(Constants.KEY_USER_TYPE);
-                            user.address = queryDocumentSnapshot.getString(Constants.KEY_ADDRESS);
-                            user.token = queryDocumentSnapshot.getString(Constants.KEY_FCM_TOKEN);
-                            user.id = queryDocumentSnapshot.getId();
-                            users.add(user);
+                            Collectors collector = new Collectors();
+                            collector.collectorName = queryDocumentSnapshot.getString(Constants.KEY_COLLECTOR_NAME);
+                            collector.collectorTelephone = queryDocumentSnapshot.getString(Constants.KEY_COLLECTOR_PHONE);
+                            collector.collectorCompany = queryDocumentSnapshot.getString(Constants.KEY_COLLECTOR_COMPANY);
+                            collector.startTime = queryDocumentSnapshot.getString(Constants.KEY_COLLECTOR_START_TIME);
+                            collector.endTime = queryDocumentSnapshot.getString(Constants.KEY_COLLECTOR_END_TIME);
+                            collector.workingArea = queryDocumentSnapshot.getString(Constants.KEY_COLLECTOR_AREA);
+                            collector.availability = queryDocumentSnapshot.getString(Constants.KEY_COLLECTOR_AVAILABILITY);
+                            collectors.add(collector);
                         }
-                        if(users.size()>0){
-                            UsersAdapter usersAdapter = new UsersAdapter(users, this);
-                            binding.disposerUsersRecyclerView.setAdapter(usersAdapter);
-                            binding.disposerUsersRecyclerView.setVisibility(View.VISIBLE);
+                        if(collectors.size()>0){
+                            CollectorsAdapter collectorsAdapter = new CollectorsAdapter(collectors);
+                            binding.rvCollectorsForDisposersRecyclerView.setAdapter(collectorsAdapter);
+                            binding.rvCollectorsForDisposersRecyclerView.setAdapter(collectorsAdapter);
+                            binding.rvCollectorsForDisposersRecyclerView.setVisibility(View.VISIBLE);
+
                         } else {
                             showErrorMessage();
                         }
@@ -129,23 +134,15 @@ public class DisposerUsersActivity extends BaseActivity implements UserListener 
     }
 
     private void showErrorMessage(){
-        binding.disposerUsersTxtErrorMessage.setText(String.format("%s", "No Users Available"));
-        binding.disposerUsersTxtErrorMessage.setVisibility(View.VISIBLE);
+        binding.collectorsForDisposersTxtErrorMessage.setText(String.format("%s", "No Users Available"));
+        binding.collectorsForDisposersTxtErrorMessage.setVisibility(View.VISIBLE);
     }
 
     private void loading(Boolean isLoading){
         if(isLoading){
-            binding.prgDisposerUsers.setVisibility(View.VISIBLE);
+            binding.prgCollectorsForDisposers.setVisibility(View.VISIBLE);
         }else{
-            binding.prgDisposerUsers.setVisibility(View.INVISIBLE);
+            binding.prgCollectorsForDisposers.setVisibility(View.INVISIBLE);
         }
-    }
-
-    @Override
-    public void onUserClicked(User user) {
-        Intent intent = new Intent(getApplicationContext(), DisposerMessagingActivity.class);
-        intent.putExtra(Constants.KEY_USER, user);
-        startActivity(intent);
-        finish();
     }
 }
