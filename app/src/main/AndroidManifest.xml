@@ -16,11 +16,23 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TrashCoinApp"
         tools:targetApi="31">
+
+        <activity
+            android:name=".activities.recyclerProduct.RecyclerProductView"
+            android:exported="true"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".activities.recyclerProduct.AddProduct"
+            android:exported="true"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".activities.recyclerProduct.EditProduct"
+            android:exported="true"
+            android:windowSoftInputMode="adjustResize" />
         <activity
             android:name=".activities.cart.SingleProductActivity"
             android:exported="true"
             android:windowSoftInputMode="adjustResize" />
-
         <activity
             android:name=".activities.cart.CartActivity"
             android:exported="true"

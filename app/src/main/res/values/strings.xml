@@ -91,7 +91,26 @@
     <string name="tv_chat_recycler">Recycler Chat</string>
     <string name="tv_availability">Online</string>
 
-
-
+    <string name="tv_add_products">Add Products</string>
+    <string name="et_product_name">Product Name</string>
+    <string name="et_product_price">Product Price</string>
+    <string name="et_products_description">Product Description</string>
+    <string name="btn_add_product">Add Product</string>
+    <string name="et_product_Category">Product Category</string>
+    <string name="et_product_Quantity">Product Quantity</string>
+    <string name="et_product_Discount_Price">Product Discount Price</string>
+    <string name="et_product_Discount_Note">Product Discount Note</string>
+    <string name="tv_waste_recycler_dashboard">Waste Recycler Dashboard</string>
+    <string name="tv_recycler_product_dashboard">Product Management</string>
+    <string name="tv_recycler_chat_dashboard">Recycler Chat</string>
+    <string name="tv_edit_products">Edit Products</string>
+    <string name="tv_recycler_info_dashboard">Recycler Info</string>
+    <string name="btn_edit_product">Submit</string>
+    <string name="btm_nav_recycler_dashboard">Home</string>
+    <string name="btm_nav_recycler_info">Info</string>
+    <string name="btm_nav_recycler_product">Product</string>
+    <string name="tv_products_recycler">System Product</string>
+    <string name="btn_products_edit_recycler">Edit</string>
+    <string name="btn_products_delete_recycler">Delete</string>
 
 </resources>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+        <item android:id="@+id/img_recycler_home"
+            android:title="@string/btm_nav_recycler_dashboard"
+            android:icon="@drawable/ic_baseline_dashboard_24"/>
+
+        <item android:id="@+id/img_view_collectors_of_recycler"
+            android:title="@string/btm_nav_view_collectors"
+            android:icon="@drawable/ic_view_collectors"/>
+
+        <item android:id="@+id/img_recycler_info"
+            android:title="@string/btm_nav_recycler_info"
+            android:icon="@drawable/ic_baseline_info_24"
+            />
+
+        <item android:id="@+id/img_product_management"
+            android:title="@string/btm_nav_recycler_product"
+            android:icon="@drawable/ic_baseline_assignment_24"
+            />
+
+        <item android:id="@+id/img_recycler_chat"
+            android:title="@string/btm_nav_chat"
+            android:icon="@drawable/ic_chat"
+            />
+
+    </menu>
