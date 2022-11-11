@@ -57,6 +57,8 @@ public class SingleProductActivity extends AppCompatActivity {
                         finish();
                         return true;
                     case R.id.img_shopping_cart:
+                        startActivity(new Intent(getApplicationContext(), ProductViewActivity.class));
+                        overridePendingTransition(0, 0);
                         return true;
 //                    case R.id.img_waste_in_hand:
 //                        startActivity(new Intent(getApplicationContext(), WasteDisposerDashboard.class));
