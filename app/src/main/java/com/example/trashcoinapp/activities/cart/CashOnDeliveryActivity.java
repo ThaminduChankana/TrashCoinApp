@@ -55,6 +55,7 @@ public class CashOnDeliveryActivity extends AppCompatActivity {
     String orderNum;
     PreferenceManager preference;
     ImageView img_cash_on_delivery_back;
+    String fixed_name, fixed_phone, fixed_address;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,6 +66,9 @@ public class CashOnDeliveryActivity extends AppCompatActivity {
 
         preference= new PreferenceManager(getApplicationContext());
         userId = preference.getString(Constants.KEY_USER_ID);
+        fixed_name = preference.getString(Constants.KEY_FULL_NAME);
+        fixed_phone = preference.getString(Constants.KEY_TELEPHONE);
+        fixed_address = preference.getString(Constants.KEY_ADDRESS);
         bundle = getIntent().getExtras();
         productPrice =bundle.getString("price");
         productList = bundle.getString("productList");
@@ -75,10 +79,16 @@ public class CashOnDeliveryActivity extends AppCompatActivity {
         orderNo = random.nextInt(100000000);
         orderNum = "ref"+orderNo;
 
+
+
         db = FirebaseFirestore.getInstance();
         name = findViewById(R.id.et_checkout_name);
         contact = findViewById(R.id.et_checkout_contact);
         address = findViewById(R.id.et_checkout_address);
+
+        name.setText(fixed_name);
+        contact.setText(fixed_phone);
+        address.setText(fixed_address);
         btn_proceed = findViewById(R.id.btn_proceed);
 
         img_cash_on_delivery_back.setOnClickListener(new View.OnClickListener() {
