@@ -1,7 +1,6 @@
 package com.example.trashcoinapp.activities.dashboards;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
 import android.content.Intent;
@@ -14,9 +13,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.trashcoinapp.R;
-import com.example.trashcoinapp.activities.LoginSelector;
+import com.example.trashcoinapp.activities.collectors.CollectorsForDisposers;
+import com.example.trashcoinapp.activities.user.LoginSelector;
 import com.example.trashcoinapp.activities.cart.ProductViewActivity;
-import com.example.trashcoinapp.activities.chat.Chat;
 import com.example.trashcoinapp.activities.chat.ChatDisposer;
 import com.example.trashcoinapp.utilities.Constants;
 import com.example.trashcoinapp.utilities.PreferenceManager;
@@ -35,6 +34,7 @@ public class WasteDisposerDashboard extends BaseActivity {
     private PreferenceManager preferenceManager;
     private CardView cv_wd_db_shop;
     private CardView cv_wd_db_chat;
+    private CardView cv_wd_db_collector;
     private TextView tv_waste_disposer_dashboard;
     Button logout;
 
@@ -49,6 +49,8 @@ public class WasteDisposerDashboard extends BaseActivity {
         tv_waste_disposer_dashboard=findViewById(R.id.tv_waste_disposer_dashboard);
         cv_wd_db_shop = findViewById(R.id.cv_wd_db_shop);
         cv_wd_db_chat = findViewById(R.id.cv_wd_db_chat);
+        cv_wd_db_chat = findViewById(R.id.cv_wd_db_chat);
+        cv_wd_db_collector = findViewById(R.id.cv_wd_db_collector);
         preferenceManager = new PreferenceManager(getApplicationContext());
 
         loadUserDetails();
@@ -66,6 +68,7 @@ public class WasteDisposerDashboard extends BaseActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), ProductViewActivity.class);
                 startActivity(intent);
+                finish();
             }
         });
 
@@ -74,6 +77,16 @@ public class WasteDisposerDashboard extends BaseActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), ChatDisposer.class);
                 startActivity(intent);
+                finish();
+            }
+        });
+
+        cv_wd_db_collector.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), CollectorsForDisposers.class);
+                startActivity(intent);
+                finish();
             }
         });
 
@@ -88,20 +101,24 @@ public class WasteDisposerDashboard extends BaseActivity {
                     case R.id.img_disposer_home:
                         return true;
                     case R.id.img_view_collectors:
-                        startActivity(new Intent(getApplicationContext(), WasteDisposerDashboard.class));
+                        startActivity(new Intent(getApplicationContext(), CollectorsForDisposers.class));
                         overridePendingTransition(0, 0);
+                        finish();
                         return true;
                     case R.id.img_shopping_cart:
                         startActivity(new Intent(getApplicationContext(), ProductViewActivity.class));
                         overridePendingTransition(0, 0);
+                        finish();
                         return true;
-                    case R.id.img_waste_in_hand:
-                        startActivity(new Intent(getApplicationContext(), WasteDisposerDashboard.class));
-                        overridePendingTransition(0, 0);
-                        return true;
+//                    case R.id.img_waste_in_hand:
+//                        startActivity(new Intent(getApplicationContext(), WasteDisposerDashboard.class));
+//                        overridePendingTransition(0, 0);
+//                        finish();
+//                        return true;
                     case R.id.img_collector_chat:
-                        startActivity(new Intent(getApplicationContext(), WasteDisposerDashboard.class));
+                        startActivity(new Intent(getApplicationContext(), ChatDisposer.class));
                         overridePendingTransition(0, 0);
+                        finish();
                         return true;
                 }
 
@@ -119,6 +136,7 @@ public class WasteDisposerDashboard extends BaseActivity {
     }
 
     private void updateToken(String token){
+        preferenceManager.putString(Constants.KEY_FCM_TOKEN,token);
         FirebaseFirestore database = FirebaseFirestore.getInstance();
         DocumentReference documentReference = database.collection(Constants.KEY_COLLECTION_USERS).document(
                 preferenceManager.getString(Constants.KEY_USER_ID)

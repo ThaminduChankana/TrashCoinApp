@@ -30,6 +30,22 @@
             android:exported="true"
             android:windowSoftInputMode="adjustResize" />
         <activity
+            android:name=".activities.collectors.CollectorsForRecyclers"
+            android:exported="true"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".activities.collectors.CollectorsForDisposers"
+            android:exported="true"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".activities.addData.CollectorAddData"
+            android:exported="true"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".activities.inventory.InventoryActivity"
+            android:exported="true"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
             android:name=".activities.cart.SingleProductActivity"
             android:exported="true"
             android:windowSoftInputMode="adjustResize" />
@@ -86,11 +102,11 @@
             android:exported="true"
             android:windowSoftInputMode="adjustResize" />
         <activity
-            android:name=".activities.EditInventory"
+            android:name=".activities.inventory.EditInventory"
             android:exported="true"
             android:windowSoftInputMode="adjustResize" />
         <activity
-            android:name=".activities.AddInventory"
+            android:name=".activities.inventory.AddInventory"
             android:exported="true"
             android:windowSoftInputMode="adjustResize" />
         <activity
@@ -110,11 +126,11 @@
             android:exported="true"
             android:windowSoftInputMode="adjustResize" />
         <activity
-            android:name=".activities.LoginSelector"
+            android:name=".activities.user.LoginSelector"
             android:exported="true"
             android:windowSoftInputMode="adjustResize" />
         <activity
-            android:name=".activities.Register"
+            android:name=".activities.user.Register"
             android:exported="true"
             android:windowSoftInputMode="adjustResize" />
         <activity
