@@ -34,7 +34,7 @@ import java.util.List;
 
 public class ProductViewActivity extends AppCompatActivity {
 
-    ImageView img_shopping_cart;
+    ImageView img_shopping_cart, img_order;
     static Context context;
     private RecyclerView productRV;
     private ArrayList<Product> productsArrayList;
@@ -50,6 +50,7 @@ public class ProductViewActivity extends AppCompatActivity {
         setContentView(R.layout.activity_product_view);
 
         img_shopping_cart = findViewById(R.id.img_shopping_cart);
+        img_order = findViewById(R.id.img_order);
         img_shopping_cart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -57,6 +58,15 @@ public class ProductViewActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        img_order.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(ProductViewActivity.this, OrderActivity.class);
+                startActivity(intent);
+            }
+        });
+
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation_disposer);
         bottomNavigationView.setSelectedItemId(R.id.img_shopping_cart);

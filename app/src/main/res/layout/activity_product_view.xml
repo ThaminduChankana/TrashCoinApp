@@ -11,7 +11,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="62dp"
+        android:layout_marginStart="45dp"
         android:layout_marginTop="14dp"
         android:gravity="center"
         android:text="@string/tv_shopping_products"
@@ -25,8 +25,8 @@
         android:layout_height="51dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="23dp"
-        android:layout_marginEnd="38dp"
+        android:layout_marginTop="21dp"
+        android:layout_marginEnd="21dp"
         app:srcCompat="@drawable/img_shop" />
 
     <androidx.recyclerview.widget.RecyclerView
@@ -50,9 +50,14 @@
     <FrameLayout
         android:id="@+id/btm_nav_disposer_container"
         android:layout_width="match_parent"
-        android:layout_height="670dp"
+        android:layout_height="581dp"
         android:layout_above="@id/bottom_navigation_disposer"
-        android:layout_marginBottom="5dp" />
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="89dp"
+        android:layout_marginBottom="5dp">
+
+    </FrameLayout>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation_disposer"
@@ -64,6 +69,15 @@
         app:itemTextColor="@color/white"
         app:menu="@menu/bottom_nav_disposer_menu" />
 
+    <ImageView
+        android:id="@+id/img_order"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="89dp"
+        app:srcCompat="@drawable/ic_baseline_order" />
 
 
 </RelativeLayout>
