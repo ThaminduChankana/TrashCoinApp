@@ -70,7 +70,7 @@ public class OrderActivity extends AppCompatActivity {
         img_order_back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(OrderActivity.this, CashOnDeliveryActivity.class);
+                Intent intent = new Intent(OrderActivity.this, ProductViewActivity.class);
                 startActivity(intent);
             }
         });

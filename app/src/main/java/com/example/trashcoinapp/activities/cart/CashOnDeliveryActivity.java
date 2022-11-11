@@ -146,14 +146,12 @@ public class CashOnDeliveryActivity extends AppCompatActivity {
                 order_address = address.getText().toString();
                 if (TextUtils.isEmpty( order_name)) {
                     name.setError("Name is required");
-                }
-                if (TextUtils.isEmpty(contactNo)) {
+                }else if (TextUtils.isEmpty(contactNo)) {
                     contact.setError("Contact Number is required");
-                }
-                if (TextUtils.isEmpty(order_address)) {
+                }else if (TextUtils.isEmpty(order_address)) {
                     address.setError("Address is required");
-                }
-                addDataToFirestore(order_name,contactNo,order_address);
+                }else if (!TextUtils.isEmpty(order_name) && !TextUtils.isEmpty(contactNo) && !TextUtils.isEmpty(order_address))
+                    addDataToFirestore(order_name,contactNo,order_address);
             }
         });
     }
