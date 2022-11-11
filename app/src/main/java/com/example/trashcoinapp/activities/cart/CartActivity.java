@@ -10,6 +10,8 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -40,13 +42,17 @@ public class CartActivity extends AppCompatActivity {
     private PreferenceManager preference;
     String userId;
     private TextView totalPrice;
-    float total;
+    float withoutDiscount;
+    float withDiscount;
+    private Button btn_checkout;
+    String productList = "";
+    ImageView img_cart_back;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cart);
-       getSupportActionBar().hide();
+        getSupportActionBar().hide();
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation_disposer);
@@ -84,11 +90,12 @@ public class CartActivity extends AppCompatActivity {
 
         preference = new PreferenceManager(getApplicationContext());
         userId = preference.getString(Constants.KEY_USER_ID);
+        btn_checkout = findViewById(R.id.btn_checkout);
 
         cartRV = findViewById(R.id.idRVCartItems);
         loadingPB = findViewById(R.id.idProgressBar);
         totalPrice = findViewById(R.id.totalPrice);
-
+        img_cart_back = findViewById(R.id.img_cart_back);
 
         db = FirebaseFirestore.getInstance();
 
@@ -99,6 +106,14 @@ public class CartActivity extends AppCompatActivity {
 
         cartRVAdapter = new CartViewAdapter (cartArrayList, this);
         cartRV.setAdapter(cartRVAdapter);
+
+        img_cart_back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(CartActivity.this, ProductViewActivity.class);
+                startActivity(intent);
+            }
+        });
 
 
 
@@ -117,11 +132,15 @@ public class CartActivity extends AppCompatActivity {
 
                                 Cart c = d.toObject(Cart.class);
                                 cartArrayList.add(c);
-                                total = total+Float.valueOf(c.getTotalPrice());
+                                withoutDiscount= withoutDiscount+Float.valueOf(c.getWithoutTotal());
+                                withDiscount = withDiscount + Float.valueOf(c.getTotalPrice());
+                                System.out.println(c.getProductName());
+                                productList = productList + c.getProductName()+ " : " + String.valueOf(c.getQuantity())+" , ";
                             }
-                            totalPrice.setText(String.valueOf(total));
+                            totalPrice.setText(String.valueOf(withoutDiscount));
                             cartRVAdapter.notifyDataSetChanged();
                         } else {
+                            loadingPB.setVisibility(View.GONE);
                             Toast.makeText(CartActivity.this, "No data found in Database", Toast.LENGTH_SHORT).show();
                         }
                     }
@@ -132,6 +151,21 @@ public class CartActivity extends AppCompatActivity {
                         Toast.makeText(CartActivity.this, "Fail to get the data.", Toast.LENGTH_SHORT).show();
                     }
                 });
+
+
+
+        btn_checkout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(CartActivity.this, CheckoutActivity.class);
+                Bundle bundle = new Bundle();
+                bundle.putString("withDiscount", String.valueOf(withDiscount));
+                bundle.putString("withoutDiscount", String.valueOf(withoutDiscount));
+                bundle.putString("productList", productList);
+                intent.putExtras(bundle);
+                startActivity(intent);
+            }
+        });
 
 
     }

@@ -39,14 +39,15 @@ public class CartViewAdapter  extends RecyclerView.Adapter<CartViewAdapter.ViewH
 
         Cart cart = cartArrayList.get(position);
         holder.productName.setText(cart .getProductName());
-        holder.productPrice.setText(String.valueOf(cart.getTotalPrice()));
+        holder.productPrice.setText(String.valueOf(cart.getWithoutTotal()));
         holder.productQuantity.setText(String.valueOf(cart .getQuantity()));
 
         holder.qtyIncrement.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 FirebaseFirestore.getInstance().collection("Cart").document(cart.getId()).update("quantity",cart.getQuantity()+1);
-                FirebaseFirestore.getInstance().collection("Cart").document(cart.getId()).update("totalPrice",(cart.getQuantity()+1)*cart.getPrice());
+                FirebaseFirestore.getInstance().collection("Cart").document(cart.getId()).update("totalPrice",(cart.getQuantity()+1)*cart.getNewPrice());
+                FirebaseFirestore.getInstance().collection("Cart").document(cart.getId()).update("withoutTotal",(cart.getQuantity()+1)*cart.getPrice());
                 Intent myIntent = new Intent(context,CartActivity.class);
                 context.startActivity(myIntent);
 
@@ -58,7 +59,8 @@ public class CartViewAdapter  extends RecyclerView.Adapter<CartViewAdapter.ViewH
             @Override
             public void onClick(View view) {
                 FirebaseFirestore.getInstance().collection("Cart").document(cart.getId()).update("quantity",cart.getQuantity()-1);
-                FirebaseFirestore.getInstance().collection("Cart").document(cart.getId()).update("totalPrice",(cart.getQuantity()-1)*cart.getPrice());
+                FirebaseFirestore.getInstance().collection("Cart").document(cart.getId()).update("totalPrice",(cart.getQuantity()-1)*cart.getNewPrice());
+                FirebaseFirestore.getInstance().collection("Cart").document(cart.getId()).update("withoutTotal",(cart.getQuantity()-1)*cart.getPrice());
                 Intent myIntent = new Intent(context,CartActivity.class);
                 context.startActivity(myIntent);
 

@@ -106,11 +106,14 @@ public class ProductViewAdapter extends RecyclerView.Adapter<ProductViewAdapter.
     private void addToCart(String productName, float price, float discount) {
         String id = UUID.randomUUID().toString();
         float quantity = 1;
-        float totalPrice = price *1;
+        float newPrice = price - discount;
+        float totalPrice = newPrice *1;
+        float withoutTotal= price *1;
+
 
 
         DocumentReference dbCartItems = db.collection("Cart").document(id);
-        Cart cart = new Cart(userId,id,productName,price,totalPrice,discount,quantity);
+        Cart cart = new Cart(userId,id,productName,price,totalPrice,discount,quantity,withoutTotal,newPrice);
 
         new CountDownTimer(1000, 1000) {
             public void onTick(long millisUntilFinished) {

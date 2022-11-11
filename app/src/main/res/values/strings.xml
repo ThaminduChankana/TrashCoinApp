@@ -100,6 +100,21 @@
     <string name="tv_pickup_date">Pickup Date :-</string>
     <string name="btn_inventory_item_edit">Edit</string>
     <string name="btn_inventory_item_delete">Delete</string>
+    <string name="tv_checkout">Checkout</string>
+    <string name="tv_checkout_total">Total Price</string>
+    <string name="tv_set_price">0</string>
+    <string name="tv_checkout_discount">Discount</string>
+    <string name="tv_total_payable">Total Payable </string>
+    <string name="btn_pay_online">Pay Online</string>
+    <string name="btn_cash_delivery">Cash On Delivery</string>
+    <string name="tv_cash_delivery">Cash On Delivery</string>
+    <string name="btn_proceed">Proceed</string>
+    <string name="et_cash_delivery_name">Name</string>
+    <string name="et_cash_delivery_contact">Contact Number</string>
+    <string name="et_cash_delivery_address">Address</string>
+    <string name="tv_order_number">Order No</string>
+    <string name="btn_pend">Pending</string>
+    <string name="tv_my_orders">My Orders</string>
 
 
 </resources>

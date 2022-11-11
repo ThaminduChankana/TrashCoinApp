@@ -11,11 +11,14 @@ import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 
 import com.example.trashcoinapp.R;
+import com.example.trashcoinapp.utilities.Constants;
+import com.example.trashcoinapp.utilities.PreferenceManager;
 
 public class SplashScreen extends AppCompatActivity {
 
     Animation logoAnim, innoAnim,teamAnim, quoteAnim;
     ImageView logo,innovation,team,quote;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,8 +46,8 @@ public class SplashScreen extends AppCompatActivity {
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                startActivity(new Intent(SplashScreen.this, IntroActivity.class));
-                finish();
+                    startActivity(new Intent(SplashScreen.this, IntroActivity.class));
+                    finish();
             }
         },4000);
 

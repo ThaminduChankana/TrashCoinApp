@@ -6,13 +6,24 @@
     android:layout_height="match_parent"
     tools:context=".activities.cart.CartActivity">
 
+    <ImageView
+        android:id="@+id/img_cart_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_gravity="start"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="10dp"
+        android:contentDescription="@string/todo"
+        android:src="@drawable/img_btn_back" />
+
     <TextView
         android:id="@+id/totalPrice"
         android:layout_width="84dp"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="170dp"
+        android:layout_marginStart="180dp"
         android:layout_marginTop="21dp"
         android:textSize="18sp"
         android:textStyle="bold" />
@@ -71,7 +82,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="35dp"
+        android:layout_marginStart="55dp"
         android:layout_marginTop="14dp"
         android:gravity="center"
         android:text="@string/tv_my_cart"
