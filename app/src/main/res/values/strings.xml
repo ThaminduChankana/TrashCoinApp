@@ -92,9 +92,7 @@
     <string name="tv_chat_disposer">Disposer Chat</string>
     <string name="tv_chat_recycler">Recycler Chat</string>
     <string name="tv_availability">Online</string>
-
-
-
+    <string name="wastetypes" />
 
 
 </resources>

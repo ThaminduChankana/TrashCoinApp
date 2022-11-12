@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activities.WasteDisposerWelcomePage">
+    tools:context=".activities.householdDisposer.WasteDisposerWelcomePage">
 
     <ImageView
         android:id="@+id/imageView2"
@@ -23,7 +23,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="80dp"
         android:hint="title1"
-        android:text="WELCOME TO HOUSEHOLD WASTE DISPOSAL"
+        android:text="WELCOME TO WASTE DISPOSAL MANAGEMENT"
         android:textAlignment="center"
         android:textColor="#2AE131"
         android:textSize="20sp"
@@ -61,6 +61,17 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView6" />
+
+    <ImageView
+        android:id="@+id/btnback"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.087"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/img_btn_back" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

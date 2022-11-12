@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activities.HouserHoldWasteAddPagetwo">
+    tools:context=".activities.householdDisposer.HouserHoldWasteAddPagetwo">
 
     <Button
         android:id="@+id/btn_view"
@@ -20,27 +20,26 @@
         android:textStyle="bold"
         app:cornerRadius="@dimen/_100ssp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/btn_next"
+        app:layout_constraintStart_toEndOf="@+id/btn_submit"
         app:layout_constraintTop_toBottomOf="@+id/edt_address" />
+
 
     <TextView
         android:id="@+id/txt_info"
         android:layout_width="166dp"
         android:layout_height="40dp"
-        android:layout_marginStart="106dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="139dp"
+        android:layout_marginBottom="41dp"
         android:hint="@string/yourinfo"
         android:text="Your Info"
         android:textAlignment="center"
         android:textColor="#4CAF50"
         android:textSize="34sp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/edtm_waste"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
 
     <EditText
         android:id="@+id/edt_Name"
@@ -52,6 +51,7 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Name"
+        android:textColor="#B5ACAC"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -68,6 +68,7 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Phone"
+        android:textColor="#B5ACAC"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
@@ -84,6 +85,7 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Address"
+        android:textColor="#B5ACAC"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
@@ -91,7 +93,7 @@
         app:layout_constraintTop_toBottomOf="@+id/edt_phone" />
 
     <Button
-        android:id="@+id/btn_next"
+        android:id="@+id/btn_submit"
         android:layout_width="152dp"
         android:layout_height="51dp"
         android:layout_marginStart="50dp"
@@ -116,9 +118,51 @@
         android:layout_marginEnd="44dp"
         android:ems="10"
         android:gravity="start|top"
+        android:hint="@string/wastetypes"
         android:inputType="textMultiLine"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_info" />
+        app:layout_constraintTop_toBottomOf="@+id/txt_info"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <ImageView
+        android:id="@+id/btn_back4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="27dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="46dp"
+        app:layout_constraintEnd_toStartOf="@+id/txt_info"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/img_btn_back" />
+
+    <FrameLayout
+        android:id="@+id/btm_nav_disposer_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottom_navigation_disposer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="675dp"
+            android:background="@color/btn_color"
+            app:itemIconTint="@color/white"
+            app:itemTextColor="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:menu="@menu/bottom_nav_disposer_menu" />
+    </FrameLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

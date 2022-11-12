@@ -15,6 +15,7 @@ import com.example.trashcoinapp.R;
 import com.example.trashcoinapp.activities.BaseActivity;
 import com.example.trashcoinapp.activities.LoginSelector;
 import com.example.trashcoinapp.activities.chat.Chat;
+import com.example.trashcoinapp.activities.householdDisposer.WasteDisposerAllView;
 import com.example.trashcoinapp.utilities.Constants;
 import com.example.trashcoinapp.utilities.PreferenceManager;
 import com.google.firebase.firestore.DocumentReference;
@@ -29,6 +30,7 @@ public class WasteCollectorDashboard extends BaseActivity {
     private PreferenceManager preferenceManager;
     private TextView tv_waste_collector_dashboard;
     private CardView cv_wc_db_chat;
+    private CardView cv_wc_db_disposer;
     private Button btn_logout;
 
     @Override
@@ -43,6 +45,7 @@ public class WasteCollectorDashboard extends BaseActivity {
         tv_waste_collector_dashboard=findViewById(R.id.tv_waste_collector_dashboard);
         cv_wc_db_chat = findViewById(R.id.cv_wc_db_chat);
         btn_logout = findViewById(R.id.btn_logout);
+        cv_wc_db_disposer=findViewById(R.id.cv_wc_db_disposer);
         loadUserDetails();
         getToken();
 
@@ -57,6 +60,15 @@ public class WasteCollectorDashboard extends BaseActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), Chat.class);
+                startActivity(intent);
+            }
+        });
+
+
+        cv_wc_db_disposer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), WasteDisposerAllView.class);
                 startActivity(intent);
             }
         });

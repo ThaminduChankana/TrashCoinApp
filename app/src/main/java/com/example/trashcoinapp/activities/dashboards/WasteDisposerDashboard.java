@@ -1,7 +1,6 @@
 package com.example.trashcoinapp.activities.dashboards;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
 import android.content.Intent;
@@ -15,9 +14,8 @@ import android.widget.Toast;
 
 import com.example.trashcoinapp.R;
 import com.example.trashcoinapp.activities.LoginSelector;
-import com.example.trashcoinapp.activities.WasteDisposerWelcomePage;
+import com.example.trashcoinapp.activities.householdDisposer.WasteDisposerWelcomePage;
 import com.example.trashcoinapp.activities.cart.ProductViewActivity;
-import com.example.trashcoinapp.activities.chat.Chat;
 import com.example.trashcoinapp.activities.chat.ChatDisposer;
 import com.example.trashcoinapp.utilities.Constants;
 import com.example.trashcoinapp.utilities.PreferenceManager;
@@ -36,6 +34,7 @@ public class WasteDisposerDashboard extends BaseActivity {
     private PreferenceManager preferenceManager;
     private CardView cv_wd_db_shop;
     private CardView cv_wd_db_chat;
+    private CardView cv_wd_db_waste;
     private TextView tv_waste_disposer_dashboard;
     Button logout;
 
@@ -50,6 +49,7 @@ public class WasteDisposerDashboard extends BaseActivity {
         tv_waste_disposer_dashboard=findViewById(R.id.tv_waste_disposer_dashboard);
         cv_wd_db_shop = findViewById(R.id.cv_wd_db_shop);
         cv_wd_db_chat = findViewById(R.id.cv_wd_db_chat);
+        cv_wd_db_waste=findViewById(R.id.cv_wd_db_waste);
         preferenceManager = new PreferenceManager(getApplicationContext());
 
         loadUserDetails();
@@ -77,6 +77,15 @@ public class WasteDisposerDashboard extends BaseActivity {
                 startActivity(intent);
             }
         });
+
+        cv_wd_db_waste.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(),WasteDisposerWelcomePage.class);
+                startActivity(intent);
+            }
+        });
+
 
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation_disposer);
