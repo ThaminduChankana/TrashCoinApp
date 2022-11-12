@@ -30,7 +30,25 @@
         android:layout_marginEnd="25dp"
         android:backgroundTint="@color/btn_color"
         android:text="@string/btn_logout"
-        android:textSize="12sp"
+        android:textSize="11sp"
+        app:cornerRadius="50dp"
+        tools:ignore="DuplicateSpeakableTextCheck" />
+
+    <Button
+        android:id="@+id/btn_calculator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_waste_collector_dashboard"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="25dp"
+        android:layout_toStartOf="@id/btn_logout"
+        android:layout_toEndOf="@id/btn_add_details"
+        android:backgroundTint="@color/btn_color"
+        android:text="@string/btn_col_calculator"
+        android:textSize="10sp"
         app:cornerRadius="50dp"
         tools:ignore="DuplicateSpeakableTextCheck" />
 
@@ -44,7 +62,7 @@
         android:layout_marginTop="25dp"
         android:backgroundTint="@color/btn_color"
         android:text="@string/btn_add_details"
-        android:textSize="12sp"
+        android:textSize="11sp"
         app:cornerRadius="50dp"
         tools:ignore="DuplicateSpeakableTextCheck" />
 
