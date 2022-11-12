@@ -6,19 +6,26 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.example.trashcoinapp.R;
+import com.example.trashcoinapp.activities.chat.Chat;
+import com.example.trashcoinapp.activities.dashboards.WasteCollectorDashboard;
+import com.example.trashcoinapp.activities.inventory.InventoryActivity;
 import com.example.trashcoinapp.adapters.DisposerWasteAllViewForCollectorAdapter;
 import com.example.trashcoinapp.models.HouseholdWaste;
 import com.example.trashcoinapp.utilities.Constants;
 import com.example.trashcoinapp.utilities.PreferenceManager;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QuerySnapshot;
@@ -38,6 +45,8 @@ public class WasteDisposerAllView extends AppCompatActivity {
         ProgressBar loadingPB;
         private PreferenceManager preference;
         String userId;
+        ImageView img_back;
+
 
 
 
@@ -53,6 +62,16 @@ public class WasteDisposerAllView extends AppCompatActivity {
             // initializing our variables.
             wasteRV = findViewById(R.id.idRVWaste2);
             loadingPB = findViewById(R.id.idProgressBar2);
+            img_back = findViewById(R.id.img_back);
+
+            img_back.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    // opening a new activity on button click
+                    Intent i = new Intent(WasteDisposerAllView.this, WasteCollectorDashboard.class);
+                    startActivity(i);
+                }
+            });
 
 
             // initializing our variable for firebase
@@ -118,6 +137,41 @@ public class WasteDisposerAllView extends AppCompatActivity {
                             Toast.makeText(WasteDisposerAllView.this, "Fail to get the data.", Toast.LENGTH_SHORT).show();
                         }
                     });
+
+            BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation_collector);
+            bottomNavigationView.setSelectedItemId(R.id.img_collector_disposers);
+            bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+
+                @Override
+                public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                    switch (item.getItemId()) {
+                        case R.id.img_collector_home:
+                            startActivity(new Intent(getApplicationContext(), WasteCollectorDashboard.class));
+                            overridePendingTransition(0, 0);
+                            finish();
+                            return true;
+                        case R.id.img_collector_disposers:
+                            return true;
+////                    case R.id.img_collector_recyclers:
+////                        startActivity(new Intent(getApplicationContext(), ProductViewActivity.class));
+////                        overridePendingTransition(0, 0);
+////                        finish();
+////                        return true;
+                        case R.id.img_collector_inventory:
+                            startActivity(new Intent(getApplicationContext(), InventoryActivity.class));
+                            overridePendingTransition(0, 0);
+                            finish();
+                            return true;
+                        case R.id.img_collector_chat:
+                            startActivity(new Intent(getApplicationContext(), Chat.class));
+                            overridePendingTransition(0, 0);
+                            finish();
+                            return true;
+                    }
+
+                    return false;
+                }
+            });
 
         }
 }

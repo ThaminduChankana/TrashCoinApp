@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.inventory.InventoryActivity">
+
+    <TextView
+        android:id="@+id/inventory_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:text="@string/tv_inventory"
+        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/heading"
+        android:textSize="40sp" />
+
+    <ImageView
+        android:id="@+id/img_inventory_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/inventory_tv"
+        android:layout_gravity="start"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="15dp"
+        android:contentDescription="@string/todo"
+        android:src="@drawable/img_btn_back" />
+
+    <ImageView
+        android:id="@+id/img_inventory_add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/inventory_tv"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="25dp"
+        android:contentDescription="@string/todo"
+        android:src="@drawable/img_plus_icon" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="@string/tv_add_item"
+        android:layout_below="@id/inventory_tv"
+        android:layout_toStartOf="@id/img_inventory_add"
+        android:layout_marginEnd="5dp"
+        android:textAlignment="center"
+        android:textSize="15sp"
+        android:padding="5dp"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/bottom_navigation_inventory"
+        android:layout_below="@id/img_inventory_add"
+        android:layout_marginTop="10dp">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/inventory_recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="-1dp"
+            android:clipToPadding="false"
+            android:orientation="vertical"
+            android:overScrollMode="never"
+            android:visibility="visible"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+    </ScrollView>
+
+
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation_inventory"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/btn_color"
+        app:itemIconTint="@color/white"
+        app:itemTextColor="@color/white"
+        app:menu="@menu/bottom_nav_collector_menu" />
+
+</RelativeLayout>

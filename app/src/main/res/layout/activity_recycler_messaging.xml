@@ -82,7 +82,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_above="@id/recycler_messaging_send"
-            android:layout_below="@id/txt_availability"
+            android:layout_below="@id/view_sup_msg"
             app:stackFromEnd="true"
             android:layout_marginTop="@dimen/_12sdp"
             android:layout_marginBottom="@dimen/_16sdp"

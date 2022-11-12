@@ -1,28 +1,41 @@
 package com.example.trashcoinapp.activities.messaging;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Toast;
 
 import com.example.trashcoinapp.R;
 import com.example.trashcoinapp.activities.BaseActivity;
+import com.example.trashcoinapp.activities.cart.ProductViewActivity;
+import com.example.trashcoinapp.activities.collectors.CollectorsForDisposers;
+import com.example.trashcoinapp.activities.dashboards.WasteDisposerDashboard;
 import com.example.trashcoinapp.adapters.ChatAdapter;
 import com.example.trashcoinapp.databinding.ActivityDisposerMessagingBinding;
 import com.example.trashcoinapp.databinding.ActivityMessagingBinding;
 import com.example.trashcoinapp.models.ChatMessage;
 import com.example.trashcoinapp.models.User;
+import com.example.trashcoinapp.network.ApiClient;
+import com.example.trashcoinapp.network.ApiService;
 import com.example.trashcoinapp.utilities.Constants;
 import com.example.trashcoinapp.utilities.PreferenceManager;
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.firestore.DocumentChange;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QuerySnapshot;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -32,6 +45,10 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
 import java.util.Objects;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class DisposerMessagingActivity extends BaseActivity {
 
@@ -55,6 +72,43 @@ public class DisposerMessagingActivity extends BaseActivity {
         loadReceiverDetails();
         init();
         listenMessages();
+
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation_disposer);
+        bottomNavigationView.setSelectedItemId(R.id.img_collector_chat);
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()) {
+                    case R.id.img_disposer_home:
+                        startActivity(new Intent(getApplicationContext(), WasteDisposerDashboard.class));
+                        overridePendingTransition(0, 0);
+                        finish();
+                        return true;
+                    case R.id.img_view_collectors:
+                        startActivity(new Intent(getApplicationContext(), CollectorsForDisposers.class));
+                        overridePendingTransition(0, 0);
+                        finish();
+                        return true;
+                    case R.id.img_shopping_cart:
+                        startActivity(new Intent(getApplicationContext(), ProductViewActivity.class));
+                        overridePendingTransition(0, 0);
+                        finish();
+                        return true;
+//                    case R.id.img_waste_in_hand:
+//                        startActivity(new Intent(getApplicationContext(), WasteDisposerDashboard.class));
+//                        overridePendingTransition(0, 0);
+//                        finish();
+//                        return true;
+                    case R.id.img_collector_chat:
+                        return true;
+                }
+
+                return false;
+            }
+        });
+
+
     }
 
     private void init(){
@@ -90,7 +144,68 @@ public class DisposerMessagingActivity extends BaseActivity {
             conversation.put(Constants.KEY_TIMESTAMP, new Date());
             addConversation(conversation);
         }
+        if(!isReceiverAvailable){
+            try{
+                JSONArray tokens = new JSONArray();
+                tokens.put(receiverUser.token);
+
+                JSONObject data = new JSONObject();
+                data.put(Constants.KEY_USER_ID, preferenceManager.getString(Constants.KEY_USER_ID));
+                data.put(Constants.KEY_FULL_NAME, preferenceManager.getString(Constants.KEY_FULL_NAME));
+                data.put(Constants.KEY_FCM_TOKEN, preferenceManager.getString(Constants.KEY_FCM_TOKEN));
+                data.put(Constants.KEY_MESSAGE, binding.disposerMessagingInputMessage.getText().toString());
+
+                JSONObject body = new JSONObject();
+                body.put(Constants.REMOTE_MSG_DATA, data);
+                body.put(Constants.REMOTE_MSG_REGISTRATION_IDS, tokens);
+
+                sendNotification(body.toString());
+
+            } catch (Exception e) {
+                showToast(e.getMessage());
+            }
+        }
         binding.disposerMessagingInputMessage.setText(null);
+    }
+
+    private void showToast(String message){
+        Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
+    }
+
+    public void sendNotification(String messageBody){
+        ApiClient.getClient().create(ApiService.class).sendMessage(
+                Constants.getRemoteMsgHeaders(),
+                messageBody
+        ).enqueue(new Callback<String>() {
+            @Override
+            public void onResponse(@NonNull Call<String> call, @NonNull Response<String> response) {
+                if(response.isSuccessful()){
+                    try {
+                        if(response.body() != null){
+                            JSONObject responseJson = new JSONObject(response.body());
+                            JSONArray results = responseJson.getJSONArray("results");
+                            if(responseJson.getInt("failure")==1){
+                                JSONObject error = (JSONObject) results.get(0);
+                                showToast(error.getString("error"));
+                                return;
+                            }
+                        }
+
+                    } catch (JSONException e){
+                        e.printStackTrace();
+                    }
+                    showToast("Notification Sent Successfully");
+
+                }else{
+                    showToast("Error: "+response.code());
+                }
+            }
+
+            @Override
+            public void onFailure(@NonNull Call<String> call, @NonNull Throwable t) {
+                showToast(t.getMessage());
+            }
+        });
     }
 
     private void listenAvailabilityOfReceiver(){
@@ -107,6 +222,7 @@ public class DisposerMessagingActivity extends BaseActivity {
                     ).intValue();
                     isReceiverAvailable = availability ==1;
                 }
+                receiverUser.token = value.getString(Constants.KEY_FCM_TOKEN);
             }
             if(isReceiverAvailable){
                 binding.txtAvailability.setVisibility(View.VISIBLE);

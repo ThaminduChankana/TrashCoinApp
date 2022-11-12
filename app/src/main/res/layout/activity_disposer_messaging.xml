@@ -83,7 +83,7 @@
             android:layout_height="wrap_content"
             android:layout_above="@id/disposer_messaging_send"
             app:stackFromEnd="true"
-            android:layout_below="@id/txt_availability"
+            android:layout_below="@id/view_sup_msg"
             android:layout_marginTop="@dimen/_12sdp"
             android:layout_marginBottom="@dimen/_16sdp"
             android:clipToPadding="false"
