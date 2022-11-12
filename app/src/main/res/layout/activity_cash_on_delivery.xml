@@ -35,6 +35,7 @@
 
     <EditText
         android:id="@+id/et_checkout_name"
+        android:drawableLeft="@drawable/ic_full_name"
         android:layout_width="300dp"
         android:layout_height="0dp"
         android:layout_marginStart="48dp"
@@ -60,6 +61,7 @@
         android:layout_marginStart="48dp"
         android:layout_marginTop="48dp"
         android:layout_marginEnd="19dp"
+        android:drawableLeft="@drawable/ic_address"
         android:background="@drawable/background_edittext"
         android:drawablePadding="20dp"
         android:ems="10"
@@ -74,6 +76,7 @@
 
     <EditText
         android:id="@+id/et_checkout_contact"
+        android:drawableLeft="@drawable/ic_phone"
         android:layout_width="300dp"
         android:layout_height="0dp"
         android:layout_marginStart="48dp"
@@ -94,30 +97,17 @@
 
     <Button
         android:id="@+id/btn_proceed"
-        android:layout_width="298dp"
+        android:layout_width="300dp"
         android:layout_height="52dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginStart="27dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="19dp"
         android:backgroundTint="@color/btn_color"
         android:text="@string/btn_proceed"
         android:textColor="@color/white"
-        app:cornerRadius="50dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.424"
+        app:layout_constraintHorizontal_bias="0.432"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/et_checkout_address" />
-
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottom_navigation_disposer"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentBottom="true"
-        android:background="@color/btn_color"
-        app:itemIconTint="@color/white"
-        app:itemTextColor="@color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:menu="@menu/bottom_nav_disposer_menu" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

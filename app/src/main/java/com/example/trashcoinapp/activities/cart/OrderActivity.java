@@ -51,22 +51,20 @@ public class OrderActivity extends AppCompatActivity {
         getSupportActionBar().hide();
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
+        db = FirebaseFirestore.getInstance();
         preference = new PreferenceManager(getApplicationContext());
         userId = preference.getString(Constants.KEY_USER_ID);
         orderRV = findViewById(R.id.idRVOrders);
         loadingPB = findViewById(R.id.idProgressBar);
         img_order_back = findViewById(R.id.img_order_back);
 
-        db = FirebaseFirestore.getInstance();
-
         orderArrayList = new ArrayList<>();
         orderRV .setHasFixedSize(true);
         orderRV .setLayoutManager(new LinearLayoutManager(this));
-
         orderViewAdapter = new OrderViewAdapter(orderArrayList, this);
-
         orderRV.setAdapter(orderViewAdapter);
 
+        // back button
         img_order_back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -75,6 +73,7 @@ public class OrderActivity extends AppCompatActivity {
             }
         });
 
+        // bottom navigation
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation_disposer);
         bottomNavigationView.setSelectedItemId(R.id.img_shopping_cart);
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -112,6 +111,7 @@ public class OrderActivity extends AppCompatActivity {
             }
         });
 
+        // get the order details
         db.collection("Order").get()
                 .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
                     @Override

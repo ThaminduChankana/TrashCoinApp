@@ -57,6 +57,7 @@ public class CartActivity extends AppCompatActivity {
         getSupportActionBar().hide();
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
+        // bottom navigation bar
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation_disposer);
         bottomNavigationView.setSelectedItemId(R.id.img_shopping_cart);
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -94,19 +95,14 @@ public class CartActivity extends AppCompatActivity {
             }
         });
 
+        db = FirebaseFirestore.getInstance();
         preference = new PreferenceManager(getApplicationContext());
         userId = preference.getString(Constants.KEY_USER_ID);
         btn_checkout = (Button)findViewById(R.id.btn_checkout);
-
-
-
         cartRV = findViewById(R.id.idRVCartItems);
         loadingPB = findViewById(R.id.idProgressBar);
         totalPrice = findViewById(R.id.totalPrice);
         img_cart_back = findViewById(R.id.img_cart_back);
-
-        db = FirebaseFirestore.getInstance();
-
 
         cartArrayList = new ArrayList<>();
         cartRV.setHasFixedSize(true);
@@ -115,6 +111,7 @@ public class CartActivity extends AppCompatActivity {
         cartRVAdapter = new CartViewAdapter (cartArrayList, this);
         cartRV.setAdapter(cartRVAdapter);
 
+        // back button
         img_cart_back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -123,10 +120,7 @@ public class CartActivity extends AppCompatActivity {
             }
         });
 
-
-
-
-
+        // read the cart items in the database
         db.collection("Cart").whereEqualTo("userID", userId).get()
                 .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
                     @Override
@@ -167,6 +161,7 @@ public class CartActivity extends AppCompatActivity {
 
 
 
+        // checkout button
         btn_checkout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

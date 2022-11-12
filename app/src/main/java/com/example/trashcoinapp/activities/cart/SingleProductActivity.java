@@ -41,6 +41,28 @@ public class SingleProductActivity extends AppCompatActivity {
         getSupportActionBar().hide();
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
+        bundle = getIntent().getExtras();
+        context = getApplicationContext();
+
+        productTitle = findViewById(R.id.tv_product_title);
+        productDescription = findViewById(R.id.tv_product_description);
+        productDiscountNote = findViewById(R.id.tv_product_discount_note);
+        productPrice = findViewById(R.id.tv_product_price);
+        productCategory = findViewById(R.id.tv_product_category);
+        productImage = findViewById(R.id.img_product_view);
+        img_checkout_back = findViewById(R.id.img_checkout_back);
+
+        productTitle.setText(bundle.getString("title"));
+        productDescription.setText(bundle.getString("description"));
+        productDiscountNote.setText(bundle.getString("discountNote"));
+        productPrice .setText(bundle.getString("price"));
+        productCategory .setText(bundle.getString("category"));
+        Picasso.get()
+                .load(bundle.getString("picUrl"))
+                .into(productImage);
+
+
+        // bottom navigation
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation_disposer);
         bottomNavigationView.setSelectedItemId(R.id.img_shopping_cart);
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -78,26 +100,8 @@ public class SingleProductActivity extends AppCompatActivity {
             }
         });
 
-        bundle = getIntent().getExtras();
-        context = getApplicationContext();
 
-        productTitle = findViewById(R.id.tv_product_title);
-       productDescription = findViewById(R.id.tv_product_description);
-       productDiscountNote = findViewById(R.id.tv_product_discount_note);
-        productPrice = findViewById(R.id.tv_product_price);
-        productCategory = findViewById(R.id.tv_product_category);
-        productImage = findViewById(R.id.img_product_view);
-        img_checkout_back = findViewById(R.id.img_checkout_back);
-
-        productTitle.setText(bundle.getString("title"));
-       productDescription.setText(bundle.getString("description"));
-        productDiscountNote.setText(bundle.getString("discountNote"));
-        productPrice .setText(bundle.getString("price"));
-        productCategory .setText(bundle.getString("category"));
-        Picasso.get()
-                .load(bundle.getString("picUrl"))
-                .into(productImage);
-
+        // back button
         img_checkout_back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

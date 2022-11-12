@@ -34,13 +34,13 @@
 
     <Button
         android:id="@+id/btn_pay_online"
-        android:layout_width="350dp"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="204dp"
         android:backgroundTint="@color/btn_color"
         android:text="Cash On Delivery"
         android:textColor="@color/white"
-        app:cornerRadius="50dp"
+
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.473"

@@ -67,6 +67,7 @@ public class ProductViewAdapter extends RecyclerView.Adapter<ProductViewAdapter.
         holder.productDiscountTv.setText(products.getDiscountNote());
         Glide.with(context).load(productArrayList.get(position).getPicURL()).into(holder.imageView);
 
+        // add items to cart
         holder.addToCart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -84,6 +85,7 @@ public class ProductViewAdapter extends RecyclerView.Adapter<ProductViewAdapter.
 
         });
 
+        // pass the one product details as a bundle
         holder.img_info.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -109,8 +111,6 @@ public class ProductViewAdapter extends RecyclerView.Adapter<ProductViewAdapter.
         float newPrice = price - discount;
         float totalPrice = newPrice *1;
         float withoutTotal= price *1;
-
-
 
         DocumentReference dbCartItems = db.collection("Cart").document(id);
         Cart cart = new Cart(userId,id,productName,price,totalPrice,discount,quantity,withoutTotal,newPrice);
@@ -164,21 +164,16 @@ public class ProductViewAdapter extends RecyclerView.Adapter<ProductViewAdapter.
         ImageView imageView, img_info;
         Button addToCart;
 
-
-
-
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
+
+            // set the product details
             productTitleTv = itemView.findViewById(R.id.productTitle);
             productPriceTv = itemView.findViewById(R.id.productPrice);
             productDiscountTv= itemView.findViewById(R.id.productDiscount);
             imageView = itemView.findViewById(R.id.productImage);
             addToCart = itemView.findViewById(R.id.addToCart);
             img_info = itemView.findViewById(R.id.img_info);
-
-
-
-
         }
     }
 }

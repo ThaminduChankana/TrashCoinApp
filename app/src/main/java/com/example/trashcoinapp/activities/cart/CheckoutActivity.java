@@ -40,6 +40,15 @@ public class CheckoutActivity extends AppCompatActivity {
         btn_pay_cash_delivery = findViewById(R.id.btn_pay_online);
         img_checkout_back = findViewById(R.id.img_checkout_back);
 
+        bundle = getIntent().getExtras();
+        float discount  = Float.valueOf(Float.valueOf(bundle.getString("withoutDiscount"))-Float.valueOf(bundle.getString("withDiscount")));
+        tv_total_price.setText("Total Price : "+ bundle.getString("withoutDiscount"));
+        tv_total_discount.setText("Discount : "+ String.valueOf(discount));
+        tv_total_payable.setText("Total Payable : "+bundle.getString("withDiscount"));
+        price = bundle.getString("withDiscount");
+        productList = bundle.getString("productList");
+
+        /// bottom navigation
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation_disposer);
         bottomNavigationView.setSelectedItemId(R.id.img_shopping_cart);
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -77,14 +86,9 @@ public class CheckoutActivity extends AppCompatActivity {
             }
         });
 
-        bundle = getIntent().getExtras();
-        float discount  = Float.valueOf(Float.valueOf(bundle.getString("withoutDiscount"))-Float.valueOf(bundle.getString("withDiscount")));
-        tv_total_price.setText("Total Price : "+ bundle.getString("withoutDiscount"));
-        tv_total_discount.setText("Discount : "+ String.valueOf(discount));
-        tv_total_payable.setText("Total Payable : "+bundle.getString("withDiscount"));
-        price = bundle.getString("withDiscount");
-        productList = bundle.getString("productList");
 
+
+        // back button
         img_checkout_back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -96,6 +100,7 @@ public class CheckoutActivity extends AppCompatActivity {
 
 
 
+        // pass the price details as a bundle
         btn_pay_cash_delivery.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

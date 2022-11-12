@@ -42,6 +42,7 @@ public class CartViewAdapter  extends RecyclerView.Adapter<CartViewAdapter.ViewH
         holder.productPrice.setText(String.valueOf(cart.getWithoutTotal()));
         holder.productQuantity.setText(String.valueOf(cart .getQuantity()));
 
+        // increment the price according to quantity
         holder.qtyIncrement.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -55,6 +56,7 @@ public class CartViewAdapter  extends RecyclerView.Adapter<CartViewAdapter.ViewH
             }
         });
 
+        // decrement the price according to quantity
         holder.qtyDecrement.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -67,6 +69,8 @@ public class CartViewAdapter  extends RecyclerView.Adapter<CartViewAdapter.ViewH
 
             }
         });
+
+        // delete the cart item
         holder.deleteItem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -100,6 +104,7 @@ public class CartViewAdapter  extends RecyclerView.Adapter<CartViewAdapter.ViewH
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
+            // set the cart details
             productName = itemView.findViewById(R.id.TVProductName);
             productPrice = itemView.findViewById(R.id.TVProductPrice);
             productQuantity = itemView.findViewById(R.id.TVProductQuantity);

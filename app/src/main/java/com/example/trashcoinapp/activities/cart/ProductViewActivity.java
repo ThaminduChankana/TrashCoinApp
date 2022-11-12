@@ -49,8 +49,21 @@ public class ProductViewActivity extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_product_view);
 
+
+        db = FirebaseFirestore.getInstance();
+        context = getApplicationContext();
+        productRV = findViewById(R.id.recycledProducts);
+        loadingPB = findViewById(R.id.idProgressBar);
         img_shopping_cart = findViewById(R.id.img_shopping_cart);
         img_order = findViewById(R.id.img_order);
+
+        productsArrayList = new ArrayList<>();
+        productRV .setHasFixedSize(true);
+        productRV .setLayoutManager(new LinearLayoutManager(this));
+        productViewAdapter = new ProductViewAdapter(productsArrayList, this);
+        productRV.setAdapter(productViewAdapter);
+
+        // navigation to cart
         img_shopping_cart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -59,6 +72,7 @@ public class ProductViewActivity extends AppCompatActivity {
             }
         });
 
+        // navigation to orders
         img_order.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -68,6 +82,7 @@ public class ProductViewActivity extends AppCompatActivity {
         });
 
 
+        // bottom navigation
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation_disposer);
         bottomNavigationView.setSelectedItemId(R.id.img_shopping_cart);
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -103,22 +118,8 @@ public class ProductViewActivity extends AppCompatActivity {
             }
         });
 
-        context = getApplicationContext();
 
-        productRV = findViewById(R.id.recycledProducts);
-        loadingPB = findViewById(R.id.idProgressBar);
-
-
-        db = FirebaseFirestore.getInstance();
-
-
-        productsArrayList = new ArrayList<>();
-        productRV .setHasFixedSize(true);
-        productRV .setLayoutManager(new LinearLayoutManager(this));
-
-
-        productViewAdapter = new ProductViewAdapter(productsArrayList, this);
-        productRV.setAdapter(productViewAdapter);
+        // get the products details
         db.collection("Products").get()
                 .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
                     @Override

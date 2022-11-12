@@ -46,7 +46,6 @@ public class CashOnDeliveryActivity extends AppCompatActivity {
     Button btn_proceed;
     private FirebaseFirestore db;
     Bundle bundle;
-
     private int orderNo;
     private float price;
     private String userId, order_name, order_address, productList,contactNo;
@@ -64,24 +63,24 @@ public class CashOnDeliveryActivity extends AppCompatActivity {
         getSupportActionBar().hide();
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
+        db = FirebaseFirestore.getInstance();
         preference= new PreferenceManager(getApplicationContext());
         userId = preference.getString(Constants.KEY_USER_ID);
+        bundle = getIntent().getExtras();
+
         fixed_name = preference.getString(Constants.KEY_FULL_NAME);
         fixed_phone = preference.getString(Constants.KEY_TELEPHONE);
         fixed_address = preference.getString(Constants.KEY_ADDRESS);
-        bundle = getIntent().getExtras();
+
         productPrice =bundle.getString("price");
         productList = bundle.getString("productList");
         price = Float.valueOf(productPrice);
-
         img_cash_on_delivery_back =findViewById(R.id.img_cash_on_delivery_back);
+
         Random random = new Random();
         orderNo = random.nextInt(100000000);
         orderNum = "ref"+orderNo;
 
-
-
-        db = FirebaseFirestore.getInstance();
         name = findViewById(R.id.et_checkout_name);
         contact = findViewById(R.id.et_checkout_contact);
         address = findViewById(R.id.et_checkout_address);
@@ -91,6 +90,7 @@ public class CashOnDeliveryActivity extends AppCompatActivity {
         address.setText(fixed_address);
         btn_proceed = findViewById(R.id.btn_proceed);
 
+        // back button
         img_cash_on_delivery_back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -99,45 +99,7 @@ public class CashOnDeliveryActivity extends AppCompatActivity {
             }
         });
 
-
-
-        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation_disposer);
-        bottomNavigationView.setSelectedItemId(R.id.img_shopping_cart);
-        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                switch (item.getItemId()) {
-                    case R.id.img_disposer_home:
-                        startActivity(new Intent(getApplicationContext(), WasteDisposerDashboard.class));
-                        overridePendingTransition(0, 0);
-                        finish();
-                        return true;
-                    case R.id.img_view_collectors:
-                        startActivity(new Intent(getApplicationContext(), CollectorsForDisposers.class));
-                        overridePendingTransition(0, 0);
-                        finish();
-                        return true;
-                    case R.id.img_shopping_cart:
-                        startActivity(new Intent(getApplicationContext(), ProductViewActivity.class));
-                        overridePendingTransition(0, 0);
-                        return true;
-//                    case R.id.img_waste_in_hand:
-//                        startActivity(new Intent(getApplicationContext(), WasteDisposerDashboard.class));
-//                        overridePendingTransition(0, 0);
-//                        finish();
-//                        return true;
-                    case R.id.img_collector_chat:
-                        startActivity(new Intent(getApplicationContext(), ChatDisposer.class));
-                        overridePendingTransition(0, 0);
-                        finish();
-                        return true;
-                }
-
-                return false;
-            }
-        });
-
+        // check the validations
         btn_proceed.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -156,6 +118,7 @@ public class CashOnDeliveryActivity extends AppCompatActivity {
         });
     }
 
+    // add order details
     private void addDataToFirestore(String order_name, String contactNo, String order_address) {
 
         CollectionReference dborder = db.collection("Order");
@@ -167,23 +130,6 @@ public class CashOnDeliveryActivity extends AppCompatActivity {
         dborder.add(order).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
             @Override
             public void onSuccess(DocumentReference documentReference) {
-//                db = FirebaseFirestore.getInstance();
-//                CollectionReference itemsRef = db.collection("Cart");
-//                Query query = itemsRef.whereEqualTo("userId", userId);
-//                query.get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-//                    @Override
-//                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
-//                        if (task.isSuccessful()) {
-//                            for (DocumentSnapshot document : task.getResult()) {
-//
-//
-//                            }
-//                        } else {
-//                            Log.d(TAG, "Error getting documents: ", task.getException());
-//                        }
-//                    }
-//                });
-
                 db.collection("Cart").whereEqualTo("userID", userId).get()
                         .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
                             @Override
