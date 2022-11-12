@@ -161,6 +161,8 @@ public class CollectorCalculator extends AppCompatActivity implements View.OnCli
             }
         }
 
+
+
     public void dashboardBack(){
         onBackPressed();
     }
