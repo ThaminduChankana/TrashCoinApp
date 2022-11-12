@@ -15,7 +15,11 @@ import android.widget.Toast;
 import com.example.trashcoinapp.R;
 import com.example.trashcoinapp.activities.BaseActivity;
 import com.example.trashcoinapp.activities.addData.CollectorAddData;
+
 import com.example.trashcoinapp.activities.addData.RecyclersListForCollectors;
+
+import com.example.trashcoinapp.activities.calculators.CollectorCalculator;
+
 import com.example.trashcoinapp.activities.cart.ProductViewActivity;
 import com.example.trashcoinapp.activities.chat.ChatDisposer;
 import com.example.trashcoinapp.activities.collectors.CollectorsForDisposers;
@@ -40,7 +44,8 @@ public class WasteCollectorDashboard extends BaseActivity {
     private CardView cv_wc_db_chat;
     private CardView cv_wc_db_inventory;
     private CardView cv_wc_db_recycler;
-    private Button btn_logout, btn_add_details;
+    private Button btn_logout, btn_add_details, btn_calculator;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,7 +61,11 @@ public class WasteCollectorDashboard extends BaseActivity {
         cv_wc_db_inventory = findViewById(R.id.cv_wc_db_inventory);
         btn_logout = findViewById(R.id.btn_logout);
         btn_add_details = findViewById(R.id.btn_add_details);
+
         cv_wc_db_recycler = findViewById(R.id.cv_wc_db_recycler);
+
+        btn_calculator = findViewById(R.id.btn_calculator);
+
         loadUserDetails();
         getToken();
 
@@ -67,6 +76,13 @@ public class WasteCollectorDashboard extends BaseActivity {
             }
         });
 
+        btn_calculator.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), CollectorCalculator.class);
+                startActivity(intent);
+            }
+        });
         btn_logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

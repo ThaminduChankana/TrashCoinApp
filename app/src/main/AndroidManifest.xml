@@ -38,6 +38,10 @@
             android:exported="true"
             android:windowSoftInputMode="adjustResize" />
         <activity
+            android:name=".activities.calculators.CollectorCalculator"
+            android:exported="true"
+            android:windowSoftInputMode="adjustResize"  />
+        <activity
             android:name=".activities.collectors.CollectorsForRecyclers"
             android:exported="true"
             android:windowSoftInputMode="adjustResize" />
