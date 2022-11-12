@@ -90,7 +90,9 @@
     <string name="tv_chat_disposer">Disposer Chat</string>
     <string name="tv_chat_recycler">Recycler Chat</string>
     <string name="tv_availability">Online</string>
-
+    <string name="tv_res_recycler_name">Recycler Name :-</string>
+    <string name="tv_recycler_phone">Recycler Phone :-</string>
+    <string name="tv_res_working_company">Material :-</string>
 
     <string name="tv_add_products">Add Products</string>
     <string name="et_product_name">Product Name</string>
@@ -113,6 +115,8 @@
     <string name="tv_products_recycler">System Product</string>
     <string name="btn_products_edit_recycler">Edit</string>
     <string name="btn_products_delete_recycler">Delete</string>
+    <string name="tv_recycler_add_data">Recycler Add Data</string>
+    <string name="et_enter_service_company">Required Material </string>
 
     <string name="btn_pickup_date">Pickup Date</string>
     <string name="tv_inventory">Inventory</string>

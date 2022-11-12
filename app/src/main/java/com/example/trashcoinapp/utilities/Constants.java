@@ -41,6 +41,12 @@ public class Constants {
     public static final String KEY_COLLECTOR_AVAILABILITY = "collectorAvailability";
     public static final String KEY_COLLECTOR_DETAILS_ADDED = "isAdded";
 
+    public static final String KEY_COLLECTION_RECYCLER_DETAILS = "recyclerDetails";
+    public static final String KEY_RECYCLER_NAME = "recyclerName";
+    public static final String KEY_RECYCLER_PHONE = "recyclerPhone";
+    public static final String KEY_RECYCLER_SERVICE = "recyclerService";
+    public static final String KEY_RECYCLER_DETAILS_ADDED = "isAdded";
+
     public static HashMap<String, String> remoteMsgHeaders = null;
 
     public static HashMap<String, String> getRemoteMsgHeaders(){

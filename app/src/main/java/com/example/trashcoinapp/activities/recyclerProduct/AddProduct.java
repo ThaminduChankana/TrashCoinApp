@@ -82,9 +82,13 @@ public class AddProduct extends AppCompatActivity {
         });
 
 
-        String PC_productTittle = productTitle.getText().toString();
-        String PC_productDescription = productDescription.getText().toString();
-        String PC_productPrices = productPrice.getText().toString();
+//        String P_productTitle = productTitle.getText().toString();
+//        String P_productDescription = productDescription.getText().toString();
+//        String P_productCategory = productCategory.getText().toString();
+//        String P_productDiscountNote = productDiscountNote.getText().toString();
+//        Float P_price = Float.valueOf(productPrice.getText().toString());
+//        Float P_discountPrice = Float.valueOf(productDiscountPrice.getText().toString());
+//        Float P_quantity = Float.valueOf(productQuantity.getText().toString());
 
 
         imageView.setOnClickListener(new View.OnClickListener() {
@@ -100,13 +104,21 @@ public class AddProduct extends AppCompatActivity {
         addProductBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                if (TextUtils.isEmpty(PC_productPrice)) {
-//                    productTitle.setError("Please enter product Name");
-//                } else if (TextUtils.isEmpty(PC_productDescription)) {
-//                    productDescription.setError("Please enter product Description");
-//                } else if (TextUtils.isEmpty(PC_productPrices)) {
-//                    productPrice.setError("Please enter product price");
-                 if (imageUri == null) {
+//             if (TextUtils.isEmpty(P_productTitle)) {
+//                      productTitle.setError("Please enter product Title");
+//                } else if (TextUtils.isEmpty(P_productDescription)) {
+//                      productDescription.setError("Please enter product Description");
+//                } else if (TextUtils.isEmpty(P_productCategory)) {
+//                      productCategory.setError("Please enter Product category");
+//                } else if (TextUtils.isEmpty(P_productDiscountNote)) {
+//                      productDiscountNote.setError("Please enter discount Note");
+//                } else if (TextUtils.isEmpty(String.valueOf(P_price))) {
+//                      productPrice.setError("Please enter Price");
+//                } else if (TextUtils.isEmpty(String.valueOf(P_discountPrice))) {
+//                      productDiscountPrice.setError("Please enter discount Note");
+//                } else if (TextUtils.isEmpty(String.valueOf(P_quantity))) {
+//                      productQuantity.setError("Please enter Quantity");
+               if (imageUri == null) {
                     Toast.makeText(AddProduct.this, "Please select image", Toast.LENGTH_SHORT).show();
                 } else {
                     uploadToFirebase(imageUri);

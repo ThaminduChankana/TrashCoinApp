@@ -63,12 +63,6 @@ public class RecyclerProductViewAdapter extends RecyclerView.Adapter<RecyclerPro
 
 
 
-
-
-
-
-
-
         holder.productsDeleteRC.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -101,36 +95,6 @@ public class RecyclerProductViewAdapter extends RecyclerView.Adapter<RecyclerPro
                 context.startActivity(intent);
             }
         });
-
-
-
-
-
-//        private void deleteProduct() {
-//
-//            db.collection("Products").
-//
-//                    document(product.getId()).
-//
-//                    delete().
-//
-//                    addOnCompleteListener(new OnCompleteListener<Void>() {
-//                        @Override
-//                        public void onComplete(@NonNull Task<Void> task) {
-//
-//
-//                            if (task.isSuccessful()) {
-//
-//                                Toast.makeText(RecyclerProductView.this, "Course has been deleted from Database.", Toast.LENGTH_SHORT).show();
-//                                Intent i = new Intent(RecyclerProductView.this, WasteRecyclerDashboard.class);
-//                                startActivity(i);
-//                            } else {
-//
-//                                Toast.makeText(RecyclerProductView.this, "Fail to delete the course. ", Toast.LENGTH_SHORT).show();
-//                            }
-//                        }
-//                    });
-//        }
 
 
 

@@ -15,6 +15,7 @@ import android.widget.Toast;
 import com.example.trashcoinapp.R;
 import com.example.trashcoinapp.activities.BaseActivity;
 import com.example.trashcoinapp.activities.addData.CollectorAddData;
+import com.example.trashcoinapp.activities.addData.RecyclersListForCollectors;
 import com.example.trashcoinapp.activities.cart.ProductViewActivity;
 import com.example.trashcoinapp.activities.chat.ChatDisposer;
 import com.example.trashcoinapp.activities.collectors.CollectorsForDisposers;
@@ -38,6 +39,7 @@ public class WasteCollectorDashboard extends BaseActivity {
     private TextView tv_waste_collector_dashboard;
     private CardView cv_wc_db_chat;
     private CardView cv_wc_db_inventory;
+    private CardView cv_wc_db_recycler;
     private Button btn_logout, btn_add_details;
 
     @Override
@@ -54,6 +56,7 @@ public class WasteCollectorDashboard extends BaseActivity {
         cv_wc_db_inventory = findViewById(R.id.cv_wc_db_inventory);
         btn_logout = findViewById(R.id.btn_logout);
         btn_add_details = findViewById(R.id.btn_add_details);
+        cv_wc_db_recycler = findViewById(R.id.cv_wc_db_recycler);
         loadUserDetails();
         getToken();
 
@@ -83,6 +86,13 @@ public class WasteCollectorDashboard extends BaseActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), Chat.class);
+                startActivity(intent);
+            }
+        });
+        cv_wc_db_recycler.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), RecyclersListForCollectors.class);
                 startActivity(intent);
             }
         });

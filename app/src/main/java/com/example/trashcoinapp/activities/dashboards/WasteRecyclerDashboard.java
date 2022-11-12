@@ -15,10 +15,11 @@ import android.widget.Toast;
 
 import com.example.trashcoinapp.R;
 import com.example.trashcoinapp.activities.BaseActivity;
-import com.example.trashcoinapp.activities.LoginSelector;
+import com.example.trashcoinapp.activities.addData.RecyclerAddData;
 import com.example.trashcoinapp.activities.cart.ProductViewActivity;
 import com.example.trashcoinapp.activities.chat.ChatDisposer;
 import com.example.trashcoinapp.activities.recyclerProduct.RecyclerProductView;
+import com.example.trashcoinapp.activities.user.LoginSelector;
 import com.example.trashcoinapp.utilities.Constants;
 import com.example.trashcoinapp.utilities.PreferenceManager;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -33,7 +34,7 @@ public class WasteRecyclerDashboard extends BaseActivity {
 
 
     private PreferenceManager preferenceManager;
-    private CardView cv_wd_db_wasteProduct;
+    private CardView cv_wd_db_wasteProduct,cv_wd_db_userinfo;
     private CardView cv_wr_db_chat;
     private TextView tv_waste_recycler_dashboard;
     Button btn_wr_logout;
@@ -51,6 +52,7 @@ public class WasteRecyclerDashboard extends BaseActivity {
         tv_waste_recycler_dashboard=findViewById(R.id.tv_waste_recycler_dashboard);
         cv_wd_db_wasteProduct=findViewById(R.id.cv_wd_db_wasteProduct);
         cv_wr_db_chat = findViewById(R.id.cv_wr_db_chat);
+        cv_wd_db_userinfo = findViewById(R.id.cv_wd_db_userinfo);
         preferenceManager = new PreferenceManager(getApplicationContext());
 
         loadUserDetails();
@@ -71,13 +73,13 @@ public class WasteRecyclerDashboard extends BaseActivity {
                 startActivity(intent);
             }
         });
-//        cv_wr_db_chat.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent = new Intent(getApplicationContext(), .class);
-//                startActivity(intent);
-//            }
-//        });
+        cv_wd_db_userinfo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), RecyclerAddData.class);
+                startActivity(intent);
+            }
+        });
 
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation_recycler);
@@ -88,13 +90,14 @@ public class WasteRecyclerDashboard extends BaseActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()) {
                     case R.id.img_recycler_home:
+
                         return true;
                     case R.id.img_view_collectors_of_recycler:
                         startActivity(new Intent(getApplicationContext(), WasteRecyclerDashboard.class));
                         overridePendingTransition(0, 0);
                         return true;
                     case R.id.img_recycler_info:
-                        startActivity(new Intent(getApplicationContext(), WasteRecyclerDashboard.class));
+                        startActivity(new Intent(getApplicationContext(), RecyclerAddData.class));
                         overridePendingTransition(0, 0);
                         return true;
                     case R.id.img_product_management:

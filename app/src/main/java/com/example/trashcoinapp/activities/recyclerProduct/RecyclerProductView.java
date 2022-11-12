@@ -84,7 +84,7 @@ public class RecyclerProductView extends AppCompatActivity {
 
         recyclerProductViewAdapter = new RecyclerProductViewAdapter(productArrayList, this);
         productWrRV.setAdapter(recyclerProductViewAdapter);
-        db.collection("Products").whereEqualTo("userID", userId).get()
+        db.collection("Products").whereEqualTo("userId", userId).get()
                 .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
                     @Override
                     public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
