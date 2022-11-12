@@ -40,6 +40,7 @@ public class WasteCollectorDashboard extends BaseActivity {
     private TextView tv_waste_collector_dashboard;
     private CardView cv_wc_db_chat;
     private CardView cv_wc_db_inventory;
+    private CardView cv_wc_db_disposers;
 
     private CardView cv_wc_db_disposer;
 
@@ -126,11 +127,11 @@ public class WasteCollectorDashboard extends BaseActivity {
                 switch (item.getItemId()) {
                     case R.id.img_collector_home:
                         return true;
-//                    case R.id.img_collector_disposers:
-//                        startActivity(new Intent(getApplicationContext(), CollectorsForDisposers.class));
-//                        overridePendingTransition(0, 0);
-//                        finish();
-//                        return true;
+                    case R.id.img_collector_disposers:
+                        startActivity(new Intent(getApplicationContext(), WasteDisposerAllView.class));
+                        overridePendingTransition(0, 0);
+                        finish();
+                        return true;
 //                    case R.id.img_collector_recyclers:
 //                        startActivity(new Intent(getApplicationContext(), ProductViewActivity.class));
 //                        overridePendingTransition(0, 0);

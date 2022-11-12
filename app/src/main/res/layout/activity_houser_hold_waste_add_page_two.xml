@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -10,6 +10,7 @@
         android:id="@+id/btn_view"
         android:layout_width="151dp"
         android:layout_height="51dp"
+        android:layout_below="@id/edt_address"
         android:layout_marginStart="34dp"
         android:layout_marginTop="40dp"
         android:layout_marginEnd="70dp"
@@ -32,6 +33,7 @@
         android:layout_marginEnd="139dp"
         android:layout_marginBottom="41dp"
         android:hint="@string/yourinfo"
+        android:layout_centerHorizontal="true"
         android:text="Your Info"
         android:textAlignment="center"
         android:textColor="#4CAF50"
@@ -45,8 +47,9 @@
         android:id="@+id/edt_Name"
         android:layout_width="346dp"
         android:layout_height="49dp"
+        android:layout_below="@id/edtm_waste"
         android:layout_marginStart="27dp"
-        android:layout_marginTop="55dp"
+        android:layout_marginTop="40dp"
         android:layout_marginEnd="38dp"
         android:ems="10"
         android:inputType="textPersonName"
@@ -59,6 +62,7 @@
         app:layout_constraintTop_toBottomOf="@+id/edtm_waste" />
 
     <EditText
+        android:layout_below="@id/edt_Name"
         android:id="@+id/edt_phone"
         android:layout_width="345dp"
         android:layout_height="51dp"
@@ -76,6 +80,7 @@
         app:layout_constraintTop_toBottomOf="@+id/edt_Name" />
 
     <EditText
+        android:layout_below="@id/edt_phone"
         android:id="@+id/edt_address"
         android:layout_width="343dp"
         android:layout_height="55dp"
@@ -96,6 +101,8 @@
         android:id="@+id/btn_submit"
         android:layout_width="152dp"
         android:layout_height="51dp"
+        android:layout_below="@id/edt_address"
+        android:layout_alignParentRight="true"
         android:layout_marginStart="50dp"
         android:layout_marginTop="40dp"
         android:layout_marginEnd="34dp"
@@ -111,8 +118,9 @@
 
     <EditText
         android:id="@+id/edtm_waste"
-        android:layout_width="339dp"
-        android:layout_height="100dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btn_back4"
         android:layout_marginStart="28dp"
         android:layout_marginTop="41dp"
         android:layout_marginEnd="44dp"
@@ -138,23 +146,22 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/img_btn_back" />
 
-    <FrameLayout
-        android:id="@+id/btm_nav_disposer_container"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0">
+<!--    <FrameLayout-->
+<!--        android:id="@+id/btm_nav_disposer_container"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.0"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        app:layout_constraintVertical_bias="0.0">-->
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/bottom_navigation_disposer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
-            android:layout_marginTop="675dp"
             android:background="@color/btn_color"
             app:itemIconTint="@color/white"
             app:itemTextColor="@color/white"
@@ -162,7 +169,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:menu="@menu/bottom_nav_disposer_menu" />
-    </FrameLayout>
+<!--    </FrameLayout>-->
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>

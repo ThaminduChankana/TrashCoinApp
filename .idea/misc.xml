@@ -86,13 +86,16 @@
         <entry key="..\:/Users/ASUS/Desktop/UEE/TrashCoinApp/app/src/main/res/layout/activity_chat_recycler.xml" value="0.33489583333333334" />
         <entry key="..\:/Users/ASUS/Desktop/UEE/TrashCoinApp/app/src/main/res/layout/activity_collector_calculator.xml" value="0.23802083333333332" />
         <entry key="..\:/Users/ASUS/Desktop/UEE/TrashCoinApp/app/src/main/res/layout/activity_collector_users.xml" value="0.33489583333333334" />
+        <entry key="..\:/Users/ASUS/Desktop/UEE/TrashCoinApp/app/src/main/res/layout/activity_collectors_for_disposers.xml" value="0.33489583333333334" />
         <entry key="..\:/Users/ASUS/Desktop/UEE/TrashCoinApp/app/src/main/res/layout/activity_disposer_messaging.xml" value="0.33489583333333334" />
         <entry key="..\:/Users/ASUS/Desktop/UEE/TrashCoinApp/app/src/main/res/layout/activity_disposer_users.xml" value="0.33489583333333334" />
+        <entry key="..\:/Users/ASUS/Desktop/UEE/TrashCoinApp/app/src/main/res/layout/activity_houser_hold_waste_add_page_two.xml" value="0.25" />
         <entry key="..\:/Users/ASUS/Desktop/UEE/TrashCoinApp/app/src/main/res/layout/activity_messaging.xml" value="0.33" />
         <entry key="..\:/Users/ASUS/Desktop/UEE/TrashCoinApp/app/src/main/res/layout/activity_recycler_messaging.xml" value="0.33489583333333334" />
         <entry key="..\:/Users/ASUS/Desktop/UEE/TrashCoinApp/app/src/main/res/layout/activity_recycler_users.xml" value="0.33489583333333334" />
         <entry key="..\:/Users/ASUS/Desktop/UEE/TrashCoinApp/app/src/main/res/layout/activity_users.xml" value="0.33489583333333334" />
-        <entry key="..\:/Users/ASUS/Desktop/UEE/TrashCoinApp/app/src/main/res/layout/activity_waste_collector_dashboard.xml" value="0.33541666666666664" />
+        <entry key="..\:/Users/ASUS/Desktop/UEE/TrashCoinApp/app/src/main/res/layout/activity_waste_collector_dashboard.xml" value="0.20447284345047922" />
+        <entry key="..\:/Users/ASUS/Desktop/UEE/TrashCoinApp/app/src/main/res/layout/activity_waste_disposer_all_view.xml" value="0.29493087557603687" />
         <entry key="..\:/Users/ASUS/Desktop/UEE/TrashCoinApp/app/src/main/res/layout/item_container_recieved_message.xml" value="0.25" />
         <entry key="..\:/Users/ASUS/Desktop/UEE/TrashCoinApp/app/src/main/res/layout/item_container_sent_message.xml" value="0.33489583333333334" />
         <entry key="..\:/Users/ASUS/Desktop/UEE/TrashCoinApp/app/src/main/res/layout/item_container_user.xml" value="0.33489583333333334" />

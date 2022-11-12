@@ -16,92 +16,48 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TrashCoinApp"
         tools:targetApi="31">
-        <activity
 
-
-            android:name=".adapters.DisposerWasteAllViewForCollectorAdapter"
-            android:exported="false"
-            tools:ignore="Instantiatable">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
         <activity
             android:name=".activities.householdDisposer.WasteDisposerAllView"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
+            android:exported="true"
+            android:windowSoftInputMode="adjustResize" />
         <activity
             android:name=".activities.householdDisposer.HouseholdwasteUpdate"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
+            android:exported="true"
+            android:windowSoftInputMode="adjustResize"/>
         <activity
             android:name=".activities.householdDisposer.WasteManagementMoredetails"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
+            android:exported="true"
+            android:windowSoftInputMode="adjustResize" />
         <activity
             android:name=".activities.householdDisposer.HouseholdWasteTimetable"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
+            android:exported="true"
+            android:windowSoftInputMode="adjustResize"/>
         <activity
             android:name=".activities.householdDisposer.HouseholdwasteDetails"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
-            android:name=".adapters.HouseholdWasteAdapter"
-            android:exported="false"
-            tools:ignore="Instantiatable">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
+            android:exported="true"
+            android:windowSoftInputMode="adjustResize"/>
+
         <activity
             android:name=".activities.householdDisposer.HouserHoldWasteAddPagetwo"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
+            android:exported="true"
+            android:windowSoftInputMode="adjustResize"/>
         <activity
             android:name=".activities.householdDisposer.HouseHoldWasteAddPage"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
+            android:exported="true"
+            android:windowSoftInputMode="adjustResize" />
         <activity
             android:name=".activities.householdDisposer.WasteDisposerLetGoPage"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
+            android:exported="true"
+            android:windowSoftInputMode="adjustResize" />
         <activity
             android:name=".activities.householdDisposer.WasteDisposerWelcomePage"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
+            android:exported="true"
+            android:windowSoftInputMode="adjustResize"/>
         <activity
             android:name=".activities.calculators.CollectorCalculator"
             android:exported="true"
             android:windowSoftInputMode="adjustResize"  />
-
         <activity
             android:name=".activities.collectors.CollectorsForRecyclers"
             android:exported="true"
