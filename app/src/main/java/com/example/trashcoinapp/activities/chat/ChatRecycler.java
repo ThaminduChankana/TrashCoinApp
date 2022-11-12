@@ -1,16 +1,23 @@
 package com.example.trashcoinapp.activities.chat;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.trashcoinapp.R;
+import com.example.trashcoinapp.activities.addData.RecyclerAddData;
+import com.example.trashcoinapp.activities.collectors.CollectorsForRecyclers;
+import com.example.trashcoinapp.activities.dashboards.WasteRecyclerDashboard;
 import com.example.trashcoinapp.activities.messaging.MessagingActivity;
+import com.example.trashcoinapp.activities.recyclerProduct.RecyclerProductView;
+import com.example.trashcoinapp.activities.users.RecyclerUsersActivity;
 import com.example.trashcoinapp.activities.users.UsersActivity;
 import com.example.trashcoinapp.adapters.RecentConversationsAdapter;
 import com.example.trashcoinapp.databinding.ActivityChatBinding;
@@ -20,6 +27,7 @@ import com.example.trashcoinapp.models.ChatMessage;
 import com.example.trashcoinapp.models.User;
 import com.example.trashcoinapp.utilities.Constants;
 import com.example.trashcoinapp.utilities.PreferenceManager;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.firestore.DocumentChange;
 import com.google.firebase.firestore.DocumentReference;
@@ -55,7 +63,39 @@ public class ChatRecycler extends AppCompatActivity implements ConversationListe
         setListeners();
         listenConversations();
 
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation_recycler);
+        bottomNavigationView.setSelectedItemId(R.id.img_recycler_chat);
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()) {
+                    case R.id.img_recycler_home:
+                        startActivity(new Intent(getApplicationContext(), WasteRecyclerDashboard.class));
+                        overridePendingTransition(0, 0);
+                        return true;
+                    case R.id.img_view_collectors_of_recycler:
+                        startActivity(new Intent(getApplicationContext(), CollectorsForRecyclers.class));
+                        overridePendingTransition(0, 0);
+                        return true;
+                    case R.id.img_recycler_info:
+                        startActivity(new Intent(getApplicationContext(), RecyclerAddData.class));
+                        overridePendingTransition(0, 0);
+                        return true;
+                    case R.id.img_product_management:
+                        startActivity(new Intent(getApplicationContext(), RecyclerProductView.class));
+                        overridePendingTransition(0, 0);
+                        return true;
+                    case R.id.img_recycler_chat:
+                        return true;
+                }
+
+                return false;
+            }
+        });
+
     }
+
 
     private void init() {
         conversations = new ArrayList<>();
@@ -150,11 +190,14 @@ public class ChatRecycler extends AppCompatActivity implements ConversationListe
         binding.fabNewChatRecycler.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), UsersActivity.class));
+                startActivity(new Intent(getApplicationContext(), RecyclerUsersActivity.class));
             }
         });
 
     }
+
+
+
 
     @Override
     public void onConversationClicked(User user) {

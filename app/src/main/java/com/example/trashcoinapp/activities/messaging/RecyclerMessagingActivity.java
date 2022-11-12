@@ -3,12 +3,19 @@ package com.example.trashcoinapp.activities.messaging;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Toast;
 
+import com.example.trashcoinapp.R;
 import com.example.trashcoinapp.activities.BaseActivity;
+import com.example.trashcoinapp.activities.addData.RecyclerAddData;
+import com.example.trashcoinapp.activities.collectors.CollectorsForRecyclers;
+import com.example.trashcoinapp.activities.dashboards.WasteRecyclerDashboard;
+import com.example.trashcoinapp.activities.recyclerProduct.RecyclerProductView;
 import com.example.trashcoinapp.adapters.ChatAdapter;
 import com.example.trashcoinapp.databinding.ActivityMessagingBinding;
 import com.example.trashcoinapp.databinding.ActivityRecyclerMessagingBinding;
@@ -19,6 +26,7 @@ import com.example.trashcoinapp.network.ApiService;
 import com.example.trashcoinapp.utilities.Constants;
 import com.example.trashcoinapp.utilities.PreferenceManager;
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.firestore.DocumentChange;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
@@ -65,6 +73,36 @@ public class RecyclerMessagingActivity extends BaseActivity {
         loadReceiverDetails();
         init();
         listenMessages();
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation_recycler);
+        bottomNavigationView.setSelectedItemId(R.id.img_recycler_chat);
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()) {
+                    case R.id.img_recycler_home:
+                        startActivity(new Intent(getApplicationContext(), WasteRecyclerDashboard.class));
+                        overridePendingTransition(0, 0);
+                        return true;
+                    case R.id.img_view_collectors_of_recycler:
+                        startActivity(new Intent(getApplicationContext(), CollectorsForRecyclers.class));
+                        overridePendingTransition(0, 0);
+                        return true;
+                    case R.id.img_recycler_info:
+                        startActivity(new Intent(getApplicationContext(), RecyclerAddData.class));
+                        overridePendingTransition(0, 0);
+                        return true;
+                    case R.id.img_product_management:
+                        startActivity(new Intent(getApplicationContext(), RecyclerProductView.class));
+                        overridePendingTransition(0, 0);
+                        return true;
+                    case R.id.img_recycler_chat:
+                        return true;
+                }
+
+                return false;
+            }
+        });
     }
 
     private void init(){

@@ -18,6 +18,8 @@ import com.example.trashcoinapp.activities.BaseActivity;
 import com.example.trashcoinapp.activities.addData.RecyclerAddData;
 import com.example.trashcoinapp.activities.cart.ProductViewActivity;
 import com.example.trashcoinapp.activities.chat.ChatDisposer;
+import com.example.trashcoinapp.activities.chat.ChatRecycler;
+import com.example.trashcoinapp.activities.collectors.CollectorsForRecyclers;
 import com.example.trashcoinapp.activities.recyclerProduct.RecyclerProductView;
 import com.example.trashcoinapp.activities.user.LoginSelector;
 import com.example.trashcoinapp.utilities.Constants;
@@ -35,7 +37,7 @@ public class WasteRecyclerDashboard extends BaseActivity {
 
     private PreferenceManager preferenceManager;
     private CardView cv_wd_db_wasteProduct,cv_wd_db_userinfo;
-    private CardView cv_wr_db_chat;
+    private CardView cv_wr_db_chat,cv_wr_db_collector;
     private TextView tv_waste_recycler_dashboard;
     Button btn_wr_logout;
 
@@ -47,7 +49,7 @@ public class WasteRecyclerDashboard extends BaseActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_waste_recycler_dashboard);
 
-
+        cv_wr_db_collector=findViewById(R.id.cv_wr_db_collector);
         btn_wr_logout=findViewById(R.id.btn_wr_logout);
         tv_waste_recycler_dashboard=findViewById(R.id.tv_waste_recycler_dashboard);
         cv_wd_db_wasteProduct=findViewById(R.id.cv_wd_db_wasteProduct);
@@ -80,7 +82,20 @@ public class WasteRecyclerDashboard extends BaseActivity {
                 startActivity(intent);
             }
         });
-
+        cv_wr_db_collector.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), CollectorsForRecyclers.class);
+                startActivity(intent);
+            }
+        });
+        cv_wr_db_chat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), ChatRecycler.class);
+                startActivity(intent);
+            }
+        });
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation_recycler);
         bottomNavigationView.setSelectedItemId(R.id.img_recycler_home);
@@ -93,7 +108,7 @@ public class WasteRecyclerDashboard extends BaseActivity {
 
                         return true;
                     case R.id.img_view_collectors_of_recycler:
-                        startActivity(new Intent(getApplicationContext(), WasteRecyclerDashboard.class));
+                        startActivity(new Intent(getApplicationContext(), CollectorsForRecyclers.class));
                         overridePendingTransition(0, 0);
                         return true;
                     case R.id.img_recycler_info:
@@ -105,7 +120,7 @@ public class WasteRecyclerDashboard extends BaseActivity {
                         overridePendingTransition(0, 0);
                         return true;
                     case R.id.img_recycler_chat:
-                        startActivity(new Intent(getApplicationContext(), WasteDisposerDashboard.class));
+                        startActivity(new Intent(getApplicationContext(), ChatRecycler.class));
                         overridePendingTransition(0, 0);
                         return true;
                 }
