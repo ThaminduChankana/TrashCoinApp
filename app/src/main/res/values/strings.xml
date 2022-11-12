@@ -118,6 +118,8 @@
     <string name="tv_col_starting_time">Starting Time :-</string>
     <string name="tv_col_end_time">End Time :-</string>
     <string name="tv_collectors">Collectors</string>
+    <string name="btn_col_calculator">Calculator</string>
+    <string name="tv_calculator">Calculator</string>
 
 
 
