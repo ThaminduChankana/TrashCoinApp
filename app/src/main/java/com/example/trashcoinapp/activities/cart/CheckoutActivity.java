@@ -3,67 +3,53 @@ package com.example.trashcoinapp.activities.cart;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Context;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
-import android.widget.EditText;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.bumptech.glide.Glide;
-import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.example.trashcoinapp.R;
 import com.example.trashcoinapp.activities.chat.ChatDisposer;
 import com.example.trashcoinapp.activities.collectors.CollectorsForDisposers;
 import com.example.trashcoinapp.activities.dashboards.WasteDisposerDashboard;
 import com.example.trashcoinapp.activities.householdDisposer.WasteDisposerWelcomePage;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.squareup.picasso.Picasso;
 
-import java.io.File;
-
-public class SingleProductActivity extends AppCompatActivity {
-
-    TextView productTitle;
-    EditText productDescription, productDiscountNote, productPrice, productCategory;
+public class CheckoutActivity extends AppCompatActivity {
     private Bundle bundle;
-    ImageView productImage;
-    Context context;
+    private TextView tv_total_price, tv_total_discount,tv_total_payable;
+    private Button btn_pay_cash_delivery;
+    String price;
+    String productList;
     ImageView img_checkout_back;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_single_product);
+        setContentView(R.layout.activity_checkout);
         getSupportActionBar().hide();
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         bundle = getIntent().getExtras();
-        context = getApplicationContext();
-
-        productTitle = findViewById(R.id.tv_product_title);
-        productDescription = findViewById(R.id.tv_product_description);
-        productDiscountNote = findViewById(R.id.tv_product_discount_note);
-        productPrice = findViewById(R.id.tv_product_price);
-        productCategory = findViewById(R.id.tv_product_category);
-        productImage = findViewById(R.id.img_product_view);
+        tv_total_price = findViewById(R.id.tv_total_price);
+        tv_total_discount = findViewById(R.id.tv_total_discount);
+        tv_total_payable = findViewById(R.id.tv_total_payable);
+        btn_pay_cash_delivery = findViewById(R.id.btn_pay_online);
         img_checkout_back = findViewById(R.id.img_checkout_back);
 
-        productTitle.setText(bundle.getString("title"));
-        productDescription.setText(bundle.getString("description"));
-        productDiscountNote.setText(bundle.getString("discountNote"));
-        productPrice .setText(bundle.getString("price"));
-        productCategory .setText(bundle.getString("category"));
-        Picasso.get()
-                .load(bundle.getString("picUrl"))
-                .into(productImage);
+        bundle = getIntent().getExtras();
+        float discount  = Float.valueOf(Float.valueOf(bundle.getString("withoutDiscount"))-Float.valueOf(bundle.getString("withDiscount")));
+        tv_total_price.setText("Total Price : "+ bundle.getString("withoutDiscount"));
+        tv_total_discount.setText("Discount : "+ String.valueOf(discount));
+        tv_total_payable.setText("Total Payable : "+bundle.getString("withDiscount"));
+        price = bundle.getString("withDiscount");
+        productList = bundle.getString("productList");
 
-
-        // bottom navigation
+        /// bottom navigation
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation_disposer);
         bottomNavigationView.setSelectedItemId(R.id.img_shopping_cart);
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -84,11 +70,11 @@ public class SingleProductActivity extends AppCompatActivity {
                     case R.id.img_shopping_cart:
                         startActivity(new Intent(getApplicationContext(), ProductViewActivity.class));
                         overridePendingTransition(0, 0);
-                        return true;
-                    case R.id.img_waste_in_hand:
-                        startActivity(new Intent(getApplicationContext(), WasteDisposerWelcomePage.class));
-                        overridePendingTransition(0, 0);
-                        finish();
+                      return true;
+                   case R.id.img_waste_in_hand:
+                       startActivity(new Intent(getApplicationContext(), WasteDisposerWelcomePage.class));
+                       overridePendingTransition(0, 0);
+                       finish();
                         return true;
                     case R.id.img_collector_chat:
                         startActivity(new Intent(getApplicationContext(), ChatDisposer.class));
@@ -102,15 +88,31 @@ public class SingleProductActivity extends AppCompatActivity {
         });
 
 
+
         // back button
         img_checkout_back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(SingleProductActivity.this, ProductViewActivity.class);
+                Intent intent = new Intent(CheckoutActivity.this, CartActivity.class);
                 startActivity(intent);
             }
         });
 
+
+
+
+        // pass the price details as a bundle
+        btn_pay_cash_delivery.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(CheckoutActivity.this, CashOnDeliveryActivity.class);
+                Bundle bundle = new Bundle();
+                bundle.putString("price", price);
+                bundle.putString("productList", productList );
+                intent.putExtras(bundle);
+                startActivity(intent);
+            }
+        });
 
 
     }

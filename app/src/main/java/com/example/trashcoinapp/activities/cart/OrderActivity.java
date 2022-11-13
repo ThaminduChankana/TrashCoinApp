@@ -5,8 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -21,8 +19,11 @@ import com.example.trashcoinapp.activities.chat.ChatDisposer;
 import com.example.trashcoinapp.activities.collectors.CollectorsForDisposers;
 import com.example.trashcoinapp.activities.dashboards.WasteDisposerDashboard;
 import com.example.trashcoinapp.activities.householdDisposer.WasteDisposerWelcomePage;
-import com.example.trashcoinapp.adapters.ProductViewAdapter;
-import com.example.trashcoinapp.models.Product;
+import com.example.trashcoinapp.adapters.OrderViewAdapter;
+import com.example.trashcoinapp.models.Cart;
+import com.example.trashcoinapp.models.Order;
+import com.example.trashcoinapp.utilities.Constants;
+import com.example.trashcoinapp.utilities.PreferenceManager;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -33,55 +34,45 @@ import com.google.firebase.firestore.QuerySnapshot;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ProductViewActivity extends AppCompatActivity {
+public class OrderActivity extends AppCompatActivity {
 
-    ImageView img_shopping_cart, img_order;
-    static Context context;
-    private RecyclerView productRV;
-    private ArrayList<Product> productsArrayList;
-    private ProductViewAdapter productViewAdapter;
+    private RecyclerView orderRV;
+    private ArrayList<Order> orderArrayList;
+    private OrderViewAdapter orderViewAdapter;
     private FirebaseFirestore db;
+    String userId;
     ProgressBar loadingPB;
+    private PreferenceManager preference;
+    ImageView img_order_back;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_order);
         getSupportActionBar().hide();
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        setContentView(R.layout.activity_product_view);
-
 
         db = FirebaseFirestore.getInstance();
-        context = getApplicationContext();
-        productRV = findViewById(R.id.recycledProducts);
+        preference = new PreferenceManager(getApplicationContext());
+        userId = preference.getString(Constants.KEY_USER_ID);
+        orderRV = findViewById(R.id.idRVOrders);
         loadingPB = findViewById(R.id.idProgressBar);
-        img_shopping_cart = findViewById(R.id.img_shopping_cart);
-        img_order = findViewById(R.id.img_order);
+        img_order_back = findViewById(R.id.img_order_back);
 
-        productsArrayList = new ArrayList<>();
-        productRV .setHasFixedSize(true);
-        productRV .setLayoutManager(new LinearLayoutManager(this));
-        productViewAdapter = new ProductViewAdapter(productsArrayList, this);
-        productRV.setAdapter(productViewAdapter);
+        orderArrayList = new ArrayList<>();
+        orderRV .setHasFixedSize(true);
+        orderRV .setLayoutManager(new LinearLayoutManager(this));
+        orderViewAdapter = new OrderViewAdapter(orderArrayList, this);
+        orderRV.setAdapter(orderViewAdapter);
 
-        // navigation to cart
-        img_shopping_cart.setOnClickListener(new View.OnClickListener() {
+        // back button
+        img_order_back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), CartActivity.class);
+                Intent intent = new Intent(OrderActivity.this, ProductViewActivity.class);
                 startActivity(intent);
             }
         });
-
-        // navigation to orders
-        img_order.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(ProductViewActivity.this, OrderActivity.class);
-                startActivity(intent);
-            }
-        });
-
 
         // bottom navigation
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation_disposer);
@@ -102,6 +93,8 @@ public class ProductViewActivity extends AppCompatActivity {
                         finish();
                         return true;
                     case R.id.img_shopping_cart:
+                        startActivity(new Intent(getApplicationContext(), ProductViewActivity.class));
+                        overridePendingTransition(0, 0);
                         return true;
                     case R.id.img_waste_in_hand:
                         startActivity(new Intent(getApplicationContext(), WasteDisposerWelcomePage.class));
@@ -119,34 +112,34 @@ public class ProductViewActivity extends AppCompatActivity {
             }
         });
 
-
-        // get the products details
-        db.collection("Products").get()
+        // get the order details
+        db.collection("Order").get()
                 .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
                     @Override
                     public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
                         if (!queryDocumentSnapshots.isEmpty()) {
+
                             loadingPB.setVisibility(View.GONE);
                             List<DocumentSnapshot> list = queryDocumentSnapshots.getDocuments();
                             for (DocumentSnapshot d : list) {
-                                Product p = d.toObject(Product.class);
-                                productsArrayList.add(p);
+
+                                Order c = d.toObject(Order.class);
+
+                                orderArrayList.add(c);
                             }
-                            productViewAdapter.notifyDataSetChanged();
+
+                            orderViewAdapter.notifyDataSetChanged();
                         } else {
                             loadingPB.setVisibility(View.GONE);
-                            Toast.makeText(ProductViewActivity.this, "No data found in Database", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(OrderActivity.this, "No data found in Database", Toast.LENGTH_SHORT).show();
                         }
                     }
                 }).addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
-                        Toast.makeText(ProductViewActivity.this, "Fail to get the data.", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(OrderActivity.this, "Fail to get the data.", Toast.LENGTH_SHORT).show();
                     }
                 });
 
-    }
-    public  static Context getContext(){
-        return context;
     }
 }

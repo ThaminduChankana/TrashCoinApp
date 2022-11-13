@@ -10,6 +10,7 @@ import android.view.WindowManager;
 
 import com.example.trashcoinapp.R;
 import com.example.trashcoinapp.activities.cart.ProductViewActivity;
+import com.example.trashcoinapp.activities.chat.ChatDisposer;
 import com.example.trashcoinapp.activities.dashboards.WasteDisposerDashboard;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -45,9 +46,9 @@ public class HouseholdWasteTimetable extends AppCompatActivity {
                         overridePendingTransition(0, 0);
                         return true;
                     case R.id.img_collector_chat:
-                        startActivity(new Intent(getApplicationContext(), WasteDisposerDashboard.class));
+                        startActivity(new Intent(getApplicationContext(), ChatDisposer.class));
                         overridePendingTransition(0, 0);
-                        return true;
+                        finish();
                 }
 
                 return false;

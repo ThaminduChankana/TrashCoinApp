@@ -17,6 +17,7 @@ import android.widget.ProgressBar;
         import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.trashcoinapp.R;
+import com.example.trashcoinapp.activities.chat.ChatDisposer;
 import com.example.trashcoinapp.activities.dashboards.WasteDisposerDashboard;
 import com.example.trashcoinapp.adapters.HouseholdWasteAdapter;
 import com.example.trashcoinapp.models.HouseholdWaste;
@@ -148,9 +149,9 @@ public class  HouseholdwasteDetails extends AppCompatActivity {
                         overridePendingTransition(0, 0);
                         return true;
                     case R.id.img_collector_chat:
-                        startActivity(new Intent(getApplicationContext(), WasteDisposerDashboard.class));
+                        startActivity(new Intent(getApplicationContext(), ChatDisposer.class));
                         overridePendingTransition(0, 0);
-                        return true;
+                        finish();
                 }
 
                 return false;

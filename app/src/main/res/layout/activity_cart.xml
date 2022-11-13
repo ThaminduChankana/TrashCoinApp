@@ -6,13 +6,24 @@
     android:layout_height="match_parent"
     tools:context=".activities.cart.CartActivity">
 
+    <ImageView
+        android:id="@+id/img_cart_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_gravity="start"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="10dp"
+        android:contentDescription="@string/todo"
+        android:src="@drawable/img_btn_back" />
+
     <TextView
         android:id="@+id/totalPrice"
         android:layout_width="84dp"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="170dp"
+        android:layout_marginStart="180dp"
         android:layout_marginTop="21dp"
         android:textSize="18sp"
         android:textStyle="bold" />
@@ -35,26 +46,7 @@
         android:layout_centerInParent="true" />
 
 
-    <FrameLayout
-        android:id="@+id/btm_nav_disposer_container"
-        android:layout_width="match_parent"
-        android:layout_height="601dp"
-        android:layout_above="@id/bottom_navigation_disposer"
-        android:layout_marginBottom="2dp" >
 
-    </FrameLayout>
-
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottom_navigation_disposer"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="0dp"
-        android:background="@color/btn_color"
-        app:itemIconTint="@color/white"
-        app:itemTextColor="@color/white"
-        app:menu="@menu/bottom_nav_disposer_menu" />
 
     <Button
         android:id="@+id/btn_checkout"
@@ -66,17 +58,36 @@
         android:layout_marginEnd="30dp"
         android:text="@string/btn_checkout"
         app:cornerRadius="50dp"
-        android:backgroundTint="@color/btn_color"/>
+        android:backgroundTint="@color/btn_color"
+       />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="35dp"
+        android:layout_marginStart="55dp"
         android:layout_marginTop="14dp"
         android:gravity="center"
         android:text="@string/tv_my_cart"
-        android:textColor="@color/heading"
+        android:textColor="@android:color/holo_green_light"
         android:textSize="30sp"
         android:textStyle="italic" />
+
+    <FrameLayout
+        android:id="@+id/btm_nav_disposer_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/bottom_navigation_disposer"
+        android:layout_marginBottom="-56dp" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation_disposer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/btn_color"
+        app:itemIconTint="@color/white"
+        app:itemTextColor="@color/white"
+        app:menu="@menu/bottom_nav_disposer_menu" />
+
 
 </RelativeLayout>

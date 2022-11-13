@@ -8,6 +8,19 @@
     tools:context=".activities.cart.SingleProductActivity">
 
 
+    <ImageView
+        android:id="@+id/img_checkout_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_gravity="start"
+        android:layout_marginStart="27dp"
+        android:layout_marginTop="28dp"
+        android:contentDescription="@string/todo"
+        android:src="@drawable/img_btn_back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:id="@+id/tv_product_title"
         android:layout_width="wrap_content"

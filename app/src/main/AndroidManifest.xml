@@ -37,6 +37,15 @@
             android:name=".activities.householdDisposer.HouseholdwasteDetails"
             android:exported="true"
             android:windowSoftInputMode="adjustResize"/>
+        <activity
+            android:name=".activities.cart.OrderActivity"
+            android:exported="true"
+            android:windowSoftInputMode="adjustResize"/>
+        <activity
+            android:name=".activities.cart.CashOnDeliveryActivity"
+
+            android:exported="true"
+            android:windowSoftInputMode="adjustResize"/>
 
         <activity
             android:name=".activities.householdDisposer.HouserHoldWasteAddPagetwo"
@@ -72,6 +81,10 @@
             android:windowSoftInputMode="adjustResize" />
         <activity
             android:name=".activities.recyclerProduct.EditProduct"
+            android:exported="true"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".activities.cart.CheckoutActivity"
             android:exported="true"
             android:windowSoftInputMode="adjustResize" />
         <activity

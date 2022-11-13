@@ -8,6 +8,47 @@ public class Cart {
     float totalPrice;
     float discount;
     float quantity;
+    float withoutTotal;
+    float newPrice;
+
+    public float getNewPrice() {
+        return newPrice;
+    }
+
+    public Cart(String userID, String id, String productName, float price, float totalPrice, float discount, float quantity, float withoutTotal, float newPrice) {
+        this.userID = userID;
+        this.id = id;
+        this.productName = productName;
+        this.price = price;
+        this.totalPrice = totalPrice;
+        this.discount = discount;
+        this.quantity = quantity;
+        this.withoutTotal = withoutTotal;
+        this.newPrice = newPrice;
+    }
+
+    public void setNewPrice(float newPrice) {
+        this.newPrice = newPrice;
+    }
+
+    public Cart(String userID, String id, String productName, float price, float totalPrice, float discount, float quantity, float withoutTotal) {
+        this.userID = userID;
+        this.id = id;
+        this.productName = productName;
+        this.price = price;
+        this.totalPrice = totalPrice;
+        this.discount = discount;
+        this.quantity = quantity;
+        this.withoutTotal = withoutTotal;
+    }
+
+    public float getWithoutTotal() {
+        return withoutTotal;
+    }
+
+    public void setWithoutTotal(float withoutTotal) {
+        this.withoutTotal = withoutTotal;
+    }
 
     public Cart(){
 
