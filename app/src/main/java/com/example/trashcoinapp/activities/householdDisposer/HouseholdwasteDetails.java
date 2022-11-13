@@ -7,6 +7,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
         import android.widget.Toast;
 
@@ -43,6 +44,7 @@ public class  HouseholdwasteDetails extends AppCompatActivity {
     ProgressBar loadingPB;
     private PreferenceManager preference;
     String userId;
+    ImageView img_back;
 
 
     @Override
@@ -58,7 +60,7 @@ public class  HouseholdwasteDetails extends AppCompatActivity {
         // initializing our variables.
         wasteRV = findViewById(R.id.idRVWaste);
         loadingPB = findViewById(R.id.idProgressBar);
-
+        img_back = findViewById(R.id.img_back);
 
         // initializing our variable for firebase
         // firestore and getting its instance.
@@ -152,6 +154,14 @@ public class  HouseholdwasteDetails extends AppCompatActivity {
                 }
 
                 return false;
+            }
+        });
+
+        img_back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(HouseholdwasteDetails.this, HouseHoldWasteAddPage.class);
+                startActivity(intent);
             }
         });
     }

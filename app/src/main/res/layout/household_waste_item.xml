@@ -23,14 +23,14 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
+            android:id="@+id/linearLayout"
             android:layout_width="391dp"
             android:layout_height="wrap_content"
             android:layout_margin="2dp"
             android:backgroundTint="#DACDCD"
             android:orientation="vertical"
             android:outlineSpotShadowColor="#272525"
-            android:padding="4dp"
-            android:id="@+id/linearLayout">
+            android:padding="4dp">
 
             <!--Textview for displaying our Course Name-->
 
@@ -45,9 +45,9 @@
                 android:textSize="24sp"
                 android:textStyle="bold"
                 tools:layout_conversion_absoluteHeight="36dp"
-                tools:layout_editor_absoluteY="11dp"
+                tools:layout_conversion_absoluteWidth="382dp"
                 tools:layout_editor_absoluteX="22dp"
-                tools:layout_conversion_absoluteWidth="382dp" />
+                tools:layout_editor_absoluteY="11dp" />
 
             <TextView
                 android:id="@+id/idTVPhone"
@@ -59,9 +59,9 @@
                 android:textSize="16sp"
                 android:textStyle="bold"
                 tools:layout_conversion_absoluteHeight="26dp"
-                tools:layout_editor_absoluteY="47dp"
+                tools:layout_conversion_absoluteWidth="382dp"
                 tools:layout_editor_absoluteX="22dp"
-                tools:layout_conversion_absoluteWidth="382dp" />
+                tools:layout_editor_absoluteY="47dp" />
 
             <!--Textview for displaying our Course Description-->
             <TextView
@@ -74,9 +74,9 @@
                 android:textSize="16sp"
                 android:textStyle="bold"
                 tools:layout_conversion_absoluteHeight="26dp"
-                tools:layout_editor_absoluteY="73dp"
+                tools:layout_conversion_absoluteWidth="382dp"
                 tools:layout_editor_absoluteX="22dp"
-                tools:layout_conversion_absoluteWidth="382dp" />
+                tools:layout_editor_absoluteY="73dp" />
 
             <TextView
                 android:id="@+id/idTVWasteItem"
@@ -88,9 +88,9 @@
                 android:textSize="16sp"
                 android:textStyle="bold"
                 tools:layout_conversion_absoluteHeight="26dp"
-                tools:layout_editor_absoluteY="98dp"
+                tools:layout_conversion_absoluteWidth="382dp"
                 tools:layout_editor_absoluteX="22dp"
-                tools:layout_conversion_absoluteWidth="382dp" />
+                tools:layout_editor_absoluteY="98dp" />
 
             <Button
                 android:id="@+id/btn_delete"
@@ -103,9 +103,9 @@
                 android:textStyle="bold"
                 app:cornerRadius="@dimen/_100ssp"
                 tools:layout_conversion_absoluteHeight="48dp"
-                tools:layout_editor_absoluteY="124dp"
+                tools:layout_conversion_absoluteWidth="97dp"
                 tools:layout_editor_absoluteX="22dp"
-                tools:layout_conversion_absoluteWidth="97dp" />
+                tools:layout_editor_absoluteY="124dp" />
 
         </LinearLayout>
 

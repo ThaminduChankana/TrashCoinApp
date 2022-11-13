@@ -1,151 +1,133 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".activities.householdDisposer.WasteManagementMoredetails">
 
+    <TextView
+        android:id="@+id/txt_more"
+        android:layout_width="369dp"
+        android:layout_height="57dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="44dp"
+        android:text="How to manage waste disposal in home?"
+        android:textColor="#4CAF50"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
     <ImageView
         android:id="@+id/imageView8"
         android:layout_width="394dp"
         android:layout_height="226dp"
         android:layout_marginTop="25dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_more"
-        app:srcCompat="@drawable/moredetails" />
+        app:srcCompat="@drawable/moredetails"
+        android:layout_below="@+id/txt_more"/>
 
-    <TextView
-        android:id="@+id/txt_more"
-        android:layout_width="369dp"
-        android:layout_height="57dp"
-        android:layout_marginTop="44dp"
-        android:text="How to manage waste disposal in home?"
-        android:textColor="#4CAF50"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.619"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+
 
 
     <TextView
         android:id="@+id/txt_moredetails"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="100dp"
+        android:layout_marginStart="50dp"
         android:layout_marginTop="12dp"
         android:text="1.Limit the use of plastic."
         android:textAlignment="center"
         android:textSize="16sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView8" />
+        android:layout_below="@+id/imageView8"
+        />
 
     <TextView
         android:id="@+id/txt_more2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="130dp"
+        android:layout_marginStart="50dp"
         android:layout_marginTop="4dp"
         android:layout_marginEnd="168dp"
         android:text="2.Segregate the waste."
         android:textAlignment="center"
         android:textSize="16sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.615"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_moredetails" />
+        android:layout_below="@+id/txt_moredetails"
+        />
 
     <TextView
         android:id="@+id/txt_more3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="130dp"
+        android:layout_marginStart="50dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="137dp"
         android:text="3.Reduce the use of paper."
         android:textAlignment="center"
         android:textSize="16sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.657"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_more2" />
+        android:layout_below="@+id/txt_more2"
+        />
 
     <TextView
         android:id="@+id/txt_more4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="112dp"
+        android:layout_marginStart="50dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="146dp"
         android:text="4.Say yes to composting."
         android:textAlignment="center"
         android:textSize="16sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.428"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_more3" />
+        android:layout_below="@+id/txt_more3"
+       />
 
     <TextView
         android:id="@+id/txt_more5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="110dp"
+        android:layout_marginStart="50dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="127dp"
         android:text="5.Plan your meals in advance."
         android:textAlignment="center"
         android:textSize="16sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.185"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_more4" />
+        android:layout_below="@+id/txt_more4"
+         />
 
     <TextView
         android:id="@+id/txt_more6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="120dp"
+        android:layout_marginStart="50dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="127dp"
         android:text="6.Invest in good-quality clothes."
         android:textAlignment="center"
         android:textSize="16sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.24"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_more5" />
+        android:layout_below="@+id/txt_more5"
+       />
 
     <TextView
         android:id="@+id/txt_more7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="100dp"
+        android:layout_marginStart="50dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="155dp"
         android:text="7.Pay your bills online."
         android:textAlignment="center"
         android:textSize="16sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_more6" />
+        android:layout_below="@+id/txt_more6"
+         />
 
     <TextView
         android:id="@+id/txt_more8"
         android:layout_width="397dp"
         android:layout_height="51dp"
-        android:layout_marginStart="7dp"
+        android:layout_marginStart="30dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="7dp"
         android:text="More Details:https://parenting.firstcry.com/articles/magazine-best-methods-to-manage-your-household-waste/."
@@ -153,22 +135,11 @@
         android:textColor="#03A9F4"
         android:textSize="14sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_more7" />
+        android:layout_below="@+id/txt_more7"
+         />
 
 
-    <FrameLayout
-        android:id="@+id/btm_nav_disposer_container"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_above="@id/txt_more"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0">
+
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/bottom_navigation_disposer"
@@ -186,7 +157,4 @@
 
         </com.google.android.material.bottomnavigation.BottomNavigationView>
 
-
-    </FrameLayout>
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>
