@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+    tools:context=".activities.recyclerProduct.RecyclerProductView">
+
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignParentStart="true"
+    android:layout_alignParentTop="true"
+    android:layout_marginStart="92dp"
+    android:layout_marginTop="34dp"
+    android:gravity="center"
+    android:text="@string/tv_products_recycler"
+    android:textColor="@color/heading"
+    android:textSize="30sp"
+    android:textStyle="italic" />
+
+<ImageView
+    android:id="@+id/img_add_product_system"
+    android:layout_width="49dp"
+    android:layout_height="51dp"
+    android:layout_alignParentTop="true"
+    android:layout_alignParentEnd="true"
+    android:layout_marginTop="23dp"
+    android:layout_marginEnd="35dp"
+    app:srcCompat="@drawable/add_product" />
+
+<androidx.recyclerview.widget.RecyclerView
+    android:id="@+id/recycledProductRecycler"
+    android:layout_width="match_parent"
+    android:layout_height="593dp"
+    android:layout_alignParentStart="true"
+    android:layout_alignParentTop="true"
+    android:layout_marginStart="0dp"
+    android:layout_marginTop="84dp" />
+
+<ProgressBar
+    android:id="@+id/idProgressBar"
+    style="?android:attr/progressBarStyle"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignParentBottom="true"
+    android:layout_centerHorizontal="true"
+    android:layout_marginBottom="312dp" />
+
+    <FrameLayout
+        android:id="@+id/btm_nav_disposer_container"
+        android:layout_width="match_parent"
+        android:layout_height="670dp"
+        android:layout_above="@id/bottom_navigation_recycler"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginBottom="5dp" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation_recycler"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="1dp"
+        android:layout_marginBottom="1dp"
+        android:background="@color/btn_color"
+        app:itemIconTint="@color/white"
+        app:itemTextColor="@color/white"
+        app:menu="@menu/bottom_nav_recycler_menu" />
+
+
+
+
+</RelativeLayout>

@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:elevation="8dp"
+    android:divider="@android:color/transparent"
+    android:layout_marginHorizontal="10dp"
+    android:scrollbars="vertical"
+    app:cardCornerRadius="25dp"
+    android:layout_marginBottom="10dp"
+    app:cardUseCompatPadding="true"
+    android:dividerHeight="0.0px"
+    android:clipToPadding="false"
+    android:clipChildren="false"
+    app:cardElevation="10dp"
+    android:layout_margin="4dp"
+    app:cardPreventCornerOverlap="false">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:background="#B8F1B0">
+
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:id="@+id/img_collector_item"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="5dp"
+            android:src="@drawable/img_collector"
+            app:riv_border_color="@color/black"
+            tools:ignore="ImageContrastCheck" />
+
+        <TextView
+            android:id="@+id/tv_recycler_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_toEndOf="@id/img_collector_item"
+            android:text="@string/tv_res_recycler_name"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_recycler_name_ans"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_toEndOf="@id/tv_recycler_name"
+            android:text="@string/txt"
+            android:textColor="@color/black"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/tv_recycler_phone"
+            android:layout_below="@id/tv_recycler_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_toEndOf="@id/img_collector_item"
+            android:text="@string/tv_recycler_phone"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_collector_phone_ans"
+            android:layout_below="@id/tv_recycler_name_ans"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_toEndOf="@id/tv_recycler_phone"
+            android:text="@string/txt"
+            android:textColor="@color/black"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/tv_recycler_company_service"
+            android:layout_below="@id/tv_recycler_phone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_toEndOf="@id/img_collector_item"
+            android:text="@string/tv_res_working_company"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_recycler_company_service_ans"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_collector_phone_ans"
+            android:layout_marginStart="5dp"
+            android:layout_toEndOf="@id/tv_recycler_company_service"
+            android:text="@string/txt"
+            android:textColor="@color/black"
+            android:textSize="15sp" />
+
+
+
+
+
+
+
+
+
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>
+    </layout>

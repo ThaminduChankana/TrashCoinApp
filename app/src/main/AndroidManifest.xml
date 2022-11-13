@@ -55,6 +55,26 @@
             android:exported="true"
             android:windowSoftInputMode="adjustResize"/>
         <activity
+            android:name=".activities.addData.RecyclersListForCollectors"
+            android:exported="true"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".activities.addData.RecyclerAddData"
+            android:exported="true"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".activities.recyclerProduct.RecyclerProductView"
+            android:exported="true"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".activities.recyclerProduct.AddProduct"
+            android:exported="true"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".activities.recyclerProduct.EditProduct"
+            android:exported="true"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
             android:name=".activities.calculators.CollectorCalculator"
             android:exported="true"
             android:windowSoftInputMode="adjustResize"  />
