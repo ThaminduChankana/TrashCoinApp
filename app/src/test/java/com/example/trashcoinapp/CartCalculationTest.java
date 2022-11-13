@@ -23,4 +23,5 @@ public class CartCalculationTest {
         double result=cartCalculation.increaseTotalPrice(5.0F,100.0F);
         assertEquals(600.0,result);
     }
+
 }

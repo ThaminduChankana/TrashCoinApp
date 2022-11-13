@@ -19,4 +19,22 @@ public class CollectorCalculatorTest {
         assertEquals(300,result);
     }
 
+    @Test
+    public void testSubtract(){
+        int result=calculation.subtract(200,100);
+        assertEquals(100,result);
+    }
+
+    @Test
+    public void testMultiply(){
+        int result=calculation.multiply(10,20);
+        assertEquals(200,result);
+    }
+
+    @Test
+    public void testDivide(){
+        int result=calculation.divide(200,100);
+        assertEquals(2,result);
+    }
+
 }
