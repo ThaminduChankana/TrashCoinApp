@@ -133,7 +133,7 @@
     <string name="tv_checkout_total">Total Price</string>
     <string name="tv_set_price">0</string>
     <string name="tv_checkout_discount">Discount</string>
-    <string name="tv_total_payable">Total Payable </string>
+    <string name="tv_total_payable">Total Payable</string>
     <string name="btn_pay_online">Pay Online</string>
     <string name="btn_cash_delivery">Cash On Delivery</string>
     <string name="tv_cash_delivery">Cash On Delivery</string>
@@ -161,4 +161,15 @@
     <string name="tv_collectors">Collectors</string>
     <string name="btn_col_calculator">Calculator</string>
     <string name="tv_calculator">Calculator</string>
+    <string name="cash_on_delivery">Cash On Delivery</string>
+    <string name="what_is_type_of_waste_do_you_have">What is type of waste do you have?</string>
+    <string name="plastic_waste">Plastic Waste</string>
+    <string name="paper_waste">Paper Waste</string>
+    <string name="metal_waste">Metal Waste</string>
+    <string name="aluminium_waste">Aluminium Waste</string>
+    <string name="cardboard_waste">Cardboard Waste</string>
+    <string name="welcome_on_board">Welcome On Board</string>
+    <string name="btn_next">Next</string>
+    <string name="timetable">Timetable</string>
+    <string name="more_details">More Details</string>
 </resources>
