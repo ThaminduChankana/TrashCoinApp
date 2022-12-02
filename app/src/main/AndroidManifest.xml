@@ -64,7 +64,7 @@
             android:exported="true"
             android:windowSoftInputMode="adjustResize"/>
         <activity
-            android:name=".activities.addData.RecyclersListForCollectors"
+            android:name=".activities.recyclers.RecyclersListForCollectors"
             android:exported="true"
             android:windowSoftInputMode="adjustResize" />
         <activity
@@ -141,10 +141,6 @@
             android:exported="true"
             android:windowSoftInputMode="adjustResize" />
         <activity
-            android:name=".activities.chat.ChatDisposer"
-            android:exported="true"
-            android:windowSoftInputMode="adjustResize" />
-        <activity
             android:name=".activities.messaging.MessagingActivity"
             android:exported="true"
             android:windowSoftInputMode="adjustResize" />
@@ -154,6 +150,10 @@
             android:windowSoftInputMode="adjustResize" />
         <activity
             android:name=".activities.chat.Chat"
+            android:exported="true"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".activities.chat.ChatDisposer"
             android:exported="true"
             android:windowSoftInputMode="adjustResize" />
         <activity

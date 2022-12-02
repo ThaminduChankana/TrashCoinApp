@@ -1,4 +1,4 @@
-package com.example.trashcoinapp.activities.addData;
+package com.example.trashcoinapp.activities.recyclers;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;

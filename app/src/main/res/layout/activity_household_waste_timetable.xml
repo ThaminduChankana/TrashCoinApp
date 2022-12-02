@@ -3,174 +3,173 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     tools:context=".activities.householdDisposer.HouseholdWasteTimetable">
-
 
 
     <TextView
         android:id="@+id/txt_timetable"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
         android:layout_marginStart="30dp"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="70dp"
-        android:text="Collector's Timetable"
+        android:layout_marginEnd="20dp"
+        android:text="@string/collector_s_timetable"
         android:textColor="#4CAF50"
         android:textSize="24sp"
-        android:textStyle="bold"
-         />
+        android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/img_timetable_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txt_timetable"
+        android:layout_gravity="start"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="15dp"
+        android:contentDescription="@string/todo"
+        android:src="@drawable/img_btn_back" />
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="612dp"
-        android:layout_height="167dp"
+        android:layout_width="match_parent"
+        android:layout_height="175dp"
+        android:layout_below="@+id/img_timetable_back"
         android:layout_marginTop="8dp"
-        android:layout_below="@+id/txt_timetable"
         app:srcCompat="@drawable/timetable" />
 
-    <TextView
-        android:id="@+id/txt_datetitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:text="Date Time"
-        android:textColor="#1B1A1A"
-        android:textSize="34sp"
-        android:layout_marginStart="30dp"
-        android:textStyle="bold"
-        android:layout_below="@+id/imageView"
-         />
 
     <TextView
         android:id="@+id/txt_weekdays"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="Weekdays"
-        android:textColor="#000000"
+        android:layout_below="@+id/imageView"
+        android:layout_centerHorizontal="true"
         android:layout_marginStart="30dp"
-        android:textSize="24sp"
-        android:layout_below="@+id/txt_datetitle"
-        />
+        android:layout_marginTop="8dp"
+        android:text="@string/weekdays"
+        android:textColor="#000000"
+        android:textSize="25sp" />
 
     <TextView
         android:id="@+id/txt_one"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/txt_weekdays"
         android:layout_marginStart="30dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="50dp"
-        android:text="Monday - 8.00 am - 5.00 pm  / Avissawella"
+        android:layout_marginTop="20dp"
+
+        android:layout_marginEnd="20dp"
+        android:gravity="center_horizontal"
+        android:text="@string/monday_8_00_am_5_00_pm"
         android:textSize="16sp"
-        android:textStyle="bold"
-        android:layout_below="@+id/txt_weekdays"/>
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/txt_two"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="70dp"
-        android:text="Tuesday - 8.00 am - 5.00 pm / Kegalle"
-        android:textSize="16sp"
-        android:textStyle="bold"
         android:layout_below="@+id/txt_one"
-         />
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp"
+        android:gravity="center_horizontal"
+        android:text="@string/tuesday_8_00_am_5_00_pm"
+        android:textSize="16sp"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/txt_tree"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="70dp"
-        android:text="Wednesday - 8.00 - 5.00 / Rathnapura"
-        android:textSize="16sp"
-        android:textStyle="bold"
         android:layout_below="@+id/txt_two"
-         />
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp"
+        android:gravity="center_horizontal"
+        android:text="@string/wednesday_8_00_5_00"
+        android:textSize="16sp"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/txt_four"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="70dp"
-        android:text="Thursday - 8.00 - 5.00 / Eheliygoda"
-        android:textSize="16sp"
-        android:textStyle="bold"
         android:layout_below="@+id/txt_tree"
-        />
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp"
+        android:gravity="center_horizontal"
+        android:text="@string/thursday_8_00_5_00"
+        android:textSize="16sp"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/txt_five"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="70dp"
-        android:text="Friday - 8.00 - 5.00 / Colombo"
-        android:textSize="16sp"
-        android:textStyle="bold"
         android:layout_below="@+id/txt_four"
-         />
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp"
+        android:gravity="center_horizontal"
+        android:text="@string/friday_8_00_5_00"
+        android:textSize="16sp"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/txt_weekend"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="Weekend"
-        android:layout_marginStart="30dp"
-        android:textColor="#090909"
-        android:textSize="24sp"
         android:layout_below="@+id/txt_five"
-        />
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="50dp"
+        android:text="@string/weekend"
+        android:textColor="#090909"
+        android:textSize="25sp" />
 
     <TextView
         android:id="@+id/txt_six"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="70dp"
-        android:text="Saturday - 8.00 - 2.00 / Colombo"
-        android:textSize="16sp"
-        android:textStyle="bold"
         android:layout_below="@+id/txt_weekend"
-        />
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:gravity="center_horizontal"
+        android:text="@string/saturday_8_00_2_00"
+        android:textSize="16sp"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/txt_seven"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="70dp"
-        android:text="Saturday - 8.00 - 4.00 / Nettbuwa"
-        android:textSize="16sp"
-        android:textStyle="bold"
         android:layout_below="@+id/txt_six"
-        />
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp"
+        android:gravity="center_horizontal"
+        android:text="@string/saturday_8_00_4_00"
+        android:textSize="16sp"
+        android:textStyle="bold" />
 
 
-
-        <com.google.android.material.bottomnavigation.BottomNavigationView
-            android:id="@+id/bottom_navigation_disposer"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_marginTop="675dp"
-            android:background="@color/btn_color"
-            app:itemIconTint="@color/white"
-            app:itemTextColor="@color/white"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:menu="@menu/bottom_nav_disposer_menu" />
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation_disposer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="675dp"
+        android:background="@color/btn_color"
+        app:itemIconTint="@color/white"
+        app:itemTextColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:menu="@menu/bottom_nav_disposer_menu" />
 
 
 </RelativeLayout>

@@ -6,11 +6,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
 import android.view.WindowManager;
 
 import com.example.trashcoinapp.R;
 import com.example.trashcoinapp.activities.cart.ProductViewActivity;
 import com.example.trashcoinapp.activities.chat.ChatDisposer;
+import com.example.trashcoinapp.activities.collectors.CollectorsForDisposers;
 import com.example.trashcoinapp.activities.dashboards.WasteDisposerDashboard;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -23,6 +25,14 @@ public class HouseholdWasteTimetable extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_household_waste_timetable);
 
+        findViewById(R.id.img_timetable_back).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), WasteDisposerDashboard.class));
+                overridePendingTransition(0, 0);
+                finish();
+            }
+        });
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation_disposer);
         bottomNavigationView.setSelectedItemId(R.id.img_disposer_home);
@@ -32,23 +42,29 @@ public class HouseholdWasteTimetable extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()) {
                     case R.id.img_disposer_home:
-                        return true;
-                    case R.id.img_view_collectors:
                         startActivity(new Intent(getApplicationContext(), WasteDisposerDashboard.class));
                         overridePendingTransition(0, 0);
+                        finish();
+                        return true;
+                    case R.id.img_view_collectors:
+                        startActivity(new Intent(getApplicationContext(), CollectorsForDisposers.class));
+                        overridePendingTransition(0, 0);
+                        finish();
                         return true;
                     case R.id.img_shopping_cart:
-                        startActivity(new Intent(getApplicationContext(), HouseholdwasteUpdate.class));
+                        startActivity(new Intent(getApplicationContext(), ProductViewActivity.class));
                         overridePendingTransition(0, 0);
                         return true;
                     case R.id.img_waste_in_hand:
-                        startActivity(new Intent(getApplicationContext(), HouseHoldWasteAddPage.class));
+                        startActivity(new Intent(getApplicationContext(), WasteDisposerWelcomePage.class));
                         overridePendingTransition(0, 0);
+                        finish();
                         return true;
                     case R.id.img_collector_chat:
                         startActivity(new Intent(getApplicationContext(), ChatDisposer.class));
                         overridePendingTransition(0, 0);
                         finish();
+                        return true;
                 }
 
                 return false;

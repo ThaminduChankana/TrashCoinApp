@@ -16,13 +16,10 @@ import com.example.trashcoinapp.R;
 import com.example.trashcoinapp.activities.BaseActivity;
 import com.example.trashcoinapp.activities.addData.CollectorAddData;
 
-import com.example.trashcoinapp.activities.addData.RecyclersListForCollectors;
+import com.example.trashcoinapp.activities.recyclers.RecyclersListForCollectors;
 
 import com.example.trashcoinapp.activities.calculators.CollectorCalculator;
 
-import com.example.trashcoinapp.activities.cart.ProductViewActivity;
-import com.example.trashcoinapp.activities.chat.ChatDisposer;
-import com.example.trashcoinapp.activities.collectors.CollectorsForDisposers;
 import com.example.trashcoinapp.activities.inventory.InventoryActivity;
 import com.example.trashcoinapp.activities.user.LoginSelector;
 import com.example.trashcoinapp.activities.chat.Chat;

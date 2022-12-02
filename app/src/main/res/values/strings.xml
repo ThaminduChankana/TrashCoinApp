@@ -172,4 +172,16 @@
     <string name="btn_next">Next</string>
     <string name="timetable">Timetable</string>
     <string name="more_details">More Details</string>
+    <string name="submit">Submit</string>
+    <string name="collector_s_timetable">Collector\'s Timetable</string>
+    <string name="date_time">Date Time</string>
+    <string name="weekend">Weekend</string>
+    <string name="weekdays">Weekdays</string>
+    <string name="monday_8_00_am_5_00_pm">Monday - 8.00 am - 5.00 pm</string>
+    <string name="tuesday_8_00_am_5_00_pm">Tuesday - 8.00 am - 5.00 pm</string>
+    <string name="wednesday_8_00_5_00">Wednesday - 8.00 - 5.00</string>
+    <string name="thursday_8_00_5_00">Thursday - 8.00 - 5.00</string>
+    <string name="friday_8_00_5_00">Friday - 8.00 - 5.00</string>
+    <string name="saturday_8_00_2_00">Saturday - 8.00 - 2.00</string>
+    <string name="saturday_8_00_4_00">Saturday - 8.00 - 4.00</string>
 </resources>
