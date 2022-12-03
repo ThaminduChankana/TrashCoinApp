@@ -12,30 +12,32 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_gravity="start"
-        android:layout_marginStart="5dp"
-        android:layout_marginTop="10dp"
+        android:layout_below="@id/tv_cart"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
         android:contentDescription="@string/todo"
         android:src="@drawable/img_btn_back" />
 
     <TextView
         android:id="@+id/totalPrice"
-        android:layout_width="84dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
+        android:layout_below="@id/tv_cart"
+        android:layout_centerHorizontal="true"
         android:layout_marginStart="180dp"
-        android:layout_marginTop="21dp"
+        android:layout_marginTop="15dp"
         android:textSize="18sp"
         android:textStyle="bold" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/idRVCartItems"
         android:layout_width="match_parent"
-        android:layout_height="597dp"
+        android:layout_height="match_parent"
+        android:layout_above="@id/bottom_navigation_disposer"
+        android:layout_below="@id/img_cart_back"
         android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
         android:layout_marginStart="0dp"
-        android:layout_marginTop="75dp"
+        android:layout_marginTop="10dp"
         android:dividerHeight="10.0sp" />
 
 
@@ -46,38 +48,32 @@
         android:layout_centerInParent="true" />
 
 
-
-
     <Button
         android:id="@+id/btn_checkout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="14dp"
-        android:layout_marginEnd="30dp"
-        android:text="@string/btn_checkout"
-        app:cornerRadius="50dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="20dp"
         android:backgroundTint="@color/btn_color"
-       />
+        android:text="@string/btn_checkout"
+        android:textSize="12dp"
+        app:cornerRadius="50dp" />
 
     <TextView
+        android:id="@+id/tv_cart"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
         android:layout_marginStart="55dp"
-        android:layout_marginTop="14dp"
+        android:layout_marginTop="15dp"
         android:gravity="center"
         android:text="@string/tv_my_cart"
         android:textColor="@android:color/holo_green_light"
         android:textSize="30sp"
         android:textStyle="italic" />
 
-    <FrameLayout
-        android:id="@+id/btm_nav_disposer_container"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_above="@id/bottom_navigation_disposer"
-        android:layout_marginBottom="-56dp" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation_disposer"

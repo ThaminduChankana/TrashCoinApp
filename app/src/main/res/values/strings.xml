@@ -184,4 +184,22 @@
     <string name="friday_8_00_5_00">Friday - 8.00 - 5.00</string>
     <string name="saturday_8_00_2_00">Saturday - 8.00 - 2.00</string>
     <string name="saturday_8_00_4_00">Saturday - 8.00 - 4.00</string>
+    <string name="update_waste_details">Update Waste Details</string>
+    <string name="waste_items">Waste Items</string>
+    <string name="what_type_of_waste_do_you_have">What type of waste do you have?</string>
+    <string name="add_product_image">Add Product Image</string>
+    <string name="waste_disposers">Waste Disposers</string>
+    <string name="desc_disposer">So many waste issues have negative consequences on the quality of life;Here comes our rule to help you have an environmental impact and feel good about it..</string>
+    <string name="tv_let_s_go">LET\'S GO</string>
+    <string name="tv_disp_man">WELCOME TO WASTE DISPOSAL MANAGEMENT</string>
+    <string name="txt_welcome">Trash coin app is here for you, If you’re interested in working you way towards a more sustainable lifestyle,Get creative with your waste items and find new uses for them.Dont’t worry we’ll do it for you..</string>
+    <string name="txt_more">How to manage waste disposal in home?</string>
+    <string name="tv_man_01">1.Limit the use of plastic.</string>
+    <string name="tv_man_02">2.Segregate the waste.</string>
+    <string name="tv_man_03">3.Reduce the use of paper.</string>
+    <string name="tv_man_04">4.Say yes to composting.</string>
+    <string name="tv_man_05">5.Plan your meals in advance.</string>
+    <string name="tv_man_06">6.Invest in good-quality clothes.</string>
+    <string name="tv_man_07">7.Pay your bills online.</string>
+    <string name="tv_url">More Details:https://parenting.firstcry.com/articles/magazine-best-methods-to-manage-your-household-waste/.</string>
 </resources>

@@ -19,6 +19,7 @@ import com.example.trashcoinapp.R;
 import com.example.trashcoinapp.activities.chat.Chat;
 import com.example.trashcoinapp.activities.dashboards.WasteCollectorDashboard;
 import com.example.trashcoinapp.activities.inventory.InventoryActivity;
+import com.example.trashcoinapp.activities.recyclers.RecyclersListForCollectors;
 import com.example.trashcoinapp.adapters.DisposerWasteAllViewForCollectorAdapter;
 import com.example.trashcoinapp.models.HouseholdWaste;
 import com.example.trashcoinapp.utilities.Constants;
@@ -152,11 +153,11 @@ public class WasteDisposerAllView extends AppCompatActivity {
                             return true;
                         case R.id.img_collector_disposers:
                             return true;
-////                    case R.id.img_collector_recyclers:
-////                        startActivity(new Intent(getApplicationContext(), ProductViewActivity.class));
-////                        overridePendingTransition(0, 0);
-////                        finish();
-////                        return true;
+                        case R.id.img_collector_recyclers:
+                            startActivity(new Intent(getApplicationContext(), RecyclersListForCollectors.class));
+                            overridePendingTransition(0, 0);
+                            finish();
+                            return true;
                         case R.id.img_collector_inventory:
                             startActivity(new Intent(getApplicationContext(), InventoryActivity.class));
                             overridePendingTransition(0, 0);

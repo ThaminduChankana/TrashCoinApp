@@ -16,6 +16,7 @@ import com.example.trashcoinapp.R;
 import com.example.trashcoinapp.activities.BaseActivity;
 import com.example.trashcoinapp.activities.addData.CollectorAddData;
 
+import com.example.trashcoinapp.activities.householdDisposer.WasteDisposerAllView;
 import com.example.trashcoinapp.activities.recyclers.RecyclersListForCollectors;
 
 import com.example.trashcoinapp.activities.calculators.CollectorCalculator;
@@ -41,6 +42,7 @@ public class WasteCollectorDashboard extends BaseActivity {
     private CardView cv_wc_db_chat;
     private CardView cv_wc_db_inventory;
     private CardView cv_wc_db_recycler;
+    private CardView cv_wc_db_disposer;
     private Button btn_logout, btn_add_details, btn_calculator;
 
 
@@ -56,6 +58,7 @@ public class WasteCollectorDashboard extends BaseActivity {
         tv_waste_collector_dashboard=findViewById(R.id.tv_waste_collector_dashboard);
         cv_wc_db_chat = findViewById(R.id.cv_wc_db_chat);
         cv_wc_db_inventory = findViewById(R.id.cv_wc_db_inventory);
+        cv_wc_db_disposer = findViewById(R.id.cv_wc_db_disposer);
         btn_logout = findViewById(R.id.btn_logout);
         btn_add_details = findViewById(R.id.btn_add_details);
 
@@ -95,6 +98,14 @@ public class WasteCollectorDashboard extends BaseActivity {
             }
         });
 
+        cv_wc_db_disposer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), WasteDisposerAllView.class);
+                startActivity(intent);
+            }
+        });
+
         cv_wc_db_chat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -119,16 +130,16 @@ public class WasteCollectorDashboard extends BaseActivity {
                 switch (item.getItemId()) {
                     case R.id.img_collector_home:
                         return true;
-//                    case R.id.img_collector_disposers:
-//                        startActivity(new Intent(getApplicationContext(), CollectorsForDisposers.class));
-//                        overridePendingTransition(0, 0);
-//                        finish();
-//                        return true;
-//                    case R.id.img_collector_recyclers:
-//                        startActivity(new Intent(getApplicationContext(), ProductViewActivity.class));
-//                        overridePendingTransition(0, 0);
-//                        finish();
-//                        return true;
+                    case R.id.img_collector_disposers:
+                        startActivity(new Intent(getApplicationContext(), WasteDisposerAllView.class));
+                        overridePendingTransition(0, 0);
+                        finish();
+                        return true;
+                    case R.id.img_collector_recyclers:
+                        startActivity(new Intent(getApplicationContext(), RecyclersListForCollectors.class));
+                        overridePendingTransition(0, 0);
+                        finish();
+                        return true;
                     case R.id.img_collector_inventory:
                         startActivity(new Intent(getApplicationContext(), InventoryActivity.class));
                         overridePendingTransition(0, 0);

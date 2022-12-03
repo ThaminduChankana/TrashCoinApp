@@ -11,73 +11,78 @@
         android:layout_width="369dp"
         android:layout_height="57dp"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="44dp"
-        android:text="How to manage waste disposal in home?"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:text="@string/txt_more"
         android:textColor="#4CAF50"
         android:textSize="24sp"
         android:textStyle="bold" />
 
     <ImageView
-        android:id="@+id/imageView8"
-        android:layout_width="394dp"
-        android:layout_height="226dp"
+        android:id="@+id/btnbacktotimetable"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txt_more"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="25dp"
-        app:srcCompat="@drawable/moredetails"
-        android:layout_below="@+id/txt_more"/>
+        app:srcCompat="@drawable/img_btn_back" />
 
-
+    <ImageView
+        android:id="@+id/imageView8"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_below="@+id/btnbacktotimetable"
+        android:layout_marginTop="25dp"
+        app:srcCompat="@drawable/moredetails" />
 
 
     <TextView
         android:id="@+id/txt_moredetails"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="12dp"
-        android:text="1.Limit the use of plastic."
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="25dp"
+        android:layout_below="@+id/imageView8"
+        android:layout_marginTop="20dp"
+        android:text="@string/tv_man_01"
         android:textAlignment="center"
         android:textSize="16sp"
-        android:textStyle="bold"
-        android:layout_below="@+id/imageView8"
-        />
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/txt_more2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginEnd="168dp"
-        android:text="2.Segregate the waste."
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="25dp"
+        android:layout_below="@+id/txt_moredetails"
+        android:text="@string/tv_man_02"
         android:textAlignment="center"
         android:textSize="16sp"
-        android:textStyle="bold"
-        android:layout_below="@+id/txt_moredetails"
-        />
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/txt_more3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="137dp"
-        android:text="3.Reduce the use of paper."
+        android:layout_centerHorizontal="true"
+
+        android:layout_below="@+id/txt_more2"
+        android:text="@string/tv_man_03"
         android:textAlignment="center"
         android:textSize="16sp"
-        android:textStyle="bold"
-        android:layout_below="@+id/txt_more2"
-        />
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/txt_more4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="146dp"
-        android:text="4.Say yes to composting."
-        android:textAlignment="center"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="25dp"
+        android:text="@string/tv_man_04"
         android:textSize="16sp"
         android:textStyle="bold"
         android:layout_below="@+id/txt_more3"
@@ -87,9 +92,10 @@
         android:id="@+id/txt_more5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="8dp"
-        android:text="5.Plan your meals in advance."
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="25dp"
+        android:text="@string/tv_man_05"
         android:textAlignment="center"
         android:textSize="16sp"
         android:textStyle="bold"
@@ -98,25 +104,25 @@
 
     <TextView
         android:id="@+id/txt_more6"
+        android:layout_below="@+id/txt_more5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="8dp"
-        android:text="6.Invest in good-quality clothes."
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="25dp"
+        android:text="@string/tv_man_06"
         android:textAlignment="center"
         android:textSize="16sp"
-        android:textStyle="bold"
-        android:layout_below="@+id/txt_more5"
-       />
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/txt_more7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="155dp"
-        android:text="7.Pay your bills online."
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="25dp"
+        android:text="@string/tv_man_07"
         android:textAlignment="center"
         android:textSize="16sp"
         android:textStyle="bold"
@@ -125,36 +131,22 @@
 
     <TextView
         android:id="@+id/txt_more8"
-        android:layout_width="397dp"
-        android:layout_height="51dp"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="7dp"
-        android:text="More Details:https://parenting.firstcry.com/articles/magazine-best-methods-to-manage-your-household-waste/."
+        android:layout_below="@+id/txt_more7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginTop="25dp"
+        android:gravity="center"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="50dp"
+        android:paddingStart="25dp"
+        android:paddingEnd="25dp"
+        android:text="@string/tv_url"
         android:textAlignment="center"
         android:textColor="#03A9F4"
         android:textSize="14sp"
-        android:textStyle="bold"
-        android:layout_below="@+id/txt_more7"
-         />
-
-
-
-
-        <com.google.android.material.bottomnavigation.BottomNavigationView
-            android:id="@+id/bottom_navigation_disposer"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_marginTop="675dp"
-            android:background="@color/btn_color"
-            app:itemIconTint="@color/white"
-            app:itemTextColor="@color/white"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:menu="@menu/bottom_nav_disposer_menu">
-
-        </com.google.android.material.bottomnavigation.BottomNavigationView>
+        android:textStyle="bold" />
 
 </RelativeLayout>

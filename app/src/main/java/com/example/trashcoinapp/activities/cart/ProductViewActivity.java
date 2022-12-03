@@ -35,7 +35,7 @@ import java.util.List;
 
 public class ProductViewActivity extends AppCompatActivity {
 
-    ImageView img_shopping_cart, img_order;
+    ImageView img_shopping_cart, img_order, img_prd_back;
     static Context context;
     private RecyclerView productRV;
     private ArrayList<Product> productsArrayList;
@@ -57,6 +57,7 @@ public class ProductViewActivity extends AppCompatActivity {
         loadingPB = findViewById(R.id.idProgressBar);
         img_shopping_cart = findViewById(R.id.img_shopping_cart);
         img_order = findViewById(R.id.img_order);
+        img_prd_back = findViewById(R.id.img_prd_back);
 
         productsArrayList = new ArrayList<>();
         productRV .setHasFixedSize(true);
@@ -82,6 +83,14 @@ public class ProductViewActivity extends AppCompatActivity {
             }
         });
 
+        img_prd_back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), WasteDisposerDashboard.class);
+                startActivity(intent);
+                finish();
+            }
+        });
 
         // bottom navigation
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation_disposer);

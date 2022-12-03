@@ -11,8 +11,10 @@ import androidx.annotation.NonNull;
 import com.example.trashcoinapp.R;
 import com.example.trashcoinapp.activities.BaseActivity;
 import com.example.trashcoinapp.activities.dashboards.WasteCollectorDashboard;
+import com.example.trashcoinapp.activities.householdDisposer.WasteDisposerAllView;
 import com.example.trashcoinapp.activities.inventory.InventoryActivity;
 import com.example.trashcoinapp.activities.messaging.MessagingActivity;
+import com.example.trashcoinapp.activities.recyclers.RecyclersListForCollectors;
 import com.example.trashcoinapp.adapters.UsersAdapter;
 import com.example.trashcoinapp.databinding.ActivityUsersBinding;
 import com.example.trashcoinapp.listeners.UserListener;
@@ -56,16 +58,16 @@ public class UsersActivity extends BaseActivity implements UserListener {
                         overridePendingTransition(0, 0);
                         finish();
                         return true;
-//                    case R.id.img_collector_disposers:
-//                        startActivity(new Intent(getApplicationContext(), CollectorsForDisposers.class));
-//                        overridePendingTransition(0, 0);
-//                        finish();
-//                        return true;
-//                    case R.id.img_collector_recyclers:
-//                        startActivity(new Intent(getApplicationContext(), ProductViewActivity.class));
-//                        overridePendingTransition(0, 0);
-//                        finish();
-//                        return true;
+                    case R.id.img_collector_disposers:
+                        startActivity(new Intent(getApplicationContext(), WasteDisposerAllView.class));
+                        overridePendingTransition(0, 0);
+                        finish();
+                        return true;
+                    case R.id.img_collector_recyclers:
+                        startActivity(new Intent(getApplicationContext(), RecyclersListForCollectors.class));
+                        overridePendingTransition(0, 0);
+                        finish();
+                        return true;
                     case R.id.img_collector_inventory:
                         startActivity(new Intent(getApplicationContext(), InventoryActivity.class));
                         overridePendingTransition(0, 0);

@@ -89,31 +89,21 @@ public class HouseHoldWasteAddPage extends AppCompatActivity {
        btn_next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 if(chk_plastic.isChecked() || chk_paper.isChecked() || chk_metal.isChecked() || chk_aluminium.isChecked() || chk_cardboard.isChecked() )
                 {
                     Intent intent = new Intent(HouseHoldWasteAddPage.this, HouserHoldWasteAddPagetwo.class);
-
                     addSelectedItemsToList();
-
                     intent.putExtra("selectedWasteList", selectedWasteList);
-
                     startActivity(intent);
                 }
                 else
                 {
-                    Toast.makeText(getBaseContext(), "This is my Toast message!",
+                    Toast.makeText(getBaseContext(), "Please Add Details!",
                             Toast.LENGTH_LONG).show();
                 }
-
             }
-
-
         });
-
-
     }
-
 
     //FUnction use to add selected items to List-------------------------------------
     public void addSelectedItemsToList()

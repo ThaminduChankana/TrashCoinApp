@@ -7,11 +7,11 @@
     android:layout_height="match_parent">
 
     <TextView
+        android:id="@+id/tv_prd_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="45dp"
+        android:layout_centerHorizontal="true"
         android:layout_marginTop="14dp"
         android:gravity="center"
         android:text="@string/tv_shopping_products"
@@ -20,23 +20,27 @@
         android:textStyle="italic" />
 
     <ImageView
+        android:id="@+id/img_prd_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_prd_view"
+        android:layout_gravity="start"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="15dp"
+        android:contentDescription="@string/todo"
+        android:src="@drawable/img_btn_back" />
+
+    <ImageView
         android:id="@+id/img_shopping_cart"
-        android:layout_width="49dp"
-        android:layout_height="51dp"
-        android:layout_alignParentTop="true"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_below="@id/tv_prd_view"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="21dp"
-        android:layout_marginEnd="21dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="25dp"
         app:srcCompat="@drawable/img_shop" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycledProducts"
-        android:layout_width="match_parent"
-        android:layout_height="593dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="0dp"
-        android:layout_marginTop="84dp" />
+
 
     <ProgressBar
         android:id="@+id/idProgressBar"
@@ -50,12 +54,16 @@
     <FrameLayout
         android:id="@+id/btm_nav_disposer_container"
         android:layout_width="match_parent"
-        android:layout_height="581dp"
+        android:layout_height="match_parent"
         android:layout_above="@id/bottom_navigation_disposer"
+        android:layout_below="@id/img_prd_back"
         android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="89dp"
-        android:layout_marginBottom="5dp">
+        android:layout_marginTop="10dp">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycledProducts"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
 
     </FrameLayout>
 
@@ -73,10 +81,9 @@
         android:id="@+id/img_order"
         android:layout_width="35dp"
         android:layout_height="35dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="28dp"
-        android:layout_marginEnd="89dp"
+        android:layout_below="@id/tv_prd_view"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
         app:srcCompat="@drawable/ic_baseline_order" />
 
 

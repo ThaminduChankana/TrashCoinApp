@@ -28,48 +28,11 @@ public class HouseholdWasteTimetable extends AppCompatActivity {
         findViewById(R.id.img_timetable_back).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), WasteDisposerDashboard.class));
-                overridePendingTransition(0, 0);
+                onBackPressed();
                 finish();
             }
         });
 
-        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation_disposer);
-        bottomNavigationView.setSelectedItemId(R.id.img_disposer_home);
-        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                switch (item.getItemId()) {
-                    case R.id.img_disposer_home:
-                        startActivity(new Intent(getApplicationContext(), WasteDisposerDashboard.class));
-                        overridePendingTransition(0, 0);
-                        finish();
-                        return true;
-                    case R.id.img_view_collectors:
-                        startActivity(new Intent(getApplicationContext(), CollectorsForDisposers.class));
-                        overridePendingTransition(0, 0);
-                        finish();
-                        return true;
-                    case R.id.img_shopping_cart:
-                        startActivity(new Intent(getApplicationContext(), ProductViewActivity.class));
-                        overridePendingTransition(0, 0);
-                        return true;
-                    case R.id.img_waste_in_hand:
-                        startActivity(new Intent(getApplicationContext(), WasteDisposerWelcomePage.class));
-                        overridePendingTransition(0, 0);
-                        finish();
-                        return true;
-                    case R.id.img_collector_chat:
-                        startActivity(new Intent(getApplicationContext(), ChatDisposer.class));
-                        overridePendingTransition(0, 0);
-                        finish();
-                        return true;
-                }
-
-                return false;
-            }
-        });
     }
 
     }

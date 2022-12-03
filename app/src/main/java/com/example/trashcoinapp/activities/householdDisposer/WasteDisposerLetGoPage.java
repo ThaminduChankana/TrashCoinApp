@@ -1,16 +1,23 @@
 package com.example.trashcoinapp.activities.householdDisposer;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
 
 import com.example.trashcoinapp.R;
+import com.example.trashcoinapp.activities.cart.ProductViewActivity;
+import com.example.trashcoinapp.activities.chat.ChatDisposer;
+import com.example.trashcoinapp.activities.collectors.CollectorsForDisposers;
+import com.example.trashcoinapp.activities.dashboards.WasteDisposerDashboard;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class WasteDisposerLetGoPage extends AppCompatActivity {
     Button btn_next;
@@ -45,6 +52,9 @@ public class WasteDisposerLetGoPage extends AppCompatActivity {
         });
 
 
+
+
     }
+
 
 }

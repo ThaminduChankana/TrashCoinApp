@@ -126,7 +126,7 @@
             <Spinner
                 android:id="@+id/spinner_user_category"
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
+                android:layout_height="48dp"
                 android:layout_marginTop="10dp"
                 android:background="@drawable/round_border"
                 android:backgroundTint="#CFEDE2"

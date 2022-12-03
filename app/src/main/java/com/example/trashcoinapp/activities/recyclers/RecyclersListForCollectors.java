@@ -10,13 +10,20 @@ import android.view.View;
 import android.view.WindowManager;
 
 import com.example.trashcoinapp.R;
+import com.example.trashcoinapp.activities.addData.RecyclerAddData;
 import com.example.trashcoinapp.activities.cart.ProductViewActivity;
 import com.example.trashcoinapp.activities.chat.Chat;
 import com.example.trashcoinapp.activities.chat.ChatDisposer;
+import com.example.trashcoinapp.activities.chat.ChatRecycler;
 import com.example.trashcoinapp.activities.collectors.CollectorsForDisposers;
+import com.example.trashcoinapp.activities.collectors.CollectorsForRecyclers;
 import com.example.trashcoinapp.activities.dashboards.WasteCollectorDashboard;
 import com.example.trashcoinapp.activities.dashboards.WasteDisposerDashboard;
+import com.example.trashcoinapp.activities.dashboards.WasteRecyclerDashboard;
+import com.example.trashcoinapp.activities.householdDisposer.WasteDisposerAllView;
+import com.example.trashcoinapp.activities.householdDisposer.WasteDisposerWelcomePage;
 import com.example.trashcoinapp.activities.inventory.InventoryActivity;
+import com.example.trashcoinapp.activities.recyclerProduct.RecyclerProductView;
 import com.example.trashcoinapp.adapters.CollectorsAdapter;
 import com.example.trashcoinapp.adapters.RecyclersAdapter;
 import com.example.trashcoinapp.databinding.ActivityCollectorsForDisposersBinding;
@@ -50,26 +57,25 @@ public class RecyclersListForCollectors extends AppCompatActivity {
         setListeners();
         getRecyclers();
 
-        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation_collector);
-        bottomNavigationView.setSelectedItemId(R.id.img_collector_home);
+        BottomNavigationView bottomNavigationView = binding.bottomNavigationCollector;
+        bottomNavigationView.setSelectedItemId(R.id.img_collector_recyclers);
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
 
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()) {
                     case R.id.img_collector_home:
-                        startActivity(new Intent(getApplicationContext(), WasteCollectorDashboard.class));
+                        startActivity(new Intent(getApplicationContext(),WasteCollectorDashboard.class));
                         overridePendingTransition(0, 0);
+                        finish();
                         return true;
                     case R.id.img_collector_disposers:
-                        startActivity(new Intent(getApplicationContext(), CollectorsForDisposers.class));
+                        startActivity(new Intent(getApplicationContext(), WasteDisposerAllView.class));
                         overridePendingTransition(0, 0);
                         finish();
                         return true;
                     case R.id.img_collector_recyclers:
-                        startActivity(new Intent(getApplicationContext(), ProductViewActivity.class));
-                        overridePendingTransition(0, 0);
-                        finish();
+
                         return true;
                     case R.id.img_collector_inventory:
                         startActivity(new Intent(getApplicationContext(), InventoryActivity.class));
@@ -125,7 +131,6 @@ public class RecyclersListForCollectors extends AppCompatActivity {
                         } else {
                             showErrorMessage();
                         }
-
 
                     } else {
                         showErrorMessage();

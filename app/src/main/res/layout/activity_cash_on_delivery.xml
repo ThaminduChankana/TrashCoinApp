@@ -12,18 +12,18 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_gravity="start"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="25dp"
         android:contentDescription="@string/todo"
         android:src="@drawable/img_btn_back"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
     <TextView
         android:id="@+id/textView3"
-        android:layout_width="193dp"
-        android:layout_height="43dp"
-        android:layout_marginTop="83dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
         android:layout_marginBottom="64dp"
         android:text="@string/tv_cash_delivery"
         android:textColor="#689F38"
@@ -39,6 +39,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
+        android:layout_marginTop="50dp"
         android:layout_marginEnd="20dp"
         android:layout_marginBottom="40dp"
         android:background="@drawable/background_edittext"
@@ -46,15 +47,15 @@
         android:drawablePadding="20dp"
         android:ems="10"
         android:importantForAutofill="no"
+        android:inputType="text"
         android:minHeight="48dp"
         android:textAlignment="textStart"
         app:layout_constraintBottom_toTopOf="@+id/et_checkout_contact"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3"
-        tools:ignore="SpeakableTextPresentCheck"
-        android:inputType="text" />
+        app:layout_constraintTop_toBottomOf="@+id/img_cash_on_delivery_back"
+        tools:ignore="SpeakableTextPresentCheck" />
 
     <EditText
         android:id="@+id/et_checkout_address"

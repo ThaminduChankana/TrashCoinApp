@@ -6,7 +6,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
 import android.view.WindowManager;
+import android.widget.ImageView;
 
 import com.example.trashcoinapp.R;
 import com.example.trashcoinapp.activities.chat.ChatDisposer;
@@ -15,6 +17,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class WasteManagementMoredetails extends AppCompatActivity {
 
+    private ImageView btnbacktotimetable;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,42 +25,15 @@ public class WasteManagementMoredetails extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_waste_management_moredetails);
 
+        btnbacktotimetable = findViewById(R.id.btnbacktotimetable);
 
-        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation_disposer);
-        bottomNavigationView.setSelectedItemId(R.id.img_disposer_home);
-        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-
+        btnbacktotimetable.setOnClickListener(new View.OnClickListener() {
             @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                switch (item.getItemId()) {
-                    case R.id.img_disposer_home:
-                        return true;
-                    case R.id.img_view_collectors:
-                        startActivity(new Intent(getApplicationContext(), WasteDisposerDashboard.class));
-                        overridePendingTransition(0, 0);
-                        return true;
-                    case R.id.img_shopping_cart:
-                        startActivity(new Intent(getApplicationContext(), HouseholdwasteUpdate.class));
-                        overridePendingTransition(0, 0);
-                        return true;
-                    case R.id.img_waste_in_hand:
-                        startActivity(new Intent(getApplicationContext(), HouseHoldWasteAddPage.class));
-                        overridePendingTransition(0, 0);
-                        return true;
-                    case R.id.img_collector_chat:
-                        startActivity(new Intent(getApplicationContext(), ChatDisposer.class));
-                        overridePendingTransition(0, 0);
-                        finish();
-                }
-
-                return false;
+            public void onClick(View v) {
+                onBackPressed();
             }
         });
 
-
-
     }
-
-
 
 }

@@ -52,15 +52,18 @@
         <entry key="..\:/Users/ASUS ROG/Desktop/UEE/TrashCoinApp/app/src/main/res/drawable/ic_inventory.xml" value="0.3195" />
         <entry key="..\:/Users/ASUS ROG/Desktop/UEE/TrashCoinApp/app/src/main/res/drawable/ic_truck.xml" value="0.316" />
         <entry key="..\:/Users/ASUS ROG/Desktop/UEE/TrashCoinApp/app/src/main/res/layout/activity_add_inventory.xml" value="0.1" />
+        <entry key="..\:/Users/ASUS ROG/Desktop/UEE/TrashCoinApp/app/src/main/res/layout/activity_add_product.xml" value="0.35052083333333334" />
+        <entry key="..\:/Users/ASUS ROG/Desktop/UEE/TrashCoinApp/app/src/main/res/layout/activity_cart.xml" value="0.35052083333333334" />
         <entry key="..\:/Users/ASUS ROG/Desktop/UEE/TrashCoinApp/app/src/main/res/layout/activity_cash_on_delivery.xml" value="0.25" />
         <entry key="..\:/Users/ASUS ROG/Desktop/UEE/TrashCoinApp/app/src/main/res/layout/activity_chat.xml" value="0.35052083333333334" />
         <entry key="..\:/Users/ASUS ROG/Desktop/UEE/TrashCoinApp/app/src/main/res/layout/activity_chat_disposer.xml" value="0.35052083333333334" />
         <entry key="..\:/Users/ASUS ROG/Desktop/UEE/TrashCoinApp/app/src/main/res/layout/activity_chat_recycler.xml" value="0.35052083333333334" />
         <entry key="..\:/Users/ASUS ROG/Desktop/UEE/TrashCoinApp/app/src/main/res/layout/activity_checkout.xml" value="0.35052083333333334" />
         <entry key="..\:/Users/ASUS ROG/Desktop/UEE/TrashCoinApp/app/src/main/res/layout/activity_collector_add_data.xml" value="0.3463541666666667" />
+        <entry key="..\:/Users/ASUS ROG/Desktop/UEE/TrashCoinApp/app/src/main/res/layout/activity_collector_calculator.xml" value="0.35052083333333334" />
         <entry key="..\:/Users/ASUS ROG/Desktop/UEE/TrashCoinApp/app/src/main/res/layout/activity_collectors_for_disposers.xml" value="0.25" />
         <entry key="..\:/Users/ASUS ROG/Desktop/UEE/TrashCoinApp/app/src/main/res/layout/activity_collectors_for_recyclers.xml" value="0.33" />
-        <entry key="..\:/Users/ASUS ROG/Desktop/UEE/TrashCoinApp/app/src/main/res/layout/activity_disposer_messaging.xml" value="0.35052083333333334" />
+        <entry key="..\:/Users/ASUS ROG/Desktop/UEE/TrashCoinApp/app/src/main/res/layout/activity_disposer_messaging.xml" value="0.33" />
         <entry key="..\:/Users/ASUS ROG/Desktop/UEE/TrashCoinApp/app/src/main/res/layout/activity_disposer_users.xml" value="0.35052083333333334" />
         <entry key="..\:/Users/ASUS ROG/Desktop/UEE/TrashCoinApp/app/src/main/res/layout/activity_edit_inventory.xml" value="0.25" />
         <entry key="..\:/Users/ASUS ROG/Desktop/UEE/TrashCoinApp/app/src/main/res/layout/activity_edit_product.xml" value="0.35052083333333334" />
@@ -68,20 +71,36 @@
         <entry key="..\:/Users/ASUS ROG/Desktop/UEE/TrashCoinApp/app/src/main/res/layout/activity_house_hold_waste_add_page.xml" value="0.33" />
         <entry key="..\:/Users/ASUS ROG/Desktop/UEE/TrashCoinApp/app/src/main/res/layout/activity_household_waste_adapter.xml" value="0.35052083333333334" />
         <entry key="..\:/Users/ASUS ROG/Desktop/UEE/TrashCoinApp/app/src/main/res/layout/activity_household_waste_timetable.xml" value="0.33" />
+        <entry key="..\:/Users/ASUS ROG/Desktop/UEE/TrashCoinApp/app/src/main/res/layout/activity_householdwaste_details.xml" value="0.33" />
         <entry key="..\:/Users/ASUS ROG/Desktop/UEE/TrashCoinApp/app/src/main/res/layout/activity_householdwaste_update.xml" value="0.35052083333333334" />
         <entry key="..\:/Users/ASUS ROG/Desktop/UEE/TrashCoinApp/app/src/main/res/layout/activity_houser_hold_waste_add_page_two.xml" value="0.33" />
         <entry key="..\:/Users/ASUS ROG/Desktop/UEE/TrashCoinApp/app/src/main/res/layout/activity_intro.xml" value="0.3463541666666667" />
+        <entry key="..\:/Users/ASUS ROG/Desktop/UEE/TrashCoinApp/app/src/main/res/layout/activity_intro_pg_five.xml" value="0.35052083333333334" />
         <entry key="..\:/Users/ASUS ROG/Desktop/UEE/TrashCoinApp/app/src/main/res/layout/activity_inventory.xml" value="0.25" />
         <entry key="..\:/Users/ASUS ROG/Desktop/UEE/TrashCoinApp/app/src/main/res/layout/activity_login_selector.xml" value="0.3463541666666667" />
+        <entry key="..\:/Users/ASUS ROG/Desktop/UEE/TrashCoinApp/app/src/main/res/layout/activity_login_waste_collector.xml" value="0.35052083333333334" />
+        <entry key="..\:/Users/ASUS ROG/Desktop/UEE/TrashCoinApp/app/src/main/res/layout/activity_login_waste_disposer.xml" value="0.35052083333333334" />
         <entry key="..\:/Users/ASUS ROG/Desktop/UEE/TrashCoinApp/app/src/main/res/layout/activity_messaging.xml" value="0.35052083333333334" />
+        <entry key="..\:/Users/ASUS ROG/Desktop/UEE/TrashCoinApp/app/src/main/res/layout/activity_order.xml" value="0.35052083333333334" />
+        <entry key="..\:/Users/ASUS ROG/Desktop/UEE/TrashCoinApp/app/src/main/res/layout/activity_product_view.xml" value="0.15" />
+        <entry key="..\:/Users/ASUS ROG/Desktop/UEE/TrashCoinApp/app/src/main/res/layout/activity_recycler_add_data.xml" value="0.35052083333333334" />
         <entry key="..\:/Users/ASUS ROG/Desktop/UEE/TrashCoinApp/app/src/main/res/layout/activity_recycler_messaging.xml" value="0.35052083333333334" />
+        <entry key="..\:/Users/ASUS ROG/Desktop/UEE/TrashCoinApp/app/src/main/res/layout/activity_recycler_product_view.xml" value="0.25" />
         <entry key="..\:/Users/ASUS ROG/Desktop/UEE/TrashCoinApp/app/src/main/res/layout/activity_recycler_users.xml" value="0.3463541666666667" />
         <entry key="..\:/Users/ASUS ROG/Desktop/UEE/TrashCoinApp/app/src/main/res/layout/activity_recyclers_list_for_collectors.xml" value="0.25" />
         <entry key="..\:/Users/ASUS ROG/Desktop/UEE/TrashCoinApp/app/src/main/res/layout/activity_register.xml" value="0.3463541666666667" />
+        <entry key="..\:/Users/ASUS ROG/Desktop/UEE/TrashCoinApp/app/src/main/res/layout/activity_single_product.xml" value="0.35052083333333334" />
         <entry key="..\:/Users/ASUS ROG/Desktop/UEE/TrashCoinApp/app/src/main/res/layout/activity_users.xml" value="0.3463541666666667" />
         <entry key="..\:/Users/ASUS ROG/Desktop/UEE/TrashCoinApp/app/src/main/res/layout/activity_waste_collector_dashboard.xml" value="0.35052083333333334" />
+        <entry key="..\:/Users/ASUS ROG/Desktop/UEE/TrashCoinApp/app/src/main/res/layout/activity_waste_disposer_all_view.xml" value="0.35052083333333334" />
         <entry key="..\:/Users/ASUS ROG/Desktop/UEE/TrashCoinApp/app/src/main/res/layout/activity_waste_disposer_dashboard.xml" value="0.35052083333333334" />
+        <entry key="..\:/Users/ASUS ROG/Desktop/UEE/TrashCoinApp/app/src/main/res/layout/activity_waste_disposer_let_go_page.xml" value="0.35052083333333334" />
+        <entry key="..\:/Users/ASUS ROG/Desktop/UEE/TrashCoinApp/app/src/main/res/layout/activity_waste_disposer_welcome_page.xml" value="0.25" />
+        <entry key="..\:/Users/ASUS ROG/Desktop/UEE/TrashCoinApp/app/src/main/res/layout/activity_waste_management_moredetails.xml" value="0.35052083333333334" />
         <entry key="..\:/Users/ASUS ROG/Desktop/UEE/TrashCoinApp/app/src/main/res/layout/activity_waste_recycler_dashboard.xml" value="0.3463541666666667" />
+        <entry key="..\:/Users/ASUS ROG/Desktop/UEE/TrashCoinApp/app/src/main/res/layout/disposer_item_for_collector.xml" value="0.35052083333333334" />
+        <entry key="..\:/Users/ASUS ROG/Desktop/UEE/TrashCoinApp/app/src/main/res/layout/household_waste_item.xml" value="0.35052083333333334" />
+        <entry key="..\:/Users/ASUS ROG/Desktop/UEE/TrashCoinApp/app/src/main/res/layout/item_cart.xml" value="0.35052083333333334" />
         <entry key="..\:/Users/ASUS ROG/Desktop/UEE/TrashCoinApp/app/src/main/res/layout/item_container_collector.xml" value="0.33" />
         <entry key="..\:/Users/ASUS ROG/Desktop/UEE/TrashCoinApp/app/src/main/res/layout/item_container_inventory.xml" value="0.3494791666666667" />
         <entry key="..\:/Users/ASUS ROG/Desktop/UEE/TrashCoinApp/app/src/main/res/layout/item_container_recent_conversation.xml" value="0.35052083333333334" />
@@ -89,6 +108,8 @@
         <entry key="..\:/Users/ASUS ROG/Desktop/UEE/TrashCoinApp/app/src/main/res/layout/item_container_recycler.xml" value="0.2911458333333333" />
         <entry key="..\:/Users/ASUS ROG/Desktop/UEE/TrashCoinApp/app/src/main/res/layout/item_container_sent_message.xml" value="0.35052083333333334" />
         <entry key="..\:/Users/ASUS ROG/Desktop/UEE/TrashCoinApp/app/src/main/res/layout/item_container_user.xml" value="0.35052083333333334" />
+        <entry key="..\:/Users/ASUS ROG/Desktop/UEE/TrashCoinApp/app/src/main/res/layout/item_product.xml" value="0.35052083333333334" />
+        <entry key="..\:/Users/ASUS ROG/Desktop/UEE/TrashCoinApp/app/src/main/res/layout/product_item.xml" value="0.35052083333333334" />
         <entry key="..\:/Users/ASUS ROG/Desktop/UEE/TrashCoinApp/app/src/main/res/menu/bottom_nav_collector_menu.xml" value="0.35052083333333334" />
         <entry key="..\:/Users/ASUS ROG/Desktop/UEE/TrashCoinApp/app/src/main/res/menu/bottom_nav_disposer_menu.xml" value="0.35052083333333334" />
         <entry key="..\:/Users/ASUS/Desktop/UEE/TrashCoinApp/app/src/main/res/layout/activity_chat.xml" value="0.33489583333333334" />
@@ -121,7 +142,7 @@
   <component name="VisualizationToolProject">
     <option name="state">
       <ProjectState>
-        <option name="scale" value="0.14" />
+        <option name="scale" value="0.15" />
       </ProjectState>
     </option>
   </component>

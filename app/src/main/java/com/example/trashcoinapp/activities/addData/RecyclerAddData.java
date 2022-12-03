@@ -83,6 +83,38 @@ public class RecyclerAddData extends AppCompatActivity {
         //setData();
         loadUserDetails();
 
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation_recycler);
+        bottomNavigationView.setSelectedItemId(R.id.img_recycler_info);
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()) {
+                    case R.id.img_recycler_home:
+                        startActivity(new Intent(getApplicationContext(), WasteRecyclerDashboard.class));
+                        overridePendingTransition(0, 0);
+                        return true;
+                    case R.id.img_view_collectors_of_recycler:
+                        startActivity(new Intent(getApplicationContext(), CollectorsForRecyclers.class));
+                        overridePendingTransition(0, 0);
+                        return true;
+                    case R.id.img_recycler_info:
+
+                        return true;
+                    case R.id.img_product_management:
+                        startActivity(new Intent(getApplicationContext(), RecyclerProductView.class));
+                        overridePendingTransition(0, 0);
+                        return true;
+                    case R.id.img_recycler_chat:
+                        startActivity(new Intent(getApplicationContext(), ChatRecycler.class));
+                        overridePendingTransition(0, 0);
+                        return true;
+                }
+
+                return false;
+            }
+        });
+
 
 
         btn_rec_add_data.setOnClickListener(new View.OnClickListener() {
