@@ -16,6 +16,7 @@ import com.example.trashcoinapp.activities.addData.RecyclerAddData;
 import com.example.trashcoinapp.activities.collectors.CollectorsForRecyclers;
 import com.example.trashcoinapp.activities.dashboards.WasteRecyclerDashboard;
 import com.example.trashcoinapp.activities.messaging.MessagingActivity;
+import com.example.trashcoinapp.activities.messaging.RecyclerMessagingActivity;
 import com.example.trashcoinapp.activities.recyclerProduct.RecyclerProductView;
 import com.example.trashcoinapp.activities.users.RecyclerUsersActivity;
 import com.example.trashcoinapp.activities.users.UsersActivity;
@@ -201,7 +202,7 @@ public class ChatRecycler extends AppCompatActivity implements ConversationListe
 
     @Override
     public void onConversationClicked(User user) {
-        Intent intent = new Intent(getApplicationContext(), MessagingActivity.class);
+        Intent intent = new Intent(getApplicationContext(), RecyclerMessagingActivity.class);
         intent.putExtra(Constants.KEY_USER, user);
         startActivity(intent);
     }
