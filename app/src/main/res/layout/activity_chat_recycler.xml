@@ -34,7 +34,7 @@
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_above="@id/bottom_navigation_chat_recycler"
+        android:layout_above="@id/bottom_navigation_recycler"
         android:layout_below="@id/img_chat_recycler_back"
         android:layout_marginTop="10dp"
         android:background="@drawable/background_content_bottom">
@@ -64,7 +64,7 @@
         android:id="@+id/fab_new_chat_recycler"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@id/bottom_navigation_chat_recycler"
+        android:layout_above="@id/bottom_navigation_recycler"
         android:layout_alignParentEnd="true"
         android:layout_marginStart="@dimen/_24sdp"
         android:layout_marginTop="@dimen/_24sdp"
@@ -75,14 +75,16 @@
         android:src="@drawable/ic_add" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottom_navigation_chat_recycler"
+        android:id="@+id/bottom_navigation_recycler"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
+        android:layout_marginStart="1dp"
+        android:layout_marginEnd="1dp"
         android:background="@color/btn_color"
         app:itemIconTint="@color/white"
         app:itemTextColor="@color/white"
-        app:menu="@menu/bottom_nav_collector_menu" />
+        app:menu="@menu/bottom_nav_recycler_menu" />
 
 
 </RelativeLayout>

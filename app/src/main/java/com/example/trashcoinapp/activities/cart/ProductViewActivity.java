@@ -20,6 +20,7 @@ import com.example.trashcoinapp.R;
 import com.example.trashcoinapp.activities.chat.ChatDisposer;
 import com.example.trashcoinapp.activities.collectors.CollectorsForDisposers;
 import com.example.trashcoinapp.activities.dashboards.WasteDisposerDashboard;
+import com.example.trashcoinapp.activities.householdDisposer.WasteDisposerWelcomePage;
 import com.example.trashcoinapp.adapters.ProductViewAdapter;
 import com.example.trashcoinapp.models.Product;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -34,7 +35,7 @@ import java.util.List;
 
 public class ProductViewActivity extends AppCompatActivity {
 
-    ImageView img_shopping_cart;
+    ImageView img_shopping_cart, img_order, img_prd_back;
     static Context context;
     private RecyclerView productRV;
     private ArrayList<Product> productsArrayList;
@@ -49,7 +50,22 @@ public class ProductViewActivity extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_product_view);
 
+
+        db = FirebaseFirestore.getInstance();
+        context = getApplicationContext();
+        productRV = findViewById(R.id.recycledProducts);
+        loadingPB = findViewById(R.id.idProgressBar);
         img_shopping_cart = findViewById(R.id.img_shopping_cart);
+        img_order = findViewById(R.id.img_order);
+        img_prd_back = findViewById(R.id.img_prd_back);
+
+        productsArrayList = new ArrayList<>();
+        productRV .setHasFixedSize(true);
+        productRV .setLayoutManager(new LinearLayoutManager(this));
+        productViewAdapter = new ProductViewAdapter(productsArrayList, this);
+        productRV.setAdapter(productViewAdapter);
+
+        // navigation to cart
         img_shopping_cart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -58,6 +74,25 @@ public class ProductViewActivity extends AppCompatActivity {
             }
         });
 
+        // navigation to orders
+        img_order.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(ProductViewActivity.this, OrderActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        img_prd_back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), WasteDisposerDashboard.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
+        // bottom navigation
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation_disposer);
         bottomNavigationView.setSelectedItemId(R.id.img_shopping_cart);
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -77,11 +112,11 @@ public class ProductViewActivity extends AppCompatActivity {
                         return true;
                     case R.id.img_shopping_cart:
                         return true;
-//                    case R.id.img_waste_in_hand:
-//                        startActivity(new Intent(getApplicationContext(), WasteDisposerDashboard.class));
-//                        overridePendingTransition(0, 0);
-//                        finish();
-//                        return true;
+                    case R.id.img_waste_in_hand:
+                        startActivity(new Intent(getApplicationContext(), WasteDisposerWelcomePage.class));
+                        overridePendingTransition(0, 0);
+                        finish();
+                        return true;
                     case R.id.img_collector_chat:
                         startActivity(new Intent(getApplicationContext(), ChatDisposer.class));
                         overridePendingTransition(0, 0);
@@ -93,21 +128,8 @@ public class ProductViewActivity extends AppCompatActivity {
             }
         });
 
-        context = getApplicationContext();
 
-        productRV = findViewById(R.id.recycledProducts);
-        loadingPB = findViewById(R.id.idProgressBar);
-
-        db = FirebaseFirestore.getInstance();
-
-
-        productsArrayList = new ArrayList<>();
-        productRV .setHasFixedSize(true);
-        productRV .setLayoutManager(new LinearLayoutManager(this));
-
-
-        productViewAdapter = new ProductViewAdapter(productsArrayList, this);
-        productRV.setAdapter(productViewAdapter);
+        // get the products details
         db.collection("Products").get()
                 .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
                     @Override
@@ -121,6 +143,7 @@ public class ProductViewActivity extends AppCompatActivity {
                             }
                             productViewAdapter.notifyDataSetChanged();
                         } else {
+                            loadingPB.setVisibility(View.GONE);
                             Toast.makeText(ProductViewActivity.this, "No data found in Database", Toast.LENGTH_SHORT).show();
                         }
                     }

@@ -24,6 +24,7 @@ public class SplashScreen extends AppCompatActivity {
     private PreferenceManager preference;
     String role;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

@@ -13,6 +13,7 @@ import com.example.trashcoinapp.R;
 import com.example.trashcoinapp.activities.cart.ProductViewActivity;
 import com.example.trashcoinapp.activities.chat.ChatDisposer;
 import com.example.trashcoinapp.activities.dashboards.WasteDisposerDashboard;
+import com.example.trashcoinapp.activities.householdDisposer.WasteDisposerWelcomePage;
 import com.example.trashcoinapp.activities.inventory.InventoryActivity;
 import com.example.trashcoinapp.adapters.CollectorsAdapter;
 import com.example.trashcoinapp.adapters.UsersAdapter;
@@ -65,11 +66,11 @@ public class CollectorsForDisposers extends AppCompatActivity {
                         overridePendingTransition(0, 0);
                         finish();
                         return true;
-//                    case R.id.img_waste_in_hand:
-//                        startActivity(new Intent(getApplicationContext(), WasteDisposerDashboard.class));
-//                        overridePendingTransition(0, 0);
-//                        finish();
-//                        return true;
+                    case R.id.img_waste_in_hand:
+                        startActivity(new Intent(getApplicationContext(), WasteDisposerWelcomePage.class));
+                        overridePendingTransition(0, 0);
+                        finish();
+                        return true;
                     case R.id.img_collector_chat:
                         startActivity(new Intent(getApplicationContext(), ChatDisposer.class));
                         overridePendingTransition(0, 0);

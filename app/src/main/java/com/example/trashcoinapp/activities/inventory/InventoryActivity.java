@@ -17,6 +17,8 @@ import android.widget.Toast;
 import com.example.trashcoinapp.R;
 import com.example.trashcoinapp.activities.chat.Chat;
 import com.example.trashcoinapp.activities.dashboards.WasteCollectorDashboard;
+import com.example.trashcoinapp.activities.householdDisposer.WasteDisposerAllView;
+import com.example.trashcoinapp.activities.recyclers.RecyclersListForCollectors;
 import com.example.trashcoinapp.adapters.InventoryAdapter;
 import com.example.trashcoinapp.database.DBHelper;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -84,16 +86,16 @@ public class InventoryActivity extends AppCompatActivity {
                         overridePendingTransition(0, 0);
                         finish();
                         return true;
-//                    case R.id.img_collector_disposers:
-//                        startActivity(new Intent(getApplicationContext(), CollectorsForDisposers.class));
-//                        overridePendingTransition(0, 0);
-//                        finish();
-//                        return true;
-//                    case R.id.img_collector_recyclers:
-//                        startActivity(new Intent(getApplicationContext(), ProductViewActivity.class));
-//                        overridePendingTransition(0, 0);
-//                        finish();
-//                        return true;
+                    case R.id.img_collector_disposers:
+                        startActivity(new Intent(getApplicationContext(), WasteDisposerAllView.class));
+                        overridePendingTransition(0, 0);
+                        finish();
+                        return true;
+                    case R.id.img_collector_recyclers:
+                        startActivity(new Intent(getApplicationContext(), RecyclersListForCollectors.class));
+                        overridePendingTransition(0, 0);
+                        finish();
+                        return true;
                     case R.id.img_collector_inventory:
                         return true;
                     case R.id.img_collector_chat:

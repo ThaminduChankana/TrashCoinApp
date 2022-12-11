@@ -15,6 +15,7 @@ import com.example.trashcoinapp.activities.BaseActivity;
 import com.example.trashcoinapp.activities.cart.ProductViewActivity;
 import com.example.trashcoinapp.activities.collectors.CollectorsForDisposers;
 import com.example.trashcoinapp.activities.dashboards.WasteDisposerDashboard;
+import com.example.trashcoinapp.activities.householdDisposer.WasteDisposerWelcomePage;
 import com.example.trashcoinapp.adapters.ChatAdapter;
 import com.example.trashcoinapp.databinding.ActivityDisposerMessagingBinding;
 import com.example.trashcoinapp.databinding.ActivityMessagingBinding;
@@ -95,11 +96,11 @@ public class DisposerMessagingActivity extends BaseActivity {
                         overridePendingTransition(0, 0);
                         finish();
                         return true;
-//                    case R.id.img_waste_in_hand:
-//                        startActivity(new Intent(getApplicationContext(), WasteDisposerDashboard.class));
-//                        overridePendingTransition(0, 0);
-//                        finish();
-//                        return true;
+                    case R.id.img_waste_in_hand:
+                        startActivity(new Intent(getApplicationContext(), WasteDisposerWelcomePage.class));
+                        overridePendingTransition(0, 0);
+                        finish();
+                        return true;
                     case R.id.img_collector_chat:
                         return true;
                 }

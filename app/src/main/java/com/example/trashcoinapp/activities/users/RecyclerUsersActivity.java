@@ -1,20 +1,30 @@
 package com.example.trashcoinapp.activities.users;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
 
+import com.example.trashcoinapp.R;
 import com.example.trashcoinapp.activities.BaseActivity;
+import com.example.trashcoinapp.activities.addData.RecyclerAddData;
+import com.example.trashcoinapp.activities.chat.ChatRecycler;
+import com.example.trashcoinapp.activities.collectors.CollectorsForRecyclers;
+import com.example.trashcoinapp.activities.dashboards.WasteRecyclerDashboard;
 import com.example.trashcoinapp.activities.messaging.MessagingActivity;
+import com.example.trashcoinapp.activities.messaging.RecyclerMessagingActivity;
+import com.example.trashcoinapp.activities.recyclerProduct.RecyclerProductView;
 import com.example.trashcoinapp.adapters.UsersAdapter;
 import com.example.trashcoinapp.databinding.ActivityRecyclerUsersBinding;
 import com.example.trashcoinapp.listeners.UserListener;
 import com.example.trashcoinapp.models.User;
 import com.example.trashcoinapp.utilities.Constants;
 import com.example.trashcoinapp.utilities.PreferenceManager;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 
@@ -38,6 +48,37 @@ public class RecyclerUsersActivity extends BaseActivity implements UserListener 
         preferenceManager = new PreferenceManager(getApplicationContext());
         setListeners();
         getUsers();
+
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation_recycler);
+        bottomNavigationView.setSelectedItemId(R.id.img_recycler_chat);
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()) {
+                    case R.id.img_recycler_home:
+                        startActivity(new Intent(getApplicationContext(), WasteRecyclerDashboard.class));
+                        overridePendingTransition(0, 0);
+                        return true;
+                    case R.id.img_view_collectors_of_recycler:
+                        startActivity(new Intent(getApplicationContext(), CollectorsForRecyclers.class));
+                        overridePendingTransition(0, 0);
+                        return true;
+                    case R.id.img_recycler_info:
+                        startActivity(new Intent(getApplicationContext(), RecyclerAddData.class));
+                        overridePendingTransition(0, 0);
+                        return true;
+                    case R.id.img_product_management:
+                        startActivity(new Intent(getApplicationContext(), RecyclerProductView.class));
+                        overridePendingTransition(0, 0);
+                        return true;
+                    case R.id.img_recycler_chat:
+                        return true;
+                }
+
+                return false;
+            }
+        });
 
     }
 
@@ -100,7 +141,7 @@ public class RecyclerUsersActivity extends BaseActivity implements UserListener 
 
     @Override
     public void onUserClicked(User user) {
-        Intent intent = new Intent(getApplicationContext(), MessagingActivity.class);
+        Intent intent = new Intent(getApplicationContext(), RecyclerMessagingActivity.class);
         intent.putExtra(Constants.KEY_USER, user);
         startActivity(intent);
         finish();

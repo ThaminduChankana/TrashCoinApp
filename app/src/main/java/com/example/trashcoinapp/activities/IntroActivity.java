@@ -21,7 +21,6 @@ public class IntroActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         getSupportActionBar().hide();
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        setContentView(R.layout.splash_screen);
         setContentView(R.layout.activity_intro);
 
         btn_intro_decide_yes = findViewById(R.id.btn_intro_decide_yes);

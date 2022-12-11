@@ -14,6 +14,7 @@ import android.widget.Toast;
 
 import com.example.trashcoinapp.R;
 import com.example.trashcoinapp.activities.collectors.CollectorsForDisposers;
+import com.example.trashcoinapp.activities.householdDisposer.WasteDisposerWelcomePage;
 import com.example.trashcoinapp.activities.user.LoginSelector;
 import com.example.trashcoinapp.activities.cart.ProductViewActivity;
 import com.example.trashcoinapp.activities.chat.ChatDisposer;
@@ -35,6 +36,7 @@ public class WasteDisposerDashboard extends BaseActivity {
     private CardView cv_wd_db_shop;
     private CardView cv_wd_db_chat;
     private CardView cv_wd_db_collector;
+    private CardView cv_wd_db_waste;
     private TextView tv_waste_disposer_dashboard;
     Button logout;
 
@@ -51,6 +53,7 @@ public class WasteDisposerDashboard extends BaseActivity {
         cv_wd_db_chat = findViewById(R.id.cv_wd_db_chat);
         cv_wd_db_chat = findViewById(R.id.cv_wd_db_chat);
         cv_wd_db_collector = findViewById(R.id.cv_wd_db_collector);
+        cv_wd_db_waste = findViewById(R.id.cv_wd_db_waste);
         preferenceManager = new PreferenceManager(getApplicationContext());
 
         loadUserDetails();
@@ -90,6 +93,16 @@ public class WasteDisposerDashboard extends BaseActivity {
             }
         });
 
+        cv_wd_db_waste.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(),WasteDisposerWelcomePage.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
+
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation_disposer);
         bottomNavigationView.setSelectedItemId(R.id.img_disposer_home);
@@ -110,11 +123,11 @@ public class WasteDisposerDashboard extends BaseActivity {
                         overridePendingTransition(0, 0);
                         finish();
                         return true;
-//                    case R.id.img_waste_in_hand:
-//                        startActivity(new Intent(getApplicationContext(), WasteDisposerDashboard.class));
-//                        overridePendingTransition(0, 0);
-//                        finish();
-//                        return true;
+                    case R.id.img_waste_in_hand:
+                        startActivity(new Intent(getApplicationContext(), WasteDisposerWelcomePage.class));
+                        overridePendingTransition(0, 0);
+                        finish();
+                        return true;
                     case R.id.img_collector_chat:
                         startActivity(new Intent(getApplicationContext(), ChatDisposer.class));
                         overridePendingTransition(0, 0);

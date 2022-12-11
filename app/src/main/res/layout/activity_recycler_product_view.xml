@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+    tools:context=".activities.recyclerProduct.RecyclerProductView">
+
+    <TextView
+        android:id="@+id/tv_sys_prod"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:text="@string/tv_products_recycler"
+        android:textColor="@color/heading"
+        android:textSize="30sp"
+        android:textStyle="italic" />
+    <ImageView
+        android:id="@+id/img_add_product_system"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_sys_prod"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="25dp"
+        android:contentDescription="@string/todo"
+        android:src="@drawable/img_plus_icon" />
+    <ImageView
+        android:id="@+id/img_add_inventory_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_gravity="start"
+        android:layout_marginTop="15dp"
+        android:layout_below="@id/tv_sys_prod"
+        android:contentDescription="@string/todo"
+        android:src="@drawable/img_btn_back" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycledProductRecycler"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/bottom_navigation_recycler"
+        android:layout_below="@id/img_add_product_system"
+        android:layout_marginTop="10dp" />
+    <ProgressBar
+        android:id="@+id/idProgressBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation_recycler"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/btn_color"
+        app:itemIconTint="@color/white"
+        app:itemTextColor="@color/white"
+        app:menu="@menu/bottom_nav_recycler_menu" />
+
+
+
+
+</RelativeLayout>

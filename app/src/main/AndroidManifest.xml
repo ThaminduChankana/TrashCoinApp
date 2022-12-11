@@ -16,6 +16,81 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TrashCoinApp"
         tools:targetApi="31">
+
+        <activity
+            android:name=".activities.householdDisposer.WasteDisposerAllView"
+            android:exported="true"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".activities.householdDisposer.HouseholdwasteUpdate"
+            android:exported="true"
+            android:windowSoftInputMode="adjustResize"/>
+        <activity
+            android:name=".activities.householdDisposer.WasteManagementMoredetails"
+            android:exported="true"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".activities.householdDisposer.HouseholdWasteTimetable"
+            android:exported="true"
+            android:windowSoftInputMode="adjustResize"/>
+        <activity
+            android:name=".activities.householdDisposer.HouseholdwasteDetails"
+            android:exported="true"
+            android:windowSoftInputMode="adjustResize"/>
+        <activity
+            android:name=".activities.cart.OrderActivity"
+            android:exported="true"
+            android:windowSoftInputMode="adjustResize"/>
+        <activity
+            android:name=".activities.cart.CashOnDeliveryActivity"
+
+            android:exported="true"
+            android:windowSoftInputMode="adjustResize"/>
+
+        <activity
+            android:name=".activities.householdDisposer.HouserHoldWasteAddPagetwo"
+            android:exported="true"
+            android:windowSoftInputMode="adjustResize"/>
+        <activity
+            android:name=".activities.householdDisposer.HouseHoldWasteAddPage"
+            android:exported="true"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".activities.householdDisposer.WasteDisposerLetGoPage"
+            android:exported="true"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".activities.householdDisposer.WasteDisposerWelcomePage"
+            android:exported="true"
+            android:windowSoftInputMode="adjustResize"/>
+        <activity
+            android:name=".activities.recyclers.RecyclersListForCollectors"
+            android:exported="true"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".activities.addData.RecyclerAddData"
+            android:exported="true"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".activities.recyclerProduct.RecyclerProductView"
+            android:exported="true"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".activities.recyclerProduct.AddProduct"
+            android:exported="true"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".activities.recyclerProduct.EditProduct"
+            android:exported="true"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".activities.cart.CheckoutActivity"
+            android:exported="true"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".activities.calculators.CollectorCalculator"
+            android:exported="true"
+            android:windowSoftInputMode="adjustResize"  />
         <activity
             android:name=".activities.collectors.CollectorsForRecyclers"
             android:exported="true"
@@ -32,6 +107,7 @@
             android:name=".activities.inventory.InventoryActivity"
             android:exported="true"
             android:windowSoftInputMode="adjustResize" />
+
         <activity
             android:name=".activities.cart.SingleProductActivity"
             android:exported="true"
@@ -65,10 +141,6 @@
             android:exported="true"
             android:windowSoftInputMode="adjustResize" />
         <activity
-            android:name=".activities.chat.ChatDisposer"
-            android:exported="true"
-            android:windowSoftInputMode="adjustResize" />
-        <activity
             android:name=".activities.messaging.MessagingActivity"
             android:exported="true"
             android:windowSoftInputMode="adjustResize" />
@@ -78,6 +150,10 @@
             android:windowSoftInputMode="adjustResize" />
         <activity
             android:name=".activities.chat.Chat"
+            android:exported="true"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".activities.chat.ChatDisposer"
             android:exported="true"
             android:windowSoftInputMode="adjustResize" />
         <activity

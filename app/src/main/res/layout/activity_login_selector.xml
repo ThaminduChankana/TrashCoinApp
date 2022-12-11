@@ -34,7 +34,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/tv_login_as"
         android:layout_marginStart="25dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="25dp"
         android:background="@color/card_background"
         android:onClick="openWasteDisposerLogin"
@@ -102,6 +102,7 @@
         android:layout_marginStart="25dp"
         android:layout_marginTop="30dp"
         android:layout_marginEnd="25dp"
+        android:layout_marginBottom="25dp"
         android:background="@color/card_background"
         android:onClick="openWasteRecyclerLogin"
         app:cardCornerRadius="50dp">

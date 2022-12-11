@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.recyclerProduct.AddProduct">
+
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+    <TextView
+        android:id="@+id/img_add_product_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:text="@string/tv_add_products"
+        android:textAlignment="center"
+        android:textColor="@color/heading"
+        android:textSize="40sp" />
+
+    <ImageView
+        android:id="@+id/img_add_product_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="20dp"
+        android:contentDescription="@string/todo"
+        android:src="@drawable/img_btn_back" />
+
+
+    <LinearLayout
+        android:id="@+id/ll_add_product"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="vertical"
+        android:paddingStart="25dp"
+        android:paddingEnd="25dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="0dp">
+        <EditText
+            android:id="@+id/productTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/background_edittext"
+            android:ems="10"
+            android:hint="@string/et_product_name"
+            android:importantForAutofill="no"
+            android:inputType="text"
+            android:minHeight="48dp"
+            android:gravity="center"
+            tools:ignore="SpeakableTextPresentCheck" />
+        <EditText
+            android:id="@+id/productDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/background_edittext"
+            android:ems="10"
+            android:hint="@string/et_product_description"
+            android:importantForAutofill="no"
+            android:inputType="text"
+            android:minHeight="48dp"
+            android:gravity="center"
+            tools:ignore="SpeakableTextPresentCheck,TextContrastCheck" />
+        <EditText
+            android:id="@+id/productCategory"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/background_edittext"
+            android:ems="10"
+            android:hint="@string/et_product_Category"
+            android:importantForAutofill="no"
+            android:inputType="text"
+            android:minHeight="48dp"
+            android:gravity="center"
+            tools:ignore="SpeakableTextPresentCheck,TextContrastCheck" />
+        <EditText
+            android:id="@+id/productQuantity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/background_edittext"
+            android:ems="10"
+            android:hint="@string/et_product_Quantity"
+            android:importantForAutofill="no"
+            android:inputType="text"
+            android:minHeight="48dp"
+            android:gravity="center"
+            tools:ignore="SpeakableTextPresentCheck,TextContrastCheck" />
+
+
+        <EditText
+            android:id="@+id/productPrice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/background_edittext"
+            android:ems="10"
+            android:hint="@string/et_product_price"
+            android:importantForAutofill="no"
+            android:inputType="text"
+            android:minHeight="48dp"
+            android:gravity="center"
+            tools:ignore="SpeakableTextPresentCheck" />
+        <EditText
+            android:id="@+id/productDiscountPrice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/background_edittext"
+            android:ems="10"
+            android:hint="@string/et_product_Discount_Price"
+            android:importantForAutofill="no"
+            android:inputType="text"
+            android:minHeight="48dp"
+            android:gravity="center"
+            tools:ignore="SpeakableTextPresentCheck,TextContrastCheck" />
+        <EditText
+            android:id="@+id/productDiscountNote"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/background_edittext"
+            android:ems="10"
+            android:hint="@string/et_product_Discount_Note"
+            android:importantForAutofill="no"
+            android:inputType="text"
+            android:minHeight="48dp"
+            android:gravity="center"
+            tools:ignore="SpeakableTextPresentCheck,TextContrastCheck" />
+
+        <ImageView
+            android:id="@+id/productImage"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:textSize="20sp"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_product_img"
+            />
+
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/addProductBtn"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:backgroundTint="@color/btn_color"
+        android:text="@string/btn_add_product"
+        app:cornerRadius="50dp"
+        tools:ignore="DuplicateSpeakableTextCheck" />
+
+
+</LinearLayout>
+
+
+</ScrollView>
+
+
+
+
+
